@@ -1393,12 +1393,6 @@ a:hover {
     }
 }
 
-@media (max-width: 767px) {
-    .prev-next-wrapper {
-        padding: 0 15px;
-    }
-}
-
 .prev a {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1494,7 +1488,19 @@ a:hover {
 .next a:hover span {
     color: #f45a6f;
     letter-spacing: 4px;
-}.header-wrapper {
+}
+
+@media (max-width: 767px) {
+    .prev-next-wrapper {
+        padding: 0 15px;
+    }
+    .prev-next-wrapper .prev-next-title {
+        display: none;
+    }
+    
+}
+
+.header-wrapper {
     -webkit-transform: translateY(0);
             transform: translateY(0);
 }

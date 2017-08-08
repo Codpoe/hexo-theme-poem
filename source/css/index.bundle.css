@@ -1551,12 +1551,6 @@ a:hover {
     }
 }
 
-@media (max-width: 767px) {
-    .prev-next-wrapper {
-        padding: 0 15px;
-    }
-}
-
 .prev a {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1653,3 +1647,14 @@ a:hover {
     color: #f45a6f;
     letter-spacing: 4px;
 }
+
+@media (max-width: 767px) {
+    .prev-next-wrapper {
+        padding: 0 15px;
+    }
+    .prev-next-wrapper .prev-next-title {
+        display: none;
+    }
+    
+}
+
