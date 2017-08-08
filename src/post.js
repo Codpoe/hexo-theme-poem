@@ -1,5 +1,6 @@
 import './css/font-awesome.min.css';
 import './css/github-markdown.css';
+import './css/github-highlight.css';
 import './css/base.css';
 import './css/prev-next.css';
 import './css/post.css';

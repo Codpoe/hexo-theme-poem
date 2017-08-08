@@ -1,4 +1,4 @@
-<% if (is_post() && post.comments && theme.disqus.open && theme.disqus.shortname) { %>
+<% if (page.comments && theme.disqus.open && theme.disqus.shortname) { %>
     <div id="disqus_thread">
     </div>
     <script>
@@ -20,4 +20,5 @@
         Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
     </noscript>
 <% } %>
+    
                             

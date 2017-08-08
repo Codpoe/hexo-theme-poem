@@ -76,9 +76,12 @@
     }
 }
 
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 767px) {
+    .year:first-child {
+        margin-top: 115px;
+    }
     .archive-posts {
-        padding: 0 16px;
+        padding: 0 15px;
     }
     .archive-post-wrapper {
         padding: 16px 0;

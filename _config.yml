@@ -3,21 +3,21 @@
 # Thanks!
 
 # first_screen
-## the links part: you can add any link, just like <GitHub: [your github url]>
+## the links part of first screen: you can add any link, just like <GitHub: [your github url]>
 first_screen:
-  open: true
-  name: Poem
-  description: Life is a Poem
+  open: true ## toggle whether your site shows the first screen
+  name: Poem ## the largest word on the first screen
+  description: Life is a Poem ## The description of your site
   links: 
 
 # header
-## the links part supports: 
-## email, weibo, twitter, github, gitlab, facebook, dribbble, behance.
+## the links part of header supports: 
+## email, weibo, twitter, github, gitlab, facebook, dribbble, behance
 header:
-  logo: 
+  logo: ## the logo on the header
   links: 
 
-  menu:
+  menu: ## the menu on the header, you can customize it.
     home: /
     category: /categories/
     archive: /archives/
@@ -25,14 +25,15 @@ header:
 
 # footer
 copyright: 
-  time: 2017
-  name: Poem
+  time: 2017 ## the time of copyright in the footer
+  name: Poem ## the name of copyright in the footer
 
 # triangle_canvas
-triangle_canvas: true
+triangle_canvas: true ## toggle whether your site show the colorful triangle-canvas in the top of all page
 
 # disqus
+## you can find more help on https://disqus.com/.
 disqus:
-  open: false
-  shortname: 
+  open: false ## toggle whether your site open the disqus
+  shortname: ## your disqus shortname
 

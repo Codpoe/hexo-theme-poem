@@ -14,11 +14,9 @@
     <div class="wrapper">
         <div class="container">
             <%- partial('_partial/post', {post: page}) %>
-            <% if (page.path.indexOf('about') === -1) { %>
-                <%- partial('_partial/prev-next') %>
-            <% } %>
-            <section class="comment">
-                <%- partial('_partial/comment', {post: page}) %>
+            <%- partial('_partial/prev-next') %>
+            <section class="comments">
+                <%- partial('_partial/comments') %>
             </section>
         </div>
         <%- partial('_partial/footer') %>

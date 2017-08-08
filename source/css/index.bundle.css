@@ -642,6 +642,79 @@
 .markdown-body hr {
   border-bottom-color: #eee;
 }
+/*
+ * modify from
+ * github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+ */
+
+.highlight .comment, .highlight .quote {
+  color: #998;
+  font-style: italic;
+}
+
+.highlight .keyword, .highlight .selector-tag, .highlight .subst {
+  color: #D73A49;
+}
+
+.highlight .number, .highlight .literal, .highlight .variable, .highlight .template-variable, .highlight .tag .attr {
+  color: #045EC6;
+}
+
+.highlight .string, .highlight .doctag {
+  color: #22863A;
+}
+
+.highlight .title, .highlight .section, .highlight .selector-id {
+  color: #6F42C1;
+}
+
+.highlight .subst {
+  font-weight: normal;
+}
+
+.highlight .type, .highlight .class .highlight .title {
+  color: #458;
+  font-weight: bold;
+}
+
+.highlight .tag, .highlight .name, .highlight .attribute {
+  color: #000080;
+  font-weight: normal;
+}
+
+.highlight .regexp, .highlight .link {
+  color: #009926;
+}
+
+.highlight .symbol, .highlight .bullet {
+  color: #990073;
+}
+
+.highlight .built_in, .highlight .builtin-name {
+  color: #6F42C1;
+}
+
+.highlight .meta {
+  color: #999;
+  font-weight: bold;
+}
+
+.highlight .deletion {
+  background: #fdd;
+}
+
+.highlight .addition {
+  background: #dfd;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}
+
+.highlight .strong {
+  font-weight: bold;
+}
+
 .header-wrapper {
     width: 100%;
     height: 100px;
@@ -1081,17 +1154,17 @@ a:hover {
 }
 
 .markdown-body h1 {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 600;
 }
 
 .markdown-body h2 {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
 }
 
 .markdown-body h3 {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
 }
 
@@ -1246,7 +1319,7 @@ a:hover {
 
 .center {
     position: relative;
-    top: -30px;
+    top: -15px;
     text-align: center;
     -webkit-user-select: none;
        -moz-user-select: none;
