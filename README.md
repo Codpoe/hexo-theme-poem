@@ -15,7 +15,7 @@ Then you can modify theme setting in `hexo-theme-poem/_config.yml`.
 ## Configuration
 The default configuration:
 
-```
+```yaml
 # If you have any problem about this theme, 
 # please let me kown it via email or GitHub issue.
 # Thanks!
