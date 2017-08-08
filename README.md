@@ -80,5 +80,6 @@ The url of the new page(normal page or clean page) is `http(s)://[your site addr
 ## Todo
 - Some widgets
 - The progress bar of the post page
+- Responsive header logo
 - ...
 
