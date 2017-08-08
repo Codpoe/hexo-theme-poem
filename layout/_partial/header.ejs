@@ -7,7 +7,7 @@
             <ul class="links">
                 <% for (var key in theme.header.links) { %>
                     <li>
-                        <% if (key === 'email') { %>
+                        <% if (key.indexOf('mail') !== -1) { %>
                             <a href="mailto:<%= theme.header.links[key] %>" title="<%= key %>">
                                 <i class="fa fa-envelope"></i>
                             </a>

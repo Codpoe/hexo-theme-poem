@@ -4,7 +4,15 @@
         <h2 class="description"><%= theme.first_screen.description %></h2>
         <div class="links">
             <% for (var key in theme.first_screen.links) { %>
-                <a href="<%= theme.first_screen.links[key] %>" target="_blank"><%= key %></a>
+                <% if (key.indexOf('mail') !== -1) { %>
+                    <a href="mailto:<%= theme.first_screen.links[key] %>">
+                        <%= key %>
+                    </a>
+                <% } else { %>
+                    <a href="<%= theme.first_screen.links[key] %>" target="_blank">
+                        <%= key %>
+                    </a>
+                <% } %>
             <% } %>
         </div>
         <button class="entry-btn">
@@ -14,3 +22,4 @@
 
     <canvas class="triangle-canvas"></canvas>
 </div>
+
