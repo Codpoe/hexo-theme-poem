@@ -1,0 +1,131 @@
+@import './common.css';
+
+.prev-next-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin: 45px 0;
+    padding: 0 45px;
+    .prev-next-title {
+        width: 400px;
+        height: 36px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -18px;
+        margin-left: -200px;
+        font-size: 16px;
+        font-weight: normal;
+        color: var(--third-text-color);
+        line-height: 36px;
+        text-align: center;
+        letter-spacing: 1px;
+        opacity: 0;
+    }
+    .prev-next-title--slide-right {
+        animation: prev-next-title--slide-right-anim 0.5s;
+        animation-fill-mode: both;
+    }
+    .prev-next-title--slide-left {
+        animation: prev-next-title--slide-left-anim 0.5s;
+        animation-fill-mode: both;
+    }
+}
+
+@keyframes prev-next-title--slide-right-anim {
+    0% {
+        transform: translateX(-30px);
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes prev-next-title--slide-left-anim {
+    0% {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 767px) {
+    .prev-next-wrapper {
+        padding: 0 15px;
+    }
+}
+
+.prev a {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    .arrow {
+        width: 36px;
+        height: 36px;
+        border-left: 1px solid var(--primary-color);
+        border-bottom: 1px solid var(--primary-color);
+        position: relative;
+        left: 8px;
+        transform: rotate(45deg);
+    }
+    span {
+        font-size: 14px;
+        color: var(--third-text-color);
+        position: relative;
+        right: 8px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: all 0.5s;
+    }
+    &:hover {
+        text-decoration: none;
+        span {
+            color: var(--primary-color);
+            letter-spacing: 4px;
+        }
+    }
+}
+
+.next a {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    .arrow {
+        width: 36px;
+        height: 36px;
+        border-top: 1px solid var(--primary-color);
+        border-right: 1px solid var(--primary-color);
+        position: relative;
+        right: 8px;
+        transform: rotate(45deg);
+    }
+    span {
+        font-size: 14px;
+        color: var(--third-text-color);
+        position: relative;
+        left: 8px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: all 0.5s;
+    }
+    &:hover {
+        text-decoration: none;
+        span {
+            color: var(--primary-color);
+            letter-spacing: 4px;
+        }
+    }
+}

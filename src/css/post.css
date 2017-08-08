@@ -1,0 +1,29 @@
+@import './common.css';
+
+.header-wrapper {
+    transform: translateY(0);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    transform: translateY(0);
+}
+
+.markdown-body {
+    color: var(--second-text-color);
+}
+
+.comment {
+    margin: 45px 0;
+    padding: 0 45px;
+}
+
+@media (max-width: 767px) {
+    .comment {
+        padding: 0 15px;
+    }
+}
+

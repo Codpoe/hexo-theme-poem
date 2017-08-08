@@ -1,0 +1,120 @@
+@import './common.css';
+
+.first-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center {
+    position: relative;
+    top: -30px;
+    text-align: center;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    h1 {
+        margin-bottom: 20px;
+        font-size: 30px;
+        font-weight: 700;
+        color: var(--text-color);
+        letter-spacing: 8px;
+    }
+    
+    h2 {
+        margin-bottom: 20px;
+        font-size: 14px;
+        font-weight: normal;
+        color: var(--third-text-color);
+        letter-spacing: 2px;
+    }
+    .links {
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: var(--third-text-color);
+        letter-spacing: 2px;
+    }
+    a {
+        font-size: 14px;
+        color: var(--third-text-color);
+        letter-spacing: 2px;
+        transition: color 0.2s;
+        &:hover {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+        &:nth-child(n+2)::before {
+            content: '/';
+            position: relative;
+            left: -3px;
+            font-size: 14px;
+            color: var(--third-text-color);
+        }
+    }
+}
+
+.entry-btn {
+    outline: none;
+    border: none;
+    position: relative;
+    border-radius: 2px;
+    background: var(--primary-color);
+    padding: 0 14px;
+    font-size: 14px;
+    color: white;
+    line-height: 32px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.2s;
+    &::before {
+        content: '';
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: linear-gradient(225deg, white 45%, #c45e6b 50%, #f45a6f 56%, #f27485 70%);
+        box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.3);
+        pointer-events: none;
+        transition: all 0.24s;
+    }
+    &:hover {
+        &::before {
+            width: 16px;
+            height: 16px;
+        }
+    }
+}
+
+.first-screen {
+    .name--fly-out {
+        animation: fly-out-anim 0.4s cubic-bezier(1, 0.5, 0.4, 0.24) both;
+    }
+    .description--fly-out {
+        animation: fly-out-anim 0.4s cubic-bezier(1, 0.5, 0.4, 0.24) 0.1s both;
+    }
+    .links--fly-out {
+        animation: fly-out-anim 0.4s cubic-bezier(1, 0.5, 0.4, 0.24) 0.2s both;
+    }
+    .entry-btn--fly-out {
+        animation: fly-out-anim 0.4s cubic-bezier(1, 0.5, 0.4, 0.24)  0.3s both;
+    }
+}
+
+@keyframes fly-out-anim {
+    100% {
+        transform: translateY(-400px);
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+

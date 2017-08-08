@@ -1,0 +1,57 @@
+<div class="prev-next-wrapper">
+    <% if (is_home()) { %>
+        <div class="prev">
+            <a href="<%- page.prev_link ? url_for(page.prev_link) : '/' %>">
+                <div class="arrow"></div>
+                <span><%= __('prev') %></span>
+            </a>
+        </div>
+        <div class="next">
+            <a href="<%- page.next_link ? url_for(page.next_link) : '' %>">
+                <div class="arrow"></div>
+                <span><%= __('next') %></span>
+            </a>
+        </div>
+    <% } else { %>
+        <div class="prev">
+            <a href="<%- page.prev ? url_for(page.prev.path) : '' %>">
+                <div class="arrow"></div>
+                <span><%= __('newer') %></span>
+            </a>
+        </div>
+        <h1 class="prev-next-title"></h1>
+        <div class="next">
+            <a href="<%- page.next ? url_for(page.next.path) : '' %>">
+                <div class="arrow"></div>
+                <span><%= __('older') %></span>
+            </a>
+        </div>
+    <% } %>
+</div>
+
+<script>
+    var prev = document.querySelector('.prev a');
+    var next = document.querySelector('.next a');
+    var title = document.querySelector('.prev-next-title');
+
+    if (title) {
+        prev.addEventListener('mouseover', function(ev) {
+            title.innerHTML = '<%= page.prev ? page.prev.title : '' %>';
+            title.classList.add('prev-next-title--slide-right');
+        });
+        prev.addEventListener('mouseout', function(ev) {
+            title.innerHTML = '';
+            title.classList.remove('prev-next-title--slide-right');
+        });
+
+        next.addEventListener('mouseover', function(ev) {
+            title.innerHTML = '<%= page.next ? page.next.title : '' %>';
+            title.classList.add('prev-next-title--slide-left');
+        });
+        next.addEventListener('mouseout', function(ev) {
+            title.innerHTML = '';
+            title.classList.remove('prev-next-title--slide-left');
+        });
+    }
+</script>
+

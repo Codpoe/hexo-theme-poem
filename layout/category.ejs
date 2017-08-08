@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+    <%- partial('_partial/head') %>
+    <link rel="stylesheet" href="/css/archive.bundle.css">
+</head>
+<body>
+    <%- partial('_partial/header') %>
+    
+    <div class="wrapper">
+        <div class="container">
+            <h1 class="year"><%= page.category %></h1>
+            <h2 class="amount">- <%= page.posts.length %> -</h2>
+            <ul class="archive-posts">
+                <% page.posts.forEach(function(post) { %>
+                    <li class="archive-post-wrapper">
+                        <div class="post-date">
+                            <%- post.date.format('ll') %>
+                        </div>
+                        <h2 class="post-title">
+                            <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+                        </h2>
+                    </li>
+                <% }) %>
+            </ul>
+        </div>
+        <%- partial('_partial/footer') %>
+    </div>
+
+    <% if (theme.triangle_canvas) { %>
+        <%- partial('_partial/triangle') %>
+    <% } %>
+
+    <script src="/js/archive.bundle.js"></script>
+</body>
+</html>

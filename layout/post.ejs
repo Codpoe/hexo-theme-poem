@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <%- partial('_partial/head') %>
+    <link rel="stylesheet" href="/css/post.bundle.css">
+</head>
+<body>
+    <% if (theme.triangle_canvas) { %>
+        <%- partial('_partial/triangle') %>
+    <% } %>
+
+    <%- partial('_partial/header') %>
+
+    <div class="wrapper">
+        <div class="container">
+            <%- partial('_partial/post', {post: page}) %>
+            <% if (page.path.indexOf('about') === -1) { %>
+                <%- partial('_partial/prev-next') %>
+            <% } %>
+            <section class="comment">
+                <%- partial('_partial/comment', {post: page}) %>
+            </section>
+        </div>
+        <%- partial('_partial/footer') %>
+    </div>
+    
+    <script src="/js/post.bundle.js"></script>
+</body>
+</html>

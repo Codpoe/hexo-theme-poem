@@ -1,0 +1,26 @@
+{
+    "name": "hexo-theme-poem",
+    "version": "0.0.1",
+    "private": true,
+    "author": "codpoe",
+    "scripts": {
+        "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+        "build": "cross-env NODE_ENV=development webpack --progress --hide-modules"
+    },
+    "devDependencies": {
+        "webpack": "^2.2.0",
+        "webpack-dev-server": "^2.5.0",
+        "cross-env": "^5.0.1",
+        "babel-core": "^6.25.0",
+        "babel-loader": "^7.1.0",
+        "babel-preset-latest": "^6.0.0",
+        "style-loader": "^0.18.2",
+        "css-loader": "^0.28.4",
+        "postcss-loader": "^2.0.6",
+        "postcss-cssnext": "^2.11.0",
+        "precss": "^1.4.0",
+        "file-loader": "^0.11.2",
+        "extract-text-webpack-plugin": "^2.1.2",
+        "github-markdown-css": "^2.8.0"
+    }
+}

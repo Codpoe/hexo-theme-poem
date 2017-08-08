@@ -1,0 +1,56 @@
+<div class="post">
+    <div class="title-wrapper">
+        <% if (is_home()) { %>
+            <a class="title" href="<%- url_for(post.path) %>">
+                <%= post.title %>
+            </a>
+        <% } else { %>
+            <span class="title">
+                <%= post.title %>
+            </span>
+        <% } %>
+        <ul class="description">
+            <li>
+                <i class="fa fa-calendar"></i>
+                <%- post.date.format('ll') %>
+            </li>
+            <% if (post.path.indexOf('about') === -1) { %>
+                |
+                <li>
+                    <i class="fa fa-tag"></i>
+                    <% post.categories.forEach(function(category, index) { %>
+                        <a href="<%- url_for(config.category_dir + '/' + category.name) %>">
+                            <% if (index < post.categories.length - 1) { %>
+                                <%= category.name + ' · ' %>
+                            <% } else { %>
+                                <%= category.name %>
+                            <% } %>
+                        </a>
+                    <% }) %>
+                </li>
+            <% } %>
+        </ul>
+    </div>
+    
+    <div class="markdown-body">
+        <% if (post.excerpt && is_home()) { %>
+            <%- post.excerpt %>
+        <% } else { %>
+            <%- post.content %>
+        <% } %>
+    </div>
+    
+    <% if (is_home()) { %>
+        <div class="more-wrapper">
+            <div class="more-btn-wrapper">
+                <a href="<%- url_for(post.path) %>">
+                    <button class="more-btn">MORE</button>
+                    <div class="border-top"></div>
+                    <div class="border-right"></div>
+                    <div class="border-bottom"></div>
+                    <div class="border-left"></div>
+                </a>
+            </div>
+        </div>
+    <% } %>
+</div>

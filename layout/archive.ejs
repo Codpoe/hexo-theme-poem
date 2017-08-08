@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+    <%- partial('_partial/head') %>
+    <link rel="stylesheet" href="/css/archive.bundle.css">
+</head>
+<body>
+    <%- partial('_partial/header') %>
+    <div class="wrapper">
+        <div class="container">
+            <% 
+                var maxYear = 10000;
+                var postsContainer = [];
+            %>
+            <% site.posts.reverse().forEach(function(post) { %>
+                <% var currentYear = new Date(post.date).getFullYear(); %>
+                <% if (currentYear < maxYear) { %>
+                    <% if (postsContainer.length > 0) { %>
+                        <h2 class="amount">– <%= postsContainer.length %> –</h2>
+                        <ul class="archive-posts">
+                            <% postsContainer.reverse().forEach(function(post) { %>
+                                <li class="archive-post-wrapper">
+                                    <div class="post-date">
+                                        <%- post.date.format('ll') %>
+                                    </div>
+                                    <h2 class="post-title">
+                                        <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+                                    </h2>
+                                </li>
+                            <% }) %>
+                        </ul>
+                        <% postsContainer = []; %>
+                    <% } %>
+                    <%
+                        maxYear = currentYear;
+                        postsContainer.push(post);
+                    %>
+                    <h1 class="year"><%= currentYear %></h1>
+                <% } else { %>
+                    <% postsContainer.push(post); %>
+                <% } %>
+            <% }) %>
+            <h2 class="amount">– <%= postsContainer.length %> –</h2>
+            <ul class="archive-posts">
+                <% postsContainer.forEach(function(post) { %>
+                    <li class="archive-post-wrapper">
+                        <div class="post-date">
+                            <%- moment(post.date).format('ll') %>
+                        </div>
+                        <h2 class="post-title">
+                            <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+                        </h2>
+                    </li>
+                <% }) %>
+            </ul>
+        </div>
+
+        <%- partial('_partial/footer') %>
+    </div>
+    <% if (theme.triangle_canvas) { %>
+        <%- partial('_partial/triangle') %>
+    <% } %>
+
+    <script src="/js/archive.bundle.js"></script>
+</body>
+</html>

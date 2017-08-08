@@ -1,0 +1,60 @@
+<header class="header-wrapper">
+    <div class="header">
+        <div class="left">
+            <a href="/">
+                <img class="logo" src="<%= theme.header.logo %>" alt="logo">
+            </a>
+            <ul class="links">
+                <% for (var key in theme.header.links) { %>
+                    <li>
+                        <% if (key === 'email') { %>
+                            <a href="mailto:<%= theme.header.links[key] %>" title="<%= key %>">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                        <% } else { %>
+                            <a href="<%= theme.header.links[key] %>" target="_blank" title="<%= key %>">
+                                <i class="fa fa-<%= key %>"></i>
+                            </a>
+                        <% } %>
+                    </li>
+                <% } %>
+            </ul>
+
+        </div>
+        <ul class="right">
+            <% for (var i in theme.header.menu) { %>
+                <li>
+                    <% if (i.indexOf('category') === -1) { %>
+                        <a 
+                            href="<%- theme.header.menu[i] %>" 
+                            class="normal-menu <%- theme.header.menu[i] + 'index.html' === '/' + path ? 'menu--active' : '' %>"
+                            target="<%- i.indexOf('resume') === -1 ? '_self' : '_blank' %>">
+                            <%= __(i) %>
+                        </a>
+                    <% } else { %>
+                        <span class="category">
+                            <%= __(i) %> <i class="fa fa-angle-down"></i>
+                            <%- list_categories({class: 'category'}) %>
+                        </span>
+                    <% } %>
+                </li>
+            <% } %>
+        </ul>
+        <i class="fa fa-bars menu-bar"></i>
+    </div>
+    <ul class="mobile-menu">
+        <% for (var i in theme.header.menu) { %>
+            <% if (i.indexOf('category') === -1) { %>
+                <li>
+                    <a 
+                        href="<%- theme.header.menu[i] %>" 
+                        class="<%- theme.header.menu[i] + 'index.html' === '/' + path ? 'menu--active' : '' %>"
+                        target="<%- i.indexOf('resume') === -1 ? '_self' : '_blank' %>">
+                        <%= __(i) %>
+                    </a>
+                </li>
+            <% } %>
+        <% } %>
+    </ul>
+</header>
+

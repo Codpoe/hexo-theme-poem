@@ -1,0 +1,38 @@
+# If you have any problem about this theme, 
+# please let me kown it via email or GitHub issue.
+# Thanks!
+
+# first_screen
+## the links part: you can add any link, just like <GitHub: [your github url]>
+first_screen:
+  open: true
+  name: Poem
+  description: Life is a Poem
+  links: 
+
+# header
+## the links part supports: 
+## email, weibo, twitter, github, gitlab, facebook, dribbble, behance.
+header:
+  logo: 
+  links: 
+
+  menu:
+    home: /
+    category: /categories/
+    archive: /archives/
+    about: /about/
+
+# footer
+copyright: 
+  time: 2017
+  name: Poem
+
+# triangle_canvas
+triangle_canvas: true
+
+# disqus
+disqus:
+  open: false
+  shortname: 
+
