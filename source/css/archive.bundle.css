@@ -614,22 +614,34 @@ a:hover {
             transform: translateY(0);
 }
 
+.year-wrapper {
+    margin: 30px 30px 20px 30px;
+    text-align: center;
+}
+
+.year-wrapper:first-child {
+    margin: 130px 30px 20px 30px;
+}
+
 .year {
-    margin: 80px 0 20px 0;
-    font-size: 30px;
+    position: relative;
+    font-size: 26px;
     font-weight: 700;
     color: #2c3e50;
     letter-spacing: 8px;
-    text-align: center;
-    cursor: default;
+    cursor: default
 }
 
-.year:first-child {
-    margin-top: 145px;
+.year::before {
+        content: '#';
+        position: absolute;
+        top: 7px;
+        left: -1em;
+        font-size: 24px;
+        color: #f45a6f;
 }
 
 .amount {
-    margin: 20px 0 25px;
     font-size: 14px;
     font-weight: normal;
     color: #525e6b;
@@ -639,7 +651,7 @@ a:hover {
 
 .archive-posts {
     max-width: 660px;
-    margin: 25px auto 45px auto;
+    margin: 0 auto 60px auto;
     padding: 0 30px;
     list-style: none;
 }
@@ -683,7 +695,7 @@ a:hover {
 }
 
 @media screen and (max-width: 767px) {
-    .year:first-child {
+    .year-wrapper:first-child {
         margin-top: 115px;
     }
     .archive-posts {

@@ -9,7 +9,9 @@
     
     <div class="wrapper">
         <div class="container">
-            <h1 class="year"><%= page.category %></h1>
+            <h1 class="year-wrapper">
+                <span class="year"><%= page.category %></span>
+            </h1>
             <h2 class="amount">- <%= page.posts.length %> -</h2>
             <ul class="archive-posts">
                 <% page.posts.forEach(function(post) { %>

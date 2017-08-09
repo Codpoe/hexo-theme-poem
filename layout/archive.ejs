@@ -35,7 +35,9 @@
                         maxYear = currentYear;
                         postsContainer.push(post);
                     %>
-                    <h1 class="year"><%= currentYear %></h1>
+                    <h1 class="year-wrapper">
+                        <span class="year"><%= currentYear %></span>
+                    </h1>
                 <% } else { %>
                     <% postsContainer.push(post); %>
                 <% } %>
