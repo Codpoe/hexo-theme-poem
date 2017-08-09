@@ -179,17 +179,25 @@ a {
 
 .more-wrapper {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     margin: 0 45px;
     background-size: 16px 13px;
     background-position-y: 2px;
+    .left-line,
+    .right-line {
+        flex: 1;
+        height: 1px;
+        background: #ddd;
+    }
     .more-btn {
         border: none;
         outline: none;
         position: relative;
         width: 54px;
         height: 24px;
+        margin: 0 10px;
         border-radius: 2px;
         border: 1px solid var(--primary-color);
         background: transparent;

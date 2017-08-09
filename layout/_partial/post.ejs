@@ -42,11 +42,13 @@
     
     <% if (is_home()) { %>
         <div class="more-wrapper">
+            <div class="left-line"></div>
             <a href="<%- url_for(post.path) %>">
                 <button class="more-btn">
                     <span>MORE</span>
                 </button>
             </a>
+            <div class="right-line"></div>
         </div>
     <% } %>
 </div>
