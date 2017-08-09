@@ -29,7 +29,7 @@ copyright:
   name: Poem ## the name of copyright in the footer
 
 # triangle_canvas
-triangle_canvas: true ## toggle whether your site show the colorful triangle-canvas in the top of all page
+triangle_canvas: false ## toggle whether your site show the colorful triangle-canvas in the top of all page
 
 # disqus
 ## you can find more help on https://disqus.com/.

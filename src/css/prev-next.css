@@ -1,26 +1,22 @@
 @import './common.css';
 
 .prev-next-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
     position: relative;
     margin: 45px 0;
     padding: 0 45px;
+    text-align: center;
+    &::after {
+        content: '';
+        width: 0;
+        height: 0;
+        display: block;
+        visibility: 0;
+        clear: both;
+    }
     .prev-next-title {
-        width: 400px;
-        height: 36px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-top: -18px;
-        margin-left: -200px;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: normal;
-        color: var(--third-text-color);
-        line-height: 36px;
-        text-align: center;
+        color: var(--primary-color);
         letter-spacing: 1px;
         opacity: 0;
     }
@@ -55,71 +51,62 @@
     }
 }
 
-.prev a {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
+.prev,
+.next {
+    display: block;
+    padding: 5px 4px;
     position: relative;
+    border-radius: 2px;
+    border: 1px solid var(--primary-color);
     overflow: hidden;
-    cursor: pointer;
-    .arrow {
-        width: 36px;
-        height: 36px;
-        border-left: 1px solid var(--primary-color);
-        border-bottom: 1px solid var(--primary-color);
-        position: relative;
-        left: 8px;
-        transform: rotate(45deg);
-    }
     span {
-        font-size: 14px;
-        color: var(--third-text-color);
         position: relative;
-        right: 8px;
+        font-size: 14px;
+        color: var(--primary-color);
         letter-spacing: 1px;
-        text-transform: uppercase;
-        transition: all 0.5s;
+        z-index: 20;
+        transition: all 0.2s;
     }
     &:hover {
         text-decoration: none;
         span {
-            color: var(--primary-color);
-            letter-spacing: 4px;
+            color: white;
         }
     }
 }
 
-.next a {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-start;
-    align-items: center;
-    overflow: hidden;
-    cursor: pointer;
-    .arrow {
-        width: 36px;
-        height: 36px;
-        border-top: 1px solid var(--primary-color);
-        border-right: 1px solid var(--primary-color);
-        position: relative;
-        right: 8px;
-        transform: rotate(45deg);
-    }
-    span {
-        font-size: 14px;
-        color: var(--third-text-color);
-        position: relative;
-        left: 8px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        transition: all 0.5s;
+.prev {
+    float: left;
+    .prev-border {
+        width: 0px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: var(--primary-color);
+        transition: width 0.2s;
     }
     &:hover {
-        text-decoration: none;
-        span {
-            color: var(--primary-color);
-            letter-spacing: 4px;
+        .prev-border {
+            width: 100%;
+        }
+    }
+}
+
+.next {
+    float: right;
+    .next-border {
+        width: 0px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: var(--primary-color);
+        transition: width 0.2s;
+    }
+    &:hover {
+        .next-border {
+            width: 100%;
         }
     }
 }

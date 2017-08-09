@@ -1,37 +1,35 @@
 <div class="prev-next-wrapper">
     <% if (is_home()) { %>
-        <div class="prev">
-            <a href="<%- page.prev_link ? url_for(page.prev_link) : '/' %>">
-                <div class="arrow"></div>
-                <span><%= __('prev') %></span>
-            </a>
-        </div>
-        <div class="next">
-            <a href="<%- page.next_link ? url_for(page.next_link) : '' %>">
-                <div class="arrow"></div>
-                <span><%= __('next') %></span>
-            </a>
-        </div>
+        <a class="prev" href="<%- page.prev_link ? url_for(page.prev_link) : '/' %>">
+            <span>
+                <i class="fa fa-angle-left"></i>
+                <%= __('prev') %>
+            </span>
+            <div class="prev-border"></div>
+        </a>
+        <a class="next" href="<%- page.next_link ? url_for(page.next_link) : '' %>">
+            <span>
+                <%= __('next') %>
+                <i class="fa fa-angle-right"></i>
+            </span>
+            <div class="next-border"></div>
+        </a>
     <% } else { %>
-        <div class="prev">
-            <a href="<%- page.prev ? url_for(page.prev.path) : '' %>">
-                <div class="arrow"></div>
-                <span><%= __('newer') %></span>
-            </a>
-        </div>
-        <h1 class="prev-next-title"></h1>
-        <div class="next">
-            <a href="<%- page.next ? url_for(page.next.path) : '' %>">
-                <div class="arrow"></div>
-                <span><%= __('older') %></span>
-            </a>
-        </div>
+        <a class="prev" href="<%- page.prev ? url_for(page.prev.path) : '' %>">
+            <i class="fa fa-angle-left"></i>
+            <%= __('newer') %>
+        </a>
+        <span class="prev-next-title"></span>
+        <a class="next" href="<%- page.next ? url_for(page.next.path) : '' %>">
+            <%= __('older') %>
+            <i class="fa fa-angle-right"></i>
+        </a>
     <% } %>
 </div>
 
 <script>
-    var prev = document.querySelector('.prev a');
-    var next = document.querySelector('.next a');
+    var prev = document.querySelector('.prev');
+    var next = document.querySelector('.next');
     var title = document.querySelector('.prev-next-title');
 
     if (title) {

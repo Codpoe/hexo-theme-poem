@@ -6,10 +6,10 @@ var isMobileMenuHidden = true;
 
 window.addEventListener('scroll', function (ev) {
     var scrollTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
-    if (!isHeaderShrink && scrollTop > 30) {
+    if (!isHeaderShrink && scrollTop !== 0) {
         isHeaderShrink = true;
         header.classList.add('header-wrapper--shrink');
-    } else if (isHeaderShrink && scrollTop < 30) {
+    } else if (isHeaderShrink && scrollTop === 0) {
         isHeaderShrink = false;
         header.classList.remove('header-wrapper--shrink');
     }
