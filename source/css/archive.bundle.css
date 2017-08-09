@@ -524,8 +524,7 @@ a:hover {
     width: 54px;
     height: 24px;
     margin: 0 10px;
-    border-radius: 2px;
-    border: 1px solid #f45a6f;
+    border-radius: 12px;
     background: transparent;
     cursor: pointer;
     overflow: hidden;
