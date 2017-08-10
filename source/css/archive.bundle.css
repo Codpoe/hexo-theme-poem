@@ -23,7 +23,7 @@
 .header-wrapper--shrink {
     height: 58.5px;
     background: white;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
+    box-shadow: 0 0 26px rgba(7, 51, 84, 0.14);
 }
 .header-wrapper--shrink .header .right .normal-menu, .header-wrapper--shrink .right .menu--active {
     padding-bottom: 0;

@@ -12,13 +12,15 @@
                 var maxYear = 10000;
                 var postsContainer = [];
             %>
-            <% site.posts.reverse().forEach(function(post) { %>
-                <% var currentYear = new Date(post.date).getFullYear(); %>
+            <% page.posts.forEach(function(post) { %>
+                <%
+                    var currentYear = new Date(date(post.date)).getFullYear(); 
+                %>
                 <% if (currentYear < maxYear) { %>
                     <% if (postsContainer.length > 0) { %>
                         <h2 class="amount">– <%= postsContainer.length %> –</h2>
                         <ul class="archive-posts">
-                            <% postsContainer.reverse().forEach(function(post) { %>
+                            <% postsContainer.forEach(function(post) { %>
                                 <li class="archive-post-wrapper">
                                     <div class="post-date">
                                         <%- post.date.format('ll') %>
