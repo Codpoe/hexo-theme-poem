@@ -9,20 +9,20 @@
     <div class="wrapper">
         <div class="container">
             <%
+                site.posts.toArray().sort(function(a, b) {
+                    return new Date(b.date).getTime() - new Date(a.date).getTime();
+                });
                 var postGroups = _.groupBy(site.posts.toArray(), function(post) {
                     return -post.date.format('YYYY');
                 });
             %>
             <% _.forEach(postGroups, function(posts, year) { %>
-                <% 
-                    var sortedPosts = _.orderBy(posts, function(post) { return post.date; }, 'desc'); 
-                %>
                 <h1 class="year-wrapper">
                     <span class="year"><%= -year %></span>
                 </h1>
-                <h2 class="amount">- <%= sortedPosts.length %> -</h2>
+                <h2 class="amount">- <%= posts.length %> -</h2>
                 <ul class="archive-posts">
-                    <% _.forEach(sortedPosts, function(post) { %>
+                    <% _.forEach(posts, function(post) { %>
                         <li class="archive-post-wrapper">
                             <div class="post-date">
                                 <%- post.date.format('ll') %>
