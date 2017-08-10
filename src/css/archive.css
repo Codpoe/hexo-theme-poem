@@ -88,8 +88,11 @@
 }
 
 @media screen and (max-width: 767px) {
+    .year-wrapper {
+        margin-top: 0;
+    }
     .year-wrapper:first-child {
-        margin-top: 115px;
+        margin-top: 100px;
     }
     .archive-posts {
         padding: 0 15px;
