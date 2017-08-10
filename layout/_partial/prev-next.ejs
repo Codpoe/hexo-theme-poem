@@ -15,12 +15,12 @@
             <div class="next-border"></div>
         </a>
     <% } else { %>
-        <a class="prev" href="<%- page.prev ? url_for(page.prev.path) : '' %>">
-            <%= __('newer') %>
-        </a>
-        <a class="next" href="<%- page.next ? url_for(page.next.path) : '' %>">
-            <%= __('older') %>
-        </a>
+        <% if (page.prev) { %>
+            <a class="prev" href="<%- url_for(page.prev.path) %>"><%= __('newer') %></a>
+        <% } %>
+        <% if (page.next) { %>
+            <a class="next" href="<%- url_for(page.next.path) %>"><%= __('older') %></a>
+        <% } %>
     <% } %>
 </div>
 
