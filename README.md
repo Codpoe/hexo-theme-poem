@@ -1,5 +1,5 @@
 # Poem
-[中文文档](http://codpoe.me/)
+[Demo](http://codpoe.me/) | 中文文档（暂无）
 
 An elegant theme for [Hexo](https://hexo.io/). Some of the desgin are inspired by [EVAN YOU's blog](http://evanyou.me).
 
