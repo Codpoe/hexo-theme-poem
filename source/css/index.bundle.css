@@ -1461,163 +1461,101 @@ a:hover {
     }
 }
 
-.prev-next-wrapper {
+.pagination {
     position: relative;
     margin: 45px 0;
     padding: 0 45px;
     text-align: center;
 }
 
-.prev-next-wrapper .prev-next-title {
-    font-size: 14px;
-    font-weight: normal;
-    color: #f45a6f;
-    letter-spacing: 1px;
-    opacity: 0;
-}
+.pagination .next:hover {}
 
-.prev-next-wrapper .prev-next-title--slide-right {
-    -webkit-animation: prev-next-title--slide-right-anim 0.5s;
-    animation: prev-next-title--slide-right-anim 0.5s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-}
-
-.prev-next-wrapper .prev-next-title--slide-left {
-    -webkit-animation: prev-next-title--slide-left-anim 0.5s;
-    animation: prev-next-title--slide-left-anim 0.5s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-}
-
-.prev-next-wrapper::after {
-        content: '';
-        width: 0;
-        height: 0;
-        display: block;
-        visibility: 0;
-        clear: both;
-}
-
-@-webkit-keyframes prev-next-title--slide-right-anim {
-    0% {
-        -webkit-transform: translateX(-30px);
-                transform: translateX(-30px);
-    }
-    100% {
-        -webkit-transform: translateX(0);
-                transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes prev-next-title--slide-right-anim {
-    0% {
-        -webkit-transform: translateX(-30px);
-                transform: translateX(-30px);
-    }
-    100% {
-        -webkit-transform: translateX(0);
-                transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@-webkit-keyframes prev-next-title--slide-left-anim {
-    0% {
-        opacity: 0;
-        -webkit-transform: translateX(30px);
-                transform: translateX(30px);
-    }
-    100% {
-        -webkit-transform: translateX(0);
-                transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes prev-next-title--slide-left-anim {
-    0% {
-        opacity: 0;
-        -webkit-transform: translateX(30px);
-                transform: translateX(30px);
-    }
-    100% {
-        -webkit-transform: translateX(0);
-                transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-.prev, .next {
-    display: block;
-    padding: 5px 4px;
-    position: relative;
-    border-radius: 2px;
-    border: 1px solid #f45a6f;
-    overflow: hidden;
-}
-
-.prev span, .next span {
-    position: relative;
-    font-size: 14px;
-    color: #f45a6f;
-    letter-spacing: 1px;
-    z-index: 20;
-    transition: all 0.2s;
-}
-
-.prev:hover, .next:hover {
-        text-decoration: none;
-}
-
-.prev:hover span, .next:hover span {
+.pagination .next:hover::after {
     color: white;
 }
 
-.prev {
-    float: left;
+.pagination .prev:hover {}
+
+.pagination .prev:hover::before {
+    color: white;
 }
 
-.prev .prev-border {
-    width: 0px;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
+.pagination a, .pagination span {
+    margin: 0 10px;
+    padding: 3px 8px;
+    border-radius: 2px;
+    font-size: 14px;
+    color: #7f8c8d;
+    transition: all 0.2s
+}
+
+.pagination a:hover, .pagination span:hover {
     background: #f45a6f;
-    transition: width 0.2s;
+    color: white;
+    text-decoration: none;
 }
 
-.prev:hover .prev-border {
-    width: 100%;
+.pagination .current {
+    color: #f45a6f
 }
 
-.next {
-    float: right;
+.pagination .current:hover {
+    background: transparent;
+    color: #f45a6f;
 }
 
-.next .next-border {
-    width: 0px;
-    height: 100%;
+.pagination .space:hover {
+    background: transparent;
+    color: #7f8c8d;
+}
+
+.pagination .prev {
+    position: relative;
+    padding-left: 26px;
+    text-transform: uppercase;
+    letter-spacing: 1px
+}
+
+.pagination .prev::before {
+    content: '\2190';
+    font-size: 14px;
+    color: #7f8c8d;
     position: absolute;
-    top: 0;
-    left: 0;
-    background: #f45a6f;
-    transition: width 0.2s;
+    top: 7px;
+    left: 8px;
+    transition: all 0.2s;
 }
 
-.next:hover .next-border {
-    width: 100%;
+.pagination .next {
+    position: relative;
+    padding-right: 26px;
+    text-transform: uppercase;
+    letter-spacing: 1px
+}
+
+.pagination .next::after {
+    content: '\2192';
+    font-size: 14px;
+    color: #7f8c8d;
+    position: absolute;
+    top: 7px;
+    right: 8px;
+    transition: all 0.2s;
 }
 
 @media (max-width: 767px) {
-    .prev-next-wrapper {
+    .pagination {
         padding: 0 15px;
     }
-    .prev-next-wrapper .prev-next-title {
-        display: none;
+    .pagination a, .pagination span {
+        margin: 0 6px;
     }
     
+}
+
+@media screen and (max-width: 560px) {
+    .pagination a, .pagination span {
+        margin: 0;
+    }
 }
 

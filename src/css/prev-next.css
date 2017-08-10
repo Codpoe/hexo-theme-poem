@@ -1,123 +1,94 @@
 @import './common.css';
 
-.prev-next-wrapper {
+.pagination {
     position: relative;
     margin: 45px 0;
     padding: 0 45px;
     text-align: center;
-    &::after {
-        content: '';
-        width: 0;
-        height: 0;
-        display: block;
-        visibility: 0;
-        clear: both;
-    }
-    .prev-next-title {
-        font-size: 14px;
-        font-weight: normal;
-        color: var(--primary-color);
-        letter-spacing: 1px;
-        opacity: 0;
-    }
-    .prev-next-title--slide-right {
-        animation: prev-next-title--slide-right-anim 0.5s;
-        animation-fill-mode: both;
-    }
-    .prev-next-title--slide-left {
-        animation: prev-next-title--slide-left-anim 0.5s;
-        animation-fill-mode: both;
-    }
-}
-
-@keyframes prev-next-title--slide-right-anim {
-    0% {
-        transform: translateX(-30px);
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes prev-next-title--slide-left-anim {
-    0% {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-.prev,
-.next {
-    display: block;
-    padding: 5px 4px;
-    position: relative;
-    border-radius: 2px;
-    border: 1px solid var(--primary-color);
-    overflow: hidden;
+    a,
     span {
-        position: relative;
+        margin: 0 10px;
+        padding: 3px 8px;
+        border-radius: 2px;
         font-size: 14px;
-        color: var(--primary-color);
-        letter-spacing: 1px;
-        z-index: 20;
+        color: var(--third-text-color);
         transition: all 0.2s;
-    }
-    &:hover {
-        text-decoration: none;
-        span {
+        &:hover {
+            background: var(--primary-color);
             color: white;
+            text-decoration: none;
         }
     }
-}
-
-.prev {
-    float: left;
-    .prev-border {
-        width: 0px;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        right: 0;
-        background: var(--primary-color);
-        transition: width 0.2s;
-    }
-    &:hover {
-        .prev-border {
-            width: 100%;
+    .current {
+        color: var(--primary-color);
+        &:hover {
+            background: transparent;
+            color: var(--primary-color);
         }
     }
-}
-
-.next {
-    float: right;
-    .next-border {
-        width: 0px;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background: var(--primary-color);
-        transition: width 0.2s;
+    .space:hover {
+        background: transparent;
+        color: var(--third-text-color);
     }
-    &:hover {
-        .next-border {
-            width: 100%;
+    .prev {
+        position: relative;
+        padding-left: 26px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        &::before {
+            content: '←';
+            font-size: 14px;
+            color: var(--third-text-color);
+            position: absolute;
+            top: 7px;
+            left: 8px;
+            transition: all 0.2s;
+        }
+        &:hover {
+            &::before {
+                color: white;
+            }
+        }
+    }
+    .next {
+        position: relative;
+        padding-right: 26px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        &::after {
+            content: '→';
+            font-size: 14px;
+            color: var(--third-text-color);
+            position: absolute;
+            top: 7px;
+            right: 8px;
+            transition: all 0.2s;
+        }
+        &:hover {
+            &::after {
+                color: white;
+            }
         }
     }
 }
 
 @media (max-width: 767px) {
-    .prev-next-wrapper {
+    .pagination {
         padding: 0 15px;
-        .prev-next-title {
-            display: none;
+        a,
+        span {
+            margin: 0 6px;
         }
     }
     
+}
+
+@media screen and (max-width: 560px) {
+    .pagination {
+        a,
+        span {
+            margin: 0;
+        }
+    }
 }
 

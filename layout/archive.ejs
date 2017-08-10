@@ -8,55 +8,32 @@
     <%- partial('_partial/header') %>
     <div class="wrapper">
         <div class="container">
-            <% 
-                var maxYear = 10000;
-                var postsContainer = [];
+            <%
+                var postGroups = _.groupBy(site.posts.toArray(), function(post) {
+                    return -post.date.format('YYYY');
+                });
             %>
-            <% page.posts.forEach(function(post) { %>
-                <%
-                    var currentYear = new Date(date(post.date)).getFullYear(); 
+            <% _.forEach(postGroups, function(posts, year) { %>
+                <% 
+                    var sortedPosts = _.orderBy(posts, function(post) { return post.date; }, 'desc'); 
                 %>
-                <% if (currentYear < maxYear) { %>
-                    <% if (postsContainer.length > 0) { %>
-                        <h2 class="amount">– <%= postsContainer.length %> –</h2>
-                        <ul class="archive-posts">
-                            <% postsContainer.forEach(function(post) { %>
-                                <li class="archive-post-wrapper">
-                                    <div class="post-date">
-                                        <%- post.date.format('ll') %>
-                                    </div>
-                                    <h2 class="post-title">
-                                        <a href="<%- url_for(post.path) %>"><%= post.title %></a>
-                                    </h2>
-                                </li>
-                            <% }) %>
-                        </ul>
-                        <% postsContainer = []; %>
-                    <% } %>
-                    <%
-                        maxYear = currentYear;
-                        postsContainer.push(post);
-                    %>
-                    <h1 class="year-wrapper">
-                        <span class="year"><%= currentYear %></span>
-                    </h1>
-                <% } else { %>
-                    <% postsContainer.push(post); %>
-                <% } %>
+                <h1 class="year-wrapper">
+                    <span class="year"><%= -year %></span>
+                </h1>
+                <h2 class="amount">- <%= sortedPosts.length %> -</h2>
+                <ul class="archive-posts">
+                    <% _.forEach(sortedPosts, function(post) { %>
+                        <li class="archive-post-wrapper">
+                            <div class="post-date">
+                                <%- post.date.format('ll') %>
+                            </div>
+                            <h2 class="post-title">
+                                <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+                            </h2>
+                        </li>
+                    <% }) %>
+                </ul>
             <% }) %>
-            <h2 class="amount">– <%= postsContainer.length %> –</h2>
-            <ul class="archive-posts">
-                <% postsContainer.forEach(function(post) { %>
-                    <li class="archive-post-wrapper">
-                        <div class="post-date">
-                            <%- moment(post.date).format('ll') %>
-                        </div>
-                        <h2 class="post-title">
-                            <a href="<%- url_for(post.path) %>"><%= post.title %></a>
-                        </h2>
-                    </li>
-                <% }) %>
-            </ul>
         </div>
 
         <%- partial('_partial/footer') %>

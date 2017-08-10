@@ -17,7 +17,9 @@
                 <%- partial('_partial/post', {post: post}) %>
             <% }) %>
 
-            <%- partial('_partial/prev-next') %>
+            <div class="pagination">
+                <%- paginator({total: page.total, current: page.current, mid_size: 1}) %>
+            </div>
         </div>
 
         <%- partial('_partial/footer') %>

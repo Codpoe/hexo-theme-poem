@@ -1,4 +1,4 @@
-<div class="prev-next-wrapper">
+<div class="pagination">
     <% if (is_home()) { %>
         <a class="prev" href="<%- page.prev_link ? url_for(page.prev_link) : '/' %>">
             <span>
@@ -16,40 +16,11 @@
         </a>
     <% } else { %>
         <a class="prev" href="<%- page.prev ? url_for(page.prev.path) : '' %>">
-            <i class="fa fa-angle-left"></i>
             <%= __('newer') %>
         </a>
-        <span class="prev-next-title"></span>
         <a class="next" href="<%- page.next ? url_for(page.next.path) : '' %>">
             <%= __('older') %>
-            <i class="fa fa-angle-right"></i>
         </a>
     <% } %>
 </div>
-
-<script>
-    var prev = document.querySelector('.prev');
-    var next = document.querySelector('.next');
-    var title = document.querySelector('.prev-next-title');
-
-    if (title) {
-        prev.addEventListener('mouseover', function(ev) {
-            title.innerHTML = '<%= page.prev ? page.prev.title : '' %>';
-            title.classList.add('prev-next-title--slide-right');
-        });
-        prev.addEventListener('mouseout', function(ev) {
-            title.innerHTML = '';
-            title.classList.remove('prev-next-title--slide-right');
-        });
-
-        next.addEventListener('mouseover', function(ev) {
-            title.innerHTML = '<%= page.next ? page.next.title : '' %>';
-            title.classList.add('prev-next-title--slide-left');
-        });
-        next.addEventListener('mouseout', function(ev) {
-            title.innerHTML = '';
-            title.classList.remove('prev-next-title--slide-left');
-        });
-    }
-</script>
 
