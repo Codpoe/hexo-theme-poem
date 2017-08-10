@@ -620,6 +620,15 @@ a:hover {
 }
 
 .year-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin: 30px 30px 20px 30px;
     text-align: center;
 }
@@ -640,7 +649,7 @@ a:hover {
 .year::before {
         content: '#';
         position: absolute;
-        top: 7px;
+        top: 1px;
         left: -1em;
         font-size: 24px;
         color: #f45a6f;

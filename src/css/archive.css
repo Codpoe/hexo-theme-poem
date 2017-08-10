@@ -13,6 +13,9 @@
 }
 
 .year-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 30px 30px 20px 30px;
     text-align: center;
 }
@@ -31,7 +34,7 @@
     &::before {
         content: '#';
         position: absolute;
-        top: 7px;
+        top: 1px;
         left: -1em;
         font-size: 24px;
         color: var(--primary-color);
