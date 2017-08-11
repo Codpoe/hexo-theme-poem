@@ -1329,8 +1329,9 @@ a:hover {
 }
 
 .pagination a, .pagination span {
+    display: inline-block;
     margin: 0 10px;
-    padding: 3px 8px;
+    padding: 6px 8px;
     border-radius: 2px;
     font-size: 14px;
     color: #7f8c8d;
@@ -1369,7 +1370,7 @@ a:hover {
     font-size: 14px;
     color: #7f8c8d;
     position: absolute;
-    top: 7px;
+    top: 6px;
     left: 8px;
     transition: all 0.2s;
 }
@@ -1386,7 +1387,7 @@ a:hover {
     font-size: 14px;
     color: #7f8c8d;
     position: absolute;
-    top: 7px;
+    top: 6px;
     right: 8px;
     transition: all 0.2s;
 }

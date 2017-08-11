@@ -7,8 +7,9 @@
     text-align: center;
     a,
     span {
+        display: inline-block;
         margin: 0 10px;
-        padding: 3px 8px;
+        padding: 6px 8px;
         border-radius: 2px;
         font-size: 14px;
         color: var(--third-text-color);
@@ -40,7 +41,7 @@
             font-size: 14px;
             color: var(--third-text-color);
             position: absolute;
-            top: 7px;
+            top: 6px;
             left: 8px;
             transition: all 0.2s;
         }
@@ -60,7 +61,7 @@
             font-size: 14px;
             color: var(--third-text-color);
             position: absolute;
-            top: 7px;
+            top: 6px;
             right: 8px;
             transition: all 0.2s;
         }
