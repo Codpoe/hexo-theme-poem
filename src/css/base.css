@@ -176,6 +176,10 @@ a {
             border: none;
         }
     }
+    img {
+        display: block;
+        margin: 0 auto;
+    }
 }
 
 .more-wrapper {

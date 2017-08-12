@@ -1201,6 +1201,11 @@ a:hover {
     border: none;
 }
 
+.markdown-body img {
+    display: block;
+    margin: 0 auto;
+}
+
 .more-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;

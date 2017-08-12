@@ -40,16 +40,16 @@ if (entryBtn) {
 /**
  * the long shadow of name in the first-screen
  */
-function getLongShadow(startColor = '212,213,213', stepNum = 12, ratioX = 1, ratioY = 1) {
+function getLongShadow(startColor = '212,213,213', shadowLength = 8, ratioX = 1, ratioY = 1) {
     let textShadow = '';
     let alpha;
     let color;
     let seperator = ',';
 
-    for (let i = 0.5; i <= stepNum; i=i+0.5) {
-        alpha = (1 - (i - 0.5) / stepNum) * 0.6;
+    for (let i = 0.5; i <= shadowLength; i=i+0.5) {
+        alpha = (1 - (i - 0.5) / shadowLength) * 0.6;
         color = `rgba(${startColor}, ${alpha})`;
-        if (i === stepNum) {
+        if (i === shadowLength) {
             seperator = '';
         }
         textShadow += `${i * ratioX}px ${i * ratioY}px ${color}${seperator}`;
@@ -61,7 +61,7 @@ function getLongShadow(startColor = '212,213,213', stepNum = 12, ratioX = 1, rat
  * dynamic long shadow
  */
 if (name) {
-    name.style.textShadow = getLongShadow('212,213,213', 12);
+    name.style.textShadow = getLongShadow('212,213,213', 8);
     let rect = name.getBoundingClientRect();
     let focus = { x: rect.left, y: rect.top };
     let mouse = { x: 0, y: 0 };
@@ -74,7 +74,7 @@ if (name) {
         mouse.y = ev.clientY;
         ratioX = (mouse.x - focus.x) / width;
         ratioY = (mouse.y - focus.y) / height;
-        name.style.textShadow = getLongShadow('212,213,213', 12, ratioX, ratioY);
+        name.style.textShadow = getLongShadow('212,213,213', 10, ratioX, ratioY);
     });
 }
 
