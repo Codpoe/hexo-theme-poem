@@ -32,6 +32,7 @@ a {
     min-height: 100vh;
     display: none;
     transform: translateY(100px);
+    opacity: 0;
     transition: all 0.5s 0.5s;
 }
 
@@ -51,12 +52,10 @@ a {
     justify-content: flex-start;
     align-items: stretch;
     transform: translateY(0);
+    opacity: 1;
 }
 
 @keyframes fly-in-anim {
-    0% {
-        opacity: 0;
-    }
     100% {
         opacity: 1;
         transform: translateY(0);
