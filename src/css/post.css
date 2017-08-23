@@ -9,15 +9,8 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
-    transform: translateY(30px);
-    opacity: 0;
-    transition: all 0.4s cubic-bezier(0.2, 0.3, 0.8, 1);
-}
-
-.wrapper--show {
     transform: translateY(0);
     opacity: 1;
-    animation: none;
 }
 
 .markdown-body {

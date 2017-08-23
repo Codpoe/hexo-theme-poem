@@ -1428,18 +1428,9 @@ a:hover {
     -webkit-box-align: stretch;
         -ms-flex-align: stretch;
             align-items: stretch;
-    -webkit-transform: translateY(30px);
-            transform: translateY(30px);
-    opacity: 0;
-    transition: all 0.4s cubic-bezier(0.2, 0.3, 0.8, 1);
-}
-
-.wrapper--show {
     -webkit-transform: translateY(0);
             transform: translateY(0);
     opacity: 1;
-    -webkit-animation: none;
-            animation: none;
 }
 
 .markdown-body {
