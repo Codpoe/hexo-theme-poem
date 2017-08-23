@@ -3,6 +3,12 @@
 <head>
     <%- partial('_partial/head') %>
     <link rel="stylesheet" href="/css/archive.bundle.css">
+    <script>
+        window.onload = function (ev) {
+            var wrapper = document.querySelector('.wrapper');
+            wrapper.classList.add('wrapper--show');
+        }
+    </script>
 </head>
 <body>
     <%- partial('_partial/header') %>
