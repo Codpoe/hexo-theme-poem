@@ -22,7 +22,7 @@
     align-items: center;
     h1 {
         margin-bottom: 20px;
-        font-size: 30px;
+        font-size: 34px;
         font-weight: 700;
         color: var(--text-color);
         letter-spacing: 8px;
@@ -30,7 +30,7 @@
     
     h2 {
         margin-bottom: 20px;
-        font-size: 14px;
+        font-size: 16px;
         font-weight: normal;
         color: var(--third-text-color);
         letter-spacing: 2px;
@@ -38,12 +38,12 @@
     .links {
         margin-bottom: 20px;
         text-align: center;
-        font-size: 14px;
+        font-size: 16px;
         color: var(--third-text-color);
         letter-spacing: 2px;
     }
     a {
-        font-size: 14px;
+        font-size: 16px;
         color: var(--third-text-color);
         letter-spacing: 2px;
         transition: color 0.2s;
@@ -55,7 +55,7 @@
             content: '/';
             position: relative;
             left: -3px;
-            font-size: 14px;
+            font-size: 16px;
             color: var(--third-text-color);
         }
     }
@@ -68,7 +68,7 @@
     border-radius: 2px;
     background: var(--primary-color);
     padding: 0 14px;
-    font-size: 14px;
+    font-size: 16px;
     color: white;
     line-height: 32px;
     letter-spacing: 2px;

@@ -6,7 +6,6 @@
     background: white;
     z-index: 999;
     transform: translateY(-100px);
-    font-family: menlo, PingFangSC-Regular, Helvetica, Arial, sans-serif;
     transition: all 0.4s, transform 0.3s 0.6s;
 }
 

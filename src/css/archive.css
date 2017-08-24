@@ -73,8 +73,6 @@
         top: 50%;
         left: 0;
         margin-top: -7px;
-        font-weight: lighter;
-        font-family: menlo, PingFangSC-Regular, Helvetica, Arial, sans-serif;
         font-size: 14px;
         color: var(--third-text-color);
         text-transform: uppercase;

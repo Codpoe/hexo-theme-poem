@@ -10,7 +10,6 @@
     background: white;
     z-index: 999;
     transform: translateY(-100px);
-    font-family: menlo, PingFangSC-Regular, Helvetica, Arial, sans-serif;
     transition: all 0.4s, transform 0.3s 0.6s;
 }
 .header-wrapper--show {
@@ -251,8 +250,9 @@
 
 body {
     background: white;
-    font-family: PingFangSC-Regular, Helvetica, Arial, sans-serif;
+    font-family: "PingFang SC", "Helvetica Neue", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", sans-serif;;
     font-size: 14px;
+    -webkit-font-smoothing: antialiased;
     line-height: 1;
 }
 
@@ -404,7 +404,6 @@ a:hover {
     align-items: center;
     margin-top: 20px;
     list-style: none;
-    font-family: menlo, PingFangSC-Regular, Helvetica, Arial, sans-serif;
     font-size: 14px;
     color: #7f8c8d;
     letter-spacing: 1px;
@@ -508,60 +507,34 @@ a:hover {
     background-position-y: 2px;
 }
 
-.more-wrapper .more-btn:hover span {
-    color: white;
-}
-
-.more-wrapper .more-btn:hover:before {
-    border: 27px solid #f45a6f;
-}
-
 .more-wrapper .left-line, .more-wrapper .right-line {
     -webkit-box-flex: 1;
     -ms-flex: 1;
     flex: 1;
     height: 1px;
-    background: #ddd;
+    background: #e6e6e6;
 }
 
 .more-wrapper .more-btn {
     border: none;
     outline: none;
     position: relative;
-    width: 54px;
-    height: 24px;
+    padding: 0 14px;
     margin: 0 10px;
-    border-radius: 12px;
+    border-radius: 2px;
+    border: 1px solid #e6e6e6;
     background: transparent;
     cursor: pointer;
     overflow: hidden;
-}
-
-.more-wrapper .more-btn span {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
     font-size: 14px;
+    line-height: 32px;
     color: #f45a6f;
     letter-spacing: 1px;
-    transition: color 0.2s;
+    transition: all 0.2s ease
 }
 
-.more-wrapper .more-btn:before {
-    content: '';
-    width: 54px;
-    height: 54px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    box-sizing: border-box;
-    border-radius: 50%;
-    -webkit-transform: translate(-50%, -50%) scale(1.2);
-    transform: translate(-50%, -50%) scale(1.2);
+.more-wrapper .more-btn:hover {
     border: 1px solid #f45a6f;
-    transition: border 0.3s;
 }
 
 @media (max-width: 767px) {
@@ -692,8 +665,6 @@ a:hover {
     top: 50%;
     left: 0;
     margin-top: -7px;
-    font-weight: lighter;
-    font-family: menlo, PingFangSC-Regular, Helvetica, Arial, sans-serif;
     font-size: 14px;
     color: #7f8c8d;
     text-transform: uppercase;

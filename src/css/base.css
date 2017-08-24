@@ -15,8 +15,9 @@
 
 body {
     background: white;
-    font-family: PingFangSC-Regular, Helvetica, Arial, sans-serif;
+    font-family: "PingFang SC", "Helvetica Neue", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", sans-serif;;
     font-size: 14px;
+    -webkit-font-smoothing: antialiased;
     line-height: 1;
 }
 
@@ -110,7 +111,6 @@ a {
         align-items: center;
         margin-top: 20px;
         list-style: none;
-        font-family: menlo, PingFangSC-Regular, Helvetica, Arial, sans-serif;
         font-size: 14px;
         color: var(--third-text-color);
         letter-spacing: 1px;
@@ -193,49 +193,26 @@ a {
     .right-line {
         flex: 1;
         height: 1px;
-        background: #ddd;
+        background: #e6e6e6;
     }
     .more-btn {
         border: none;
         outline: none;
         position: relative;
-        width: 54px;
-        height: 24px;
+        padding: 0 14px;
         margin: 0 10px;
-        border-radius: 12px;
+        border-radius: 2px;
+        border: 1px solid #e6e6e6;
         background: transparent;
         cursor: pointer;
         overflow: hidden;
-        &:before {
-            content: '';
-            width: 54px;
-            height: 54px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            box-sizing: border-box;
-            border-radius: 50%;
-            transform: translate(-50%, -50%) scale(1.2);
-            border: 1px solid var(--primary-color);
-            transition: border 0.3s;
-        }
-        span {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 14px;
-            color: var(--primary-color);
-            letter-spacing: 1px;
-            transition: color 0.2s;
-        }
+        font-size: 14px;
+        line-height: 32px;
+        color: var(--primary-color);
+        letter-spacing: 1px;
+        transition: all 0.2s ease;
         &:hover {
-            span {
-                color: white;
-            }
-            &:before {
-                border: 27px solid var(--primary-color);
-            }
+            border: 1px solid var(--primary-color);
         }
     }
 }
