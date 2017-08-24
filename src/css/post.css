@@ -1,7 +1,7 @@
 @import './common.css';
 
 .header-wrapper {
-    transform: translateY(78.5px);
+    transform: translateY(80px);
 }
 
 .wrapper {

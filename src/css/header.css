@@ -1,8 +1,8 @@
 .header-wrapper {
     width: 100%;
-    height: 78.5px;
+    height: 80px;
     position: fixed;
-    top: -78.5px;
+    top: -80px;
     background: white;
     z-index: 999;
     transform: translateY(-100px);
@@ -11,7 +11,7 @@
 }
 
 .header-wrapper--show {
-    transform: translateY(78.5px);
+    transform: translateY(80px);
 }
 
 .header-wrapper--visible {
