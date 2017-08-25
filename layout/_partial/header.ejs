@@ -1,9 +1,14 @@
 <header class="header-wrapper <%- page.current != 1 ? 'header-wrapper--normal' : '' %>">
     <div class="header">
         <div class="left">
-            <a href="/">
-                <img class="logo" src="<%= theme.header.logo %>" alt="logo">
-            </a>
+            <div class="logo">
+                <a href="/">
+                    <img src="<%= theme.header.logo %>" alt="logo">
+                </a>
+                <div class="logo__detail">
+
+                </div>
+            </div>
             <ul class="links">
                 <% for (var key in theme.header.links) { %>
                     <li>

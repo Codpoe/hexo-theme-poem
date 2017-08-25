@@ -49,10 +49,42 @@
     align-items: center;
 }
 .header .left .logo {
+    position: relative;
+    margin-right: 12px;
+}
+.header .left .logo a {
+    display: inline-block;
+    position: relative;
+    z-index: 1001;
+}
+.header .left .logo img {
     width: 32px;
     height: 32px;
-    margin-right: 12px;
     border-radius: 50%;
+    transition: all 0.2s ease;
+}
+.header .left .logo__detail {
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    min-width: 180px;
+    height: 300px;
+    background: white;
+    border-radius: 2px;
+    box-shadow: 0 0 26px rgba(7, 51, 84, 0.14);
+    transform: translateX(-50%) scaleY(0);
+    transform-origin: center top;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+.header .left .logo:hover img {
+    transform: translateY(20px) scale(1.4);
+}
+.header .left .logo:hover .logo__detail {
+    transform: translateX(-50%) scaleY(1);
+    visibility: visible;
+    opacity: 1;
 }
 .header .left .links {
     list-style: none;
