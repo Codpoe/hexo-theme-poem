@@ -716,29 +716,32 @@
 }
 
 .header-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 80px;
     position: fixed;
-    top: -80px;
-    background: white;
+    background: rgba(255,255,255,0);
+    transition: all 0.4s ease;
     z-index: 999;
-    transform: translateY(-100px);
-    transition: all 0.4s, transform 0.3s 0.6s;
 }
-.header-wrapper--show {
-    transform: translateY(80px);
+.header-wrapper--normal .header .right .normal-menu, .header-wrapper--normal .header .right .category, .header-wrapper--normal .header .right .menu--active {
+    color: #7f8c8d;
 }
-.header-wrapper--visible {
-    transition: none;
-    transform: translateY(0px);
+.header-wrapper--normal .haeder .right .menu--active {
+    color: #2c3e50
 }
 .header-wrapper--shrink {
-    height: 58.5px;
-    background: white;
+    height: 58px;
+    background: rgba(255,255,255,1);
     box-shadow: 0 0 26px rgba(7, 51, 84, 0.14);
 }
-.header-wrapper--shrink .header .right .normal-menu, .header-wrapper--shrink .right .menu--active {
+.header-wrapper--shrink .header .right .normal-menu {
     padding-bottom: 0;
+}
+.header-wrapper--shrink .header .right .normal-menu, .header-wrapper--shrink .header .right .category {
+    color: #7f8c8d;
 }
 .header {
     position: relative;
@@ -807,9 +810,9 @@
     padding-bottom: 8px;
     font-size: 14px;
     line-height: 1.4;
-    color: #7f8c8d;
+    color: white;
     text-transform: uppercase;
-    transition: padding-bottom 0.4s;
+    transition: color 0.2s ease;
 }
 .header .right .category {
     position: relative;
@@ -826,7 +829,7 @@
 }
 .header .right .menu--active {
     font-weight: 700;
-    color: #2c3e50;
+    color: white;
     border-bottom: 2px solid #f45a6f;
     transition: padding-bottom 0.4s;
 }
@@ -980,68 +983,22 @@ a:hover {
 .wrapper {
     width: 100%;
     min-height: 100vh;
-    display: none;
-    -webkit-transform: translateY(100px);
-            transform: translateY(100px);
-    opacity: 0;
+    background: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
     transition: all 0.5s 0.5s;
-}
-
-.wrapper--show {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
-    -webkit-animation: fly-in-anim 0.3s;
-            animation: fly-in-anim 0.3s;
-    -webkit-animation-delay: 0.6s;
-            animation-delay: 0.6s;
-    -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
-}
-
-.wrapper--visible {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1;
-}
-
-@-webkit-keyframes fly-in-anim {
-    100% {
-        opacity: 1;
-        -webkit-transform: translateY(0);
-                transform: translateY(0);
-    }
-}
-
-@keyframes fly-in-anim {
-    100% {
-        opacity: 1;
-        -webkit-transform: translateY(0);
-                transform: translateY(0);
-    }
+    z-index: 99;
 }
 
 .container {
@@ -1283,33 +1240,23 @@ a:hover {
  ---------------triangle canvas end---------------
 */
 
-.entry-btn:hover {}
-
-.entry-btn:hover::before {
-            width: 16px;
-            height: 16px;
-}
-
 .first-screen {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    height: 100vh;
+    z-index: -1;
+    background: linear-gradient(to right, #1D4350, #A43931);
+    transition: all 0.2s cubic-bezier(0.1, 0.34, 0.5, 0.8);
 }
 
 .center {
-    position: relative;
-    top: -15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     text-align: center;
     -webkit-user-select: none;
        -moz-user-select: none;
@@ -1331,114 +1278,51 @@ a:hover {
 }
 
 .center a:nth-child(n+2)::before {
-            content: '/';
-            position: relative;
-            left: -3px;
-            font-size: 16px;
-            color: #7f8c8d;
+    content: '/';
+    position: relative;
+    left: -3px;
+    font-size: 16px;
+    color: white;
 }
 
 .center h1 {
-            margin-bottom: 20px;
-            font-size: 34px;
-            font-weight: 700;
-            color: #2c3e50;
-            letter-spacing: 8px;
+    margin-bottom: 20px;
+    font-size: 64px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 8px;
 }
 
 .center h2 {
-            margin-bottom: 20px;
-            font-size: 16px;
-            font-weight: normal;
-            color: #7f8c8d;
-            letter-spacing: 2px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: normal;
+    color: white;
+    letter-spacing: 2px;
 }
 
 .center .links {
-            margin-bottom: 20px;
-            text-align: center;
-            font-size: 16px;
-            color: #7f8c8d;
-            letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #7f8c8d;
+    letter-spacing: 2px;
 }
 
 .center a {
-            font-size: 16px;
-            color: #7f8c8d;
-            letter-spacing: 2px;
-            transition: color 0.2s
+    font-size: 16px;
+    color: white;
+    letter-spacing: 2px;
+    transition: color 0.2s ease
 }
 
 .center a:hover {
-            text-decoration: none;
-            color: #f45a6f;
+    text-decoration: none;
+    color: #f45a6f;
 }
 
-.entry-btn {
-    outline: none;
-    border: none;
-    position: relative;
-    border-radius: 2px;
-    background: #f45a6f;
-    padding: 0 14px;
-    font-size: 16px;
-    color: white;
-    line-height: 32px;
-    letter-spacing: 2px;
-    cursor: pointer;
-    overflow: hidden;
-    transition: all 0.2s
-}
-
-.entry-btn::before {
-        content: '';
-        width: 0px;
-        height: 0px;
-        position: absolute;
-        top: 0;
-        right: 0;
-        background: linear-gradient(225deg, white 45%, #c45e6b 50%, #f45a6f 56%, #f27485 70%);
-        box-shadow: -1px 1px 1px rgba(0, 0, 0, .3);
-        pointer-events: none;
-        transition: all 0.24s;
-}
-
-.first-screen .name--fly-out {
-            -webkit-animation: fly-out-anim 0.4s cubic-bezier(1, 0.5, 0.4, 0.24) both;
-            animation: fly-out-anim 0.4s cubic-bezier(1, 0.5, 0.4, 0.24) both;
-}
-
-.first-screen .description--fly-out {
-            -webkit-animation: fly-out-anim 0.4s cubic-bezier(1, 0.5, 0.4, 0.24) 0.1s both;
-            animation: fly-out-anim 0.4s cubic-bezier(1, 0.5, 0.4, 0.24) 0.1s both;
-}
-
-.first-screen .links--fly-out {
-            -webkit-animation: fly-out-anim 0.4s cubic-bezier(1, 0.5, 0.4, 0.24) 0.2s both;
-            animation: fly-out-anim 0.4s cubic-bezier(1, 0.5, 0.4, 0.24) 0.2s both;
-}
-
-.first-screen .entry-btn--fly-out {
-            -webkit-animation: fly-out-anim 0.4s cubic-bezier(1, 0.5, 0.4, 0.24)  0.3s both;
-            animation: fly-out-anim 0.4s cubic-bezier(1, 0.5, 0.4, 0.24)  0.3s both;
-}
-
-@-webkit-keyframes fly-out-anim {
-    100% {
-        -webkit-transform: translateY(-400px);
-                transform: translateY(-400px);
-        opacity: 0;
-        visibility: hidden;
-    }
-}
-
-@keyframes fly-out-anim {
-    100% {
-        -webkit-transform: translateY(-400px);
-                transform: translateY(-400px);
-        opacity: 0;
-        visibility: hidden;
-    }
+.holder {
+    margin-top: 100vh;
 }
 
 .pagination {

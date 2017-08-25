@@ -3,11 +3,4 @@ import './css/base.css';
 import './css/archive.css';
 
 import './js/common.js';
-import draw from './js/triangle-canvas.js';
-
-var canvas = document.querySelector('.triangle-canvas');
-
-if (canvas) {
-    draw(false, canvas);
-}
 

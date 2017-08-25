@@ -1,15 +1,23 @@
 var isHeaderShrink = false;
+var firstScreen = document.querySelector('.first-screen');
 var header = document.querySelector('.header-wrapper');
 var menuBar = document.querySelector('.menu-bar');
 var mobileMenu = document.querySelector('.mobile-menu');
 var isMobileMenuHidden = true;
 
-window.addEventListener('scroll', function (ev) {
+window.addEventListener('scroll', function(ev) {
     var scrollTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
-    if (!isHeaderShrink && scrollTop !== 0) {
+    var limit = firstScreen ? window.innerHeight / 2 : 0;
+    if (firstScreen && scrollTop < window.innerHeight) {
+        firstScreen.style.webkitTransform = `translateY(${- scrollTop / 4}px)`;
+        firstScreen.style.MozTransform = `translateY(${- scrollTop / 4}px)`;
+        firstScreen.style.msTransform = `translateY(${- scrollTop / 4}px)`;
+        firstScreen.style.transform = `translateY(${- scrollTop / 4}px)`;
+    }
+    if (!isHeaderShrink && scrollTop > limit) {
         isHeaderShrink = true;
         header.classList.add('header-wrapper--shrink');
-    } else if (isHeaderShrink && scrollTop === 0) {
+    } else if (isHeaderShrink && scrollTop <=50) {
         isHeaderShrink = false;
         header.classList.remove('header-wrapper--shrink');
     }
@@ -24,4 +32,24 @@ menuBar.addEventListener('click', function (ev) {
         mobileMenu.classList.remove('mobile-menu--show');
     }
 });
+
+function throttle(fn, wait) {
+    let that = this;
+    let args = arguments;
+    let prev;
+    let isFirst = true;
+    return function () {
+        var now = +new Date();
+        if (isFirst) {
+            fn.apply(that, args);
+            isFirst = false;
+            prev = +new Date();
+            return;
+        }
+        if (now - prev > wait) {
+            fn.apply(that, args);
+            prev = now;
+        }
+    }
+}
 

@@ -31,36 +31,13 @@ a {
 .wrapper {
     width: 100%;
     min-height: 100vh;
-    display: none;
-    transform: translateY(100px);
-    opacity: 0;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
     transition: all 0.5s 0.5s;
-}
-
-.wrapper--show {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
-    animation: fly-in-anim 0.3s;
-    animation-delay: 0.6s;
-    animation-fill-mode: both;
-}
-
-.wrapper--visible {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
-    transform: translateY(0);
-    opacity: 1;
-}
-
-@keyframes fly-in-anim {
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    z-index: 99;
 }
 
 .container {

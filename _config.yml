@@ -6,6 +6,7 @@
 ## the links part of first screen: you can add any link, just like <GitHub: [your github url]>
 first_screen:
   open: true ## toggle whether your site shows the first screen
+  img: https://ws4.sinaimg.cn/large/006tNc79gy1fiw7toytvfj31kw11xdqn.jpg
   name: Poem ## the largest word on the first screen
   description: Life is a Poem ## The description of your site
   links: 
@@ -14,8 +15,9 @@ first_screen:
 ## the links part of header supports: 
 ## email, weibo, twitter, github, gitlab, facebook, dribbble, behance
 header:
-  logo: ## the logo on the header
-  links: 
+  logo: https://ws1.sinaimg.cn/large/006tNc79gy1fiwje9t48fj30ro0rojss.jpg ## the logo on the header
+  links:
+    email: mailto:codpoe.me@gmail.com
 
   menu: ## the menu on the header, you can customize it.
     home: /
@@ -27,9 +29,6 @@ header:
 copyright: 
   time: 2017 ## the time of copyright in the footer
   name: Poem ## the name of copyright in the footer
-
-# triangle_canvas
-triangle_canvas: false ## toggle whether your site show the colorful triangle-canvas in the top of all page
 
 # disqus
 ## you can find more help on https://disqus.com/.
