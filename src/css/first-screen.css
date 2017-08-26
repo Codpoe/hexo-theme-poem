@@ -63,6 +63,42 @@
     }
 }
 
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 80vw;
+    height: 80vw;
+    margin-left: -40vw;
+    margin-bottom: -75vw;
+    border-radius: 40%;
+    background: #A43931;
+    opacity: 0.24;
+    animation: wave-anim 13s infinite linear;
+}
+
+.wave2 {
+    left: 30%;
+    border-radius: 42%;
+    background: crimson;
+    opacity: 0.2;
+    animation-duration: 11s;
+}
+
+.wave3 {
+    left: 70%;
+    border-radius: 38%;
+    background: #1D4350;
+    opacity: 0.32;
+    animation-duration: 15s;
+}
+
+@keyframes wave-anim {
+    from {
+        transform: rotate(-360deg);
+    }
+}
+
 .holder {
     margin-top: 100vh;
 }
