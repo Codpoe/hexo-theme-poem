@@ -1,3 +1,5 @@
+@import './common.css';
+
 .header-wrapper {
     position: fixed;
     top: 0;
@@ -25,6 +27,9 @@
     height: 58px;
     background: rgba(255,255,255,1);
     box-shadow: 0 0 26px rgba(7, 51, 84, 0.14);
+    .header .left .links .fa {
+        color: var(--third-text-color);
+    }
     .header .right .normal-menu {
         padding-bottom: 0;
     }
@@ -45,134 +50,105 @@
     justify-content: space-between;
     align-items: center;
     z-index: 99;
-    .left {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        .logo {
-            position: relative;
-            margin-right: 12px;
-            a {
-                display: inline-block;
-                position: relative;
-                z-index: 1001;
-            }
-            img {
-                width: 32px;
-                height: 32px;
-                border-radius: 50%;
-                transition: all 0.2s ease;
-            }
-        }
-        .logo__detail {
-            position: absolute;
-            top: 45px;
-            left: 50%;
-            min-width: 180px;
-            height: 300px;
-            background: white;
-            border-radius: 2px;
-            box-shadow: 0 0 26px rgba(7, 51, 84, 0.14);
-            transform: translateX(-50%) scaleY(0);
-            transform-origin: center top;
-            visibility: hidden;
-            opacity: 0;
-            transition: all 0.2s ease;
-        }
-        .logo:hover {
-            img {
-                transform: translateY(20px) scale(1.4);
-            }
-            .logo__detail {
-                transform: translateX(-50%) scaleY(1);
-                visibility: visible;
-                opacity: 1;
-            }
-        }
-        .links {
-            list-style: none;
-            display: inline-block;
-            li {
-                float: left;
-                margin-left: 12px;
-            }
-            a {
-                width: 30px;
-                height: 30px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border-radius: 50%;
-                text-decoration: none;
-                transition: background 0.2s;
-                &:hover {
-                    background: var(--primary-color);
-                    .fa {
-                        color: white;
-                    }
-                }
-            }
-            .fa {
-                font-size: 18px;
-                color: var(--third-text-color);
-                transition: color 0.2s;
-            }
-        }
-    }
-    .right {
-        list-style: none;
+}
+
+.header .left {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    perspective: 400px;
+    .logo {
         display: inline-block;
-        >li {
-            float: left;
+        margin-right: 24px;
+        img {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
         }
-        >li:nth-child(n+2) {
-            margin-left: 24px;
-        }
-        .normal-menu,
-        .category {
-            padding-bottom: 8px;
-            font-size: 14px;
-            line-height: 1.4;
-            color: white;
-            text-transform: uppercase;
-            transition: color 0.2s ease;
-        }
-        .category {
-            position: relative;
-            cursor: default;
-        }
-        .normal-menu:hover {
-            text-decoration: none;
-            border-bottom: 2px solid var(--primary-color);
-        }
-        .category:hover {
-            .category-list {
-                visibility: visible;
-                transform: translateY(0);
-                opacity: 1;
+    }
+}
+
+.header .left .links {
+    list-style-type: none;
+    display: inline-block;
+    li {
+        display: inline-block;
+    }
+    a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        text-decoration: none;
+        transition: all 0.2s;
+        &:hover {
+            .fa {
+                color: var(--primary-color);
             }
         }
-        .menu--active {
-            font-weight: 700;
-            color: white;
-            border-bottom: 2px solid var(--primary-color);
-            transition: padding-bottom 0.4s;
+    }
+    .fa {
+        font-size: 16px;
+        color: rgba(255,255,255,0.8);
+        transition: color 0.2s ease;
+    }
+}
+
+.header .right {
+    list-style: none;
+    display: inline-block;
+    >li {
+        float: left;
+    }
+    >li:nth-child(n+2) {
+        margin-left: 24px;
+    }
+    .normal-menu,
+    .category {
+        padding-bottom: 8px;
+        font-size: 14px;
+        line-height: 1.4;
+        color: white;
+        text-transform: uppercase;
+        transition: color 0.2s ease;
+    }
+    .category {
+        position: relative;
+        cursor: default;
+    }
+    .normal-menu:hover {
+        text-decoration: none;
+        border-bottom: 2px solid var(--primary-color);
+    }
+    .category:hover {
+        .category-list {
+            visibility: visible;
+            transform: translateY(0);
+            opacity: 1;
         }
     }
-    .menu-bar {
-        display: none;
-        font-size: 18px;
-        color: var(--third-text-color);
-        cursor: pointer;
+    .menu--active {
+        font-weight: 700;
+        color: white;
+        border-bottom: 2px solid var(--primary-color);
+        transition: padding-bottom 0.4s;
     }
+}
+
+.header .menu-bar {
+    display: none;
+    font-size: 18px;
+    color: var(--third-text-color);
+    cursor: pointer;
 }
 
 .header .category-list {
     position: absolute;
     top: 100%;
     left: 0;
-    background: rgba(255,255,255,.9);
+    background: rgba(255,255,255,0.8);
     box-shadow: 0 1px 2px 0 rgba(0,0,0,.1), 0 -1px 2px 0 rgba(0,0,0,.1);
     border-radius: 2px;
     list-style-type: none;
@@ -193,7 +169,7 @@
         transition: background 0.2s;
         &:hover {
             text-decoration: none;
-            background: #E5E9EF;
+            background: rgba(229, 233, 239, 0.74);
         }
     }
     .category-list-link:before {

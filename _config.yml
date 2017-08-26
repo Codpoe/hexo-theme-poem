@@ -16,8 +16,11 @@ first_screen:
 ## email, weibo, twitter, github, gitlab, facebook, dribbble, behance
 header:
   logo: https://ws1.sinaimg.cn/large/006tNc79gy1fiwje9t48fj30ro0rojss.jpg ## the logo on the header
+  description: Codpoe / Front-End Developer ##
   links:
-    email: mailto:codpoe.me@gmail.com
+    email: codpoe.me@gmail.com
+    weibo: http://weibo.cn
+    github: https://github.com
 
   menu: ## the menu on the header, you can customize it.
     home: /
