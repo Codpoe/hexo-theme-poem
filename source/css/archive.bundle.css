@@ -25,7 +25,7 @@
 .header-wrapper--shrink {
     height: 58px;
     background: rgba(255, 255, 255, 1);
-    box-shadow: 0 0 26px rgba(7, 51, 84, .14);
+    box-shadow: 0 1px 2px #f28291;
 }
 
 .header-wrapper--shrink .header .left .links .fa {
@@ -89,6 +89,10 @@
     width: 36px;
     height: 36px;
     border-radius: 50%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .header .left .links {
@@ -614,11 +618,11 @@ a:hover {
 }
 
 .header-wrapper .header .right .normal-menu, .header-wrapper .header .right .category, .header-wrapper .header .right .menu--active {
-    color: var(--third-text-color);
+    color: #7f8c8d;
 }
 
 .header-wrapper .haeder .right .menu--active {
-    color: var(--text-color)
+    color: #2c3e50
 }
 
 .wrapper {
@@ -659,7 +663,7 @@ a:hover {
     position: relative;
     font-size: 26px;
     font-weight: 700;
-    color: var(--text-color);
+    color: #2c3e50;
     letter-spacing: 8px;
     cursor: default
 }
@@ -670,13 +674,13 @@ a:hover {
         top: 1px;
         left: -1em;
         font-size: 24px;
-        color: var(--primary-color);
+        color: #f45a6f;
 }
 
 .amount {
     font-size: 14px;
     font-weight: normal;
-    color: var(--second-text-color);
+    color: #525e6b;
     text-align: center;
     cursor: default;
 }
@@ -700,7 +704,7 @@ a:hover {
     left: 0;
     margin-top: -7px;
     font-size: 14px;
-    color: var(--third-text-color);
+    color: #7f8c8d;
     text-transform: uppercase;
     letter-spacing: 1px;
     cursor: default;
@@ -713,14 +717,14 @@ a:hover {
 .archive-post-wrapper a {
     font-size: 18px;
     font-weight: normal;
-    color: var(--second-text-color);
+    color: #525e6b;
     letter-spacing: 2px;
     transition: all 0.2s;
     line-height: 1.6
 }
 
 .archive-post-wrapper a:hover {
-    color: var(--primary-color);
+    color: #f45a6f;
     text-decoration: none;
 }
 

@@ -738,7 +738,7 @@
 .header-wrapper--shrink {
     height: 58px;
     background: rgba(255, 255, 255, 1);
-    box-shadow: 0 0 26px rgba(7, 51, 84, .14);
+    box-shadow: 0 1px 2px #f28291;
 }
 
 .header-wrapper--shrink .header .left .links .fa {
@@ -802,6 +802,10 @@
     width: 36px;
     height: 36px;
     border-radius: 50%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .header .left .links {

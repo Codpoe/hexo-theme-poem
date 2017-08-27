@@ -26,7 +26,7 @@
 .header-wrapper--shrink {
     height: 58px;
     background: rgba(255,255,255,1);
-    box-shadow: 0 0 26px rgba(7, 51, 84, 0.14);
+    box-shadow: 0 1px 2px #f28291;
     .header .left .links .fa {
         color: var(--third-text-color);
     }
@@ -65,6 +65,7 @@
             width: 36px;
             height: 36px;
             border-radius: 50%;
+            user-select: none;
         }
     }
 }

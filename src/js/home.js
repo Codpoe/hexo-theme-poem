@@ -20,10 +20,13 @@ var gradients = [
     { left: '#5f2c82', right: '#49a09d' },
     { left: '#085078', right: '#85D8CE' },
     { left: '#00467F', right: '#A5CC82' }
-]
+];
 var lastIndex;
 var firstScreen = document.querySelector('.first-screen');
 
+/**
+ * change the gradient colors of the first screen
+ */
 function changeColor() {
     var index = Math.floor(Math.random() * 21);
     while (index === lastIndex) {
@@ -33,7 +36,7 @@ function changeColor() {
     firstScreen.style.background = `linear-gradient(to right, ${gradients[index].left}, ${gradients[index].right})`;
 }
 
-setInterval(changeColor, 4000);
+firstScreen.addEventListener('mousedown', changeColor);
 
 /**
  * the long shadow of name in the first-screen
