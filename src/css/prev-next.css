@@ -1,39 +1,36 @@
 @import './common.css';
 
-.pagination {
-    position: relative;
+.prev-next {
     margin: 45px 0;
     padding: 0 45px;
-    text-align: center;
-    a,
-    span {
-        display: inline-block;
-        margin: 0 10px;
-        padding: 8px 8px;
-        border-radius: 2px;
-        border: 1px solid transparent;
-        font-size: 14px;
-        color: var(--third-text-color);
-        transition: all 0.2s ease;
+    &::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        visibility: hidden;
+        clear: both;
     }
-    a:hover {
-        border-color: var(--primary-color);
-        color: var(--primary-color);
-        text-decoration: none;
-    }
-    .current {
-        color: var(--primary-color);
-    }
-    .space:hover {
-        background: transparent;
-        color: var(--third-text-color);
-    }
-    .prev {
+    .prev,
+    .next {
         position: relative;
-        padding-left: 26px;
+        border-radius: 2px;
         border: 1px solid #e6e6e6;
         text-transform: uppercase;
         letter-spacing: 1px;
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--third-text-color);
+        transition: all 0.2s ease;
+        &:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+    }
+    .prev {
+        float: left;
+        padding: 8px 8px 8px 26px;
         &::before {
             content: '←';
             font-size: 14px;
@@ -50,11 +47,8 @@
         }
     }
     .next {
-        position: relative;
-        padding-right: 26px;
-        border: 1px solid #e6e6e6;
-        text-transform: uppercase;
-        letter-spacing: 1px;
+        float: right;
+        padding: 8px 26px 8px 8px;
         &::after {
             content: '→';
             font-size: 14px;
@@ -73,22 +67,9 @@
 }
 
 @media (max-width: 767px) {
-    .pagination {
+    .prev-next {
         padding: 0 15px;
-        a,
-        span {
-            margin: 0 6px;
-        }
     }
     
-}
-
-@media screen and (max-width: 560px) {
-    .pagination {
-        a,
-        span {
-            margin: 0;
-        }
-    }
 }
 
