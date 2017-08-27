@@ -1,4 +1,9 @@
-<header class="header-wrapper <%- page.current != 1 ? 'header-wrapper--normal' : '' %>">
+<header class="header-wrapper 
+    <%- is_home() && page.current === 1 
+        ? 'header-wrapper--first-screen' : '' %>
+    <%- is_home() && page.current === 1 && !theme.first_screen.img && !theme.first_screen.gradient ? 
+        'header-wrapper--grid' : '' %>">
+
     <div class="header">
         <div class="left">
             <a href="/" class="logo">
@@ -23,11 +28,28 @@
         </div>
         <ul class="right">
             <% for (var i in theme.header.menu) { %>
+            <%
+                var isActive;
+                switch (theme.header.menu[i]) {
+                    case '/':
+                        isActive = is_home();
+                        break;
+                    case '/categories':
+                        isActive = is_category();
+                        break;
+                    case '/archives':
+                        isActive = is_archive();
+                        break;
+                    default:
+                        isActive = theme.header.menu[i] + 'index.html' === '/' + path;
+                        break;
+                }
+            %>
                 <li>
                     <% if (i.indexOf('category') === -1) { %>
-                        <a 
+                        <a
                             href="<%- theme.header.menu[i] %>" 
-                            class="normal-menu <%- theme.header.menu[i] + 'index.html' === '/' + path ? 'menu--active' : '' %>"
+                            class="normal-menu <%- isActive ? 'menu--active' : '' %>"
                             target="<%- i.indexOf('resume') === -1 ? '_self' : '_blank' %>">
                             <%= __(i) %>
                         </a>

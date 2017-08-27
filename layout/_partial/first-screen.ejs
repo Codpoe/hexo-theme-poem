@@ -1,5 +1,9 @@
-<div class="first-screen" 
+<div class="first-screen <%- (!theme.first_screen.img && !theme.first_screen.gradient) ? 'first-screen--grid' : '' %>"
+    style="<%- theme.first_screen.img ? 'background-image: url(' + theme.first_screen.img + ')' : 
+        (theme.first_screen.gradient ? 
+            'background: linear-gradient(to right,' + theme.first_screen.gradient.left + ',' + theme.first_screen.gradient.right + ')' : '') %>"
     >
+    <img src="" alt="">
     <div class="center">
         <h1 class="name"><%= theme.first_screen.name %></h1>
         <h2 class="description"><%= theme.first_screen.description %></h2>

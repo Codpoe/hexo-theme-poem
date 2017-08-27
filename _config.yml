@@ -5,8 +5,10 @@
 # first_screen
 ## the links part of first screen: you can add any link, just like <GitHub: [your github url]>
 first_screen:
-  open: true ## toggle whether your site shows the first screen
-  img: https://ws4.sinaimg.cn/large/006tNc79gy1fiw7toytvfj31kw11xdqn.jpg
+  img: #https://ws3.sinaimg.cn/large/006tNc79gy1fiyf9ncv1tj31kw11odmz.jpg
+  gradient:
+    left: '#3a6186'
+    right: '#89253e'
   name: Poem ## the largest word on the first screen
   description: Life is a Poem ## The description of your site
   links: 
@@ -24,9 +26,9 @@ header:
 
   menu: ## the menu on the header, you can customize it.
     home: /
-    category: /categories/
-    archive: /archives/
-    about: /about/
+    category: /categories
+    archive: /archives
+    about: /about
 
 # footer
 copyright: 

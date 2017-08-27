@@ -36,7 +36,7 @@ function changeColor() {
     firstScreen.style.background = `linear-gradient(to right, ${gradients[index].left}, ${gradients[index].right})`;
 }
 
-firstScreen.addEventListener('mousedown', changeColor);
+// firstScreen.addEventListener('mousedown', changeColor);
 
 /**
  * the long shadow of name in the first-screen
@@ -61,8 +61,9 @@ function getLongShadow(startColor = '212,213,213', shadowLength = 8, ratioX = 1,
 /**
  * dynamic long shadow
  */
+var name = document.querySelector('.first-screen--grid .name');
 if (name) {
-    name.style.textShadow = getLongShadow('212,213,213', 8);
+    name.style.textShadow = getLongShadow('212,213,213', 12);
     let rect = name.getBoundingClientRect();
     let focus = { x: rect.left, y: rect.top };
     let mouse = { x: 0, y: 0 };
@@ -75,7 +76,7 @@ if (name) {
         mouse.y = ev.clientY;
         ratioX = (mouse.x - focus.x) / width;
         ratioY = (mouse.y - focus.y) / height;
-        name.style.textShadow = getLongShadow('212,213,213', 10, ratioX, ratioY);
+        name.style.textShadow = getLongShadow('212,213,213', 12, ratioX, ratioY);
     });
 }
 

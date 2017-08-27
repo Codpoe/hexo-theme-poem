@@ -1,17 +1,5 @@
 @import './common.css';
 
-.header-wrapper {
-    background: white;
-    .header .right .normal-menu,
-    .header .right .category,
-    .header .right .menu--active {
-        color: var(--third-text-color);
-    }
-    .haeder .right .menu--active {
-        color: var(--text-color)
-    }
-}
-
 .wrapper {
     margin-top: 0;
     transform: translateY(30px);
