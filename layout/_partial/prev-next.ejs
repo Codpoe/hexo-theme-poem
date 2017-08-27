@@ -1,26 +1,9 @@
-<div class="pagination">
-    <% if (is_home()) { %>
-        <a class="prev" href="<%- page.prev_link ? url_for(page.prev_link) : '/' %>">
-            <span>
-                <i class="fa fa-angle-left"></i>
-                <%= __('prev') %>
-            </span>
-            <div class="prev-border"></div>
-        </a>
-        <a class="next" href="<%- page.next_link ? url_for(page.next_link) : '' %>">
-            <span>
-                <%= __('next') %>
-                <i class="fa fa-angle-right"></i>
-            </span>
-            <div class="next-border"></div>
-        </a>
-    <% } else { %>
-        <% if (page.prev) { %>
-            <a class="prev" href="<%- url_for(page.prev.path) %>"><%= __('newer') %></a>
-        <% } %>
-        <% if (page.next) { %>
-            <a class="next" href="<%- url_for(page.next.path) %>"><%= __('older') %></a>
-        <% } %>
-    <% } %>
+<div class="prev-next">
+<% if (page.prev) { %>
+    <a class="prev" href="<%- url_for(page.prev.path) %>"><%= __('newer') %></a>
+<% } %>
+<% if (page.next) { %>
+    <a class="next" href="<%- url_for(page.next.path) %>"><%= __('older') %></a>
+<% } %>
 </div>
 

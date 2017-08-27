@@ -5,7 +5,7 @@ import './css/header.css';
 import './css/footer.css';
 import './css/base.css';
 import './css/first-screen.css';
-import './css/prev-next.css';
+import './css/pagination.css';
 
 import './js/common.js';
 import './js/home.js';

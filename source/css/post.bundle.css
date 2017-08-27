@@ -1336,37 +1336,33 @@ a:hover {
 .pagination .next:hover {}
 
 .pagination .next:hover::after {
-    color: white;
+    color: #f45a6f;
 }
 
 .pagination .prev:hover {}
 
 .pagination .prev:hover::before {
-    color: white;
+    color: #f45a6f;
 }
 
 .pagination a, .pagination span {
     display: inline-block;
     margin: 0 10px;
-    padding: 6px 8px;
+    padding: 8px 8px;
     border-radius: 2px;
+    border: 1px solid transparent;
     font-size: 14px;
     color: #7f8c8d;
-    transition: all 0.2s
+    transition: all 0.2s ease;
 }
 
-.pagination a:hover, .pagination span:hover {
-    background: #f45a6f;
-    color: white;
+.pagination a:hover {
+    border-color: #f45a6f;
+    color: #f45a6f;
     text-decoration: none;
 }
 
 .pagination .current {
-    color: #f45a6f
-}
-
-.pagination .current:hover {
-    background: transparent;
     color: #f45a6f;
 }
 
@@ -1378,6 +1374,7 @@ a:hover {
 .pagination .prev {
     position: relative;
     padding-left: 26px;
+    border: 1px solid #e6e6e6;
     text-transform: uppercase;
     letter-spacing: 1px
 }
@@ -1387,14 +1384,15 @@ a:hover {
     font-size: 14px;
     color: #7f8c8d;
     position: absolute;
-    top: 6px;
+    top: 8px;
     left: 8px;
-    transition: all 0.2s;
+    transition: all 0.2s ease;
 }
 
 .pagination .next {
     position: relative;
     padding-right: 26px;
+    border: 1px solid #e6e6e6;
     text-transform: uppercase;
     letter-spacing: 1px
 }
@@ -1404,9 +1402,9 @@ a:hover {
     font-size: 14px;
     color: #7f8c8d;
     position: absolute;
-    top: 6px;
+    top: 8px;
     right: 8px;
-    transition: all 0.2s;
+    transition: all 0.2s ease;
 }
 
 @media (max-width: 767px) {

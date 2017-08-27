@@ -31,7 +31,6 @@
     .prev {
         position: relative;
         padding-left: 26px;
-        border: 1px solid #e6e6e6;
         text-transform: uppercase;
         letter-spacing: 1px;
         &::before {
@@ -52,7 +51,6 @@
     .next {
         position: relative;
         padding-right: 26px;
-        border: 1px solid #e6e6e6;
         text-transform: uppercase;
         letter-spacing: 1px;
         &::after {
