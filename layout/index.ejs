@@ -18,7 +18,7 @@
             <% }) %>
 
             <div class="pagination">
-                <%- paginator({total: page.total, current: page.current, mid_size: 1}) %>
+                <%- paginator({total: page.total, current: page.current, mid_size: 1, prev_text: __('prev'), next_text: __('next')}) %>
             </div>
         </div>
 
