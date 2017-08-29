@@ -1,9 +1,9 @@
 var isHeaderShrink = false;
 var firstScreen = document.querySelector('.first-screen');
+var windowMask = document.querySelector('.window-mask');
 var header = document.querySelector('.header-wrapper');
 var menuBar = document.querySelector('.menu-bar');
-var mobileMenu = document.querySelector('.mobile-menu');
-var isMobileMenuHidden = true;
+var drawer = document.querySelector('.drawer');
 
 window.addEventListener('scroll', function(ev) {
     var scrollTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
@@ -24,14 +24,16 @@ window.addEventListener('scroll', function(ev) {
 });
 
 menuBar.addEventListener('click', function (ev) {
-    if (isMobileMenuHidden) {
-        isMobileMenuHidden = false;
-        mobileMenu.classList.add('mobile-menu--show');
-    } else {
-        isMobileMenuHidden = true;
-        mobileMenu.classList.remove('mobile-menu--show');
-    }
+    menuBar.classList.toggle('menu-bar--close');
+    drawer.classList.toggle('drawer--show');
+    windowMask.classList.toggle('window-mask--show');
 });
+
+windowMask.addEventListener('click', function (ev) {
+    menuBar.classList.toggle('menu-bar--close');
+    drawer.classList.toggle('drawer--show');
+    windowMask.classList.toggle('window-mask--show');
+})
 
 function throttle(fn, wait) {
     let that = this;

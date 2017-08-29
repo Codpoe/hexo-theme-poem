@@ -7,11 +7,13 @@
     <div class="header">
         <div class="left">
             <div class="menu-bar">
-                
+                <div class="menu-bar__middle"></div>
             </div>
             <a href="/" class="logo">
-                <img src="<%= theme.header.logo %>" alt="logo">
+                <!--<img src="<%= theme.header.logo %>" alt="logo">-->
+                Codpoe
             </a>
+            <!--
             <ul class="links">
                 <% for (var key in theme.header.links) { %>
                     <li>
@@ -27,6 +29,7 @@
                     </li>
                 <% } %>
             </ul>
+            -->
 
         </div>
         <ul class="right">
@@ -65,21 +68,73 @@
                 </li>
             <% } %>
         </ul>
+        <!--
         <i class="fa fa-bars menu-bar"></i>
+        -->
     </div>
-    <ul class="mobile-menu">
+
+    <div class="drawer">
+        <div
+            class="drawer__header"
+            style="background-image: <%- theme.drawer.img ? 
+                'url(' + theme.drawer.img + ')' :
+                 theme.drawer.gradient ? 
+                 'linear-gradient(to bottom,' + theme.drawer.gradient.top + ',' + theme.drawer.gradient.bottom + ')' :
+                 'linear-gradient(to bottom, #3a6186, #89253e)' %>">
+            
+            <img src="<%= theme.header.logo %>" alt="logo" class="logo">
+
+        </div>
+        <ul class="drawer__menu-list">
         <% for (var i in theme.header.menu) { %>
+        <%
+            var isDrawerActive;
+            switch (theme.header.menu[i]) {
+                case '/':
+                    isDrawerActive = is_home();
+                    break;
+                case '/categories':
+                    isDrawerActive = is_category();
+                    break;
+                case '/archives':
+                    isDrawerActive = is_archive();
+                    break;
+                default:
+                    isDrawerActive = theme.header.menu[i] + '/index.html' === '/' + path;
+                    break;
+            }
+        %>
             <% if (i.indexOf('category') === -1) { %>
                 <li>
                     <a 
                         href="<%- theme.header.menu[i] %>" 
-                        class="<%- theme.header.menu[i] + 'index.html' === '/' + path ? 'menu--active' : '' %>"
+                        class="drawer__menu <%- isDrawerActive ? 'drawer__menu--active' : '' %>"
                         target="<%- i.indexOf('resume') === -1 ? '_self' : '_blank' %>">
                         <%= __(i) %>
                     </a>
                 </li>
             <% } %>
         <% } %>
-    </ul>
+        </ul>
+        <div class="drawer__footer">
+            <ul class="links">
+                <% for (var key in theme.header.links) { %>
+                    <li>
+                        <% if (key.indexOf('mail') !== -1) { %>
+                            <a href="mailto:<%= theme.header.links[key] %>" title="<%= key %>">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                        <% } else { %>
+                            <a href="<%= theme.header.links[key] %>" target="_blank" title="<%= key %>">
+                                <i class="fa fa-<%= key %>"></i>
+                            </a>
+                        <% } %>
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+
+    <div class="window-mask"></div>
 </header>
 

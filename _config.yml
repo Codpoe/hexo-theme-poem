@@ -30,6 +30,13 @@ header:
     archive: /archives
     about: /about
 
+# navigation drawer
+drawer:
+  img: #https://ws3.sinaimg.cn/large/006tNc79gy1fiyf9ncv1tj31kw11odmz.jpg
+  gradient:
+    top: '#3a6186'
+    bottom: '#89253e'
+
 # footer
 copyright: 
   time: 2017 ## the time of copyright in the footer
