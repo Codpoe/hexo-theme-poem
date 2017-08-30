@@ -79,8 +79,11 @@
                  'linear-gradient(to bottom,' + theme.drawer.gradient.top + ',' + theme.drawer.gradient.bottom + ')' :
                  'linear-gradient(to bottom, #3a6186, #89253e)' %>">
             
-            <img src="<%= theme.logo %>" alt="logo" class="logo">
-
+            <div class="drawer__info">
+                <img src="<%= theme.logo %>" alt="logo" class="drawer__logo">
+                <h1 class="drawer__name"><%= theme.name %></h1>
+                <h2 class="drawer__description"><%= theme.description %></h2>
+            </div>
         </div>
         <ul class="drawer__menu-list">
         <% for (var i in theme.header.menu) { %>
@@ -114,7 +117,7 @@
         <% } %>
         </ul>
         <ul class="drawer__links">
-        <% for (var key in theme.header.links) { %>
+        <% for (var key in theme.drawer.links) { %>
             <%
                 var color;
                 switch (key) {
@@ -148,11 +151,11 @@
             %>
             <li>
             <% if (key.indexOf('mail') !== -1) { %>
-                <a href="mailto:<%= theme.header.links[key] %>" title="<%= key %>">
+                <a href="mailto:<%= theme.drawer.links[key] %>" title="<%= key %>">
                     <i class="fa fa-envelope" style="color: <%= color %>"></i>
                 </a>
             <% } else { %>
-                <a href="<%= theme.header.links[key] %>" target="_blank" title="<%= key %>">
+                <a href="<%= theme.drawer.links[key] %>" target="_blank" title="<%= key %>">
                     <i class="fa fa-<%= key %>" style="color: <%= color %>"></i>
                 </a>
             <% } %>

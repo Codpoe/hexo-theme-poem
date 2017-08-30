@@ -1008,13 +1008,43 @@
         background-size: cover;
 }
 
-.header-wrapper .drawer .logo {
+.header-wrapper .drawer .drawer__info {
         position: absolute;
-        top: 30px;
+        top: 20px;
         left: 20px;
-        width: 56px;
-        height: 56px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+}
+
+.header-wrapper .drawer .drawer__logo {
+        width: 64px;
+        height: 64px;
         border-radius: 50%;
+}
+
+.header-wrapper .drawer .drawer__name {
+        margin-top: 8px;
+        font-size: 18px;
+        font-weight: 400;
+        color: white;
+}
+
+.header-wrapper .drawer .drawer__description {
+        margin-top: 8px;
+        font-size: 14px;
+        font-weight: 400;
+        color: rgba(255, 255, 255, .6);
 }
 
 .header-wrapper .drawer ul {

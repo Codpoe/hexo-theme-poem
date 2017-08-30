@@ -234,13 +234,31 @@
         background-position: center;
         background-size: cover;
     }
-    .logo {
+    .drawer__info {
         position: absolute;
-        top: 30px;
+        top: 20px;
         left: 20px;
-        width: 56px;
-        height: 56px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .drawer__logo {
+        width: 64px;
+        height: 64px;
         border-radius: 50%;
+    }
+    .drawer__name {
+        margin-top: 8px;
+        font-size: 18px;
+        font-weight: 400;
+        color: white;
+    }
+    .drawer__description {
+        margin-top: 8px;
+        font-size: 14px;
+        font-weight: 400;
+        color: rgba(255,255,255,0.6);
     }
     ul {
         list-style-type: none;
