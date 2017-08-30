@@ -223,7 +223,7 @@
     height: 100vh;
     position: absolute;
     top: 0;
-    left: -80vw;
+    left: -256px;
     background: white;
     z-index: 2;
     transition: all 0.24s cubic-bezier(0.1, 0.6, 0.8, 1);
@@ -426,7 +426,7 @@
 }
 
 .header-wrapper .drawer--show {
-    transform: translateX(80vw);
+    transform: translateX(256px);
 }
 
 @media screen and (max-width: 767px) {
