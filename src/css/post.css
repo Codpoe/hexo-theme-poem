@@ -16,7 +16,7 @@
 }
 
 @media (max-width: 767px) {
-    .comment {
+    .comments {
         padding: 0 15px;
     }
 }
