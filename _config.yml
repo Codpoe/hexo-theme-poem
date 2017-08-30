@@ -4,8 +4,9 @@
 
 # primary config
 name: Codpoe ## on the header and the drawer
-description: Life is a Poem
-site_name: Poem ## on the first screen
+description: I am ...
+site_name: Codpoe的个人博客 ## on the first screen
+site_description: Life is a Poem
 logo: https://ws1.sinaimg.cn/large/006tNc79gy1fiwje9t48fj30ro0rojss.jpg
 
 # first_screen
@@ -32,7 +33,7 @@ header:
 
 # navigation drawer
 drawer:
-  img: #https://ws3.sinaimg.cn/large/006tNc79gy1fiyf9ncv1tj31kw11odmz.jpg
+  img: https://ws3.sinaimg.cn/large/006tNc79gy1fiyf9ncv1tj31kw11odmz.jpg
   gradient:
     top: '#3a6186'
     bottom: '#89253e'

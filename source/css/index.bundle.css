@@ -1579,6 +1579,7 @@ a:hover {
     width: 100%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
+    margin-top: -30px;
     text-align: center;
     -webkit-user-select: none;
        -moz-user-select: none;
@@ -1611,18 +1612,18 @@ a:hover {
 }
 
 .first-screen .center h1 {
-    margin-bottom: 20px;
-    font-size: 56px;
+    margin-bottom: 30px;
+    font-size: 30px;
     font-weight: 700;
     color: white;
     letter-spacing: 8px;
 }
 
 .first-screen .center h2 {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     font-size: 16px;
     font-weight: normal;
-    color: white;
+    color: #ddd;
     letter-spacing: 2px;
 }
 
@@ -1637,7 +1638,7 @@ a:hover {
     float: left;
     padding: 0 12px;
     font-size: 16px;
-    color: white;
+    color: #ddd;
     letter-spacing: 2px;
     transition: color 0.2s ease
 }
@@ -1675,6 +1676,12 @@ a:hover {
 
 .holder {
     margin-top: 100vh;
+}
+
+@media screen and (max-width: 400px) {
+    .first-screen .center h1 {
+        font-size: 24px;
+    }
 }
 
 .pagination {
