@@ -2,6 +2,12 @@
 # please let me kown it via email or GitHub issue.
 # Thanks!
 
+# primary config
+name: Codpoe ## on the header and the drawer
+description: Life is a Poem
+site_name: Poem ## on the first screen
+logo: https://ws1.sinaimg.cn/large/006tNc79gy1fiwje9t48fj30ro0rojss.jpg
+
 # first_screen
 ## the links part of first screen: you can add any link, just like <GitHub: [your github url]>
 first_screen:
@@ -9,21 +15,15 @@ first_screen:
   gradient:
     left: '#3a6186'
     right: '#89253e'
-  name: Poem ## the largest word on the first screen
-  description: Life is a Poem ## The description of your site
-  links: 
+  links:
+    Gmail: codpoe.me@gmail.com
+    Weibo: http://weibo.com
+    GitHub: https://github.com
 
 # header
 ## the links part of header supports: 
 ## email, weibo, twitter, github, gitlab, facebook, dribbble, behance
 header:
-  logo: https://ws1.sinaimg.cn/large/006tNc79gy1fiwje9t48fj30ro0rojss.jpg ## the logo on the header
-  description: Codpoe / Front-End Developer ##
-  links:
-    email: codpoe.me@gmail.com
-    weibo: http://weibo.cn
-    github: https://github.com
-
   menu: ## the menu on the header, you can customize it.
     home: /
     category: /categories
@@ -36,11 +36,14 @@ drawer:
   gradient:
     top: '#3a6186'
     bottom: '#89253e'
+  links:
+    mail: codpoe.me@gmail.com
+    weibo: http://weibo.com
+    github: https://github.com
 
 # footer
 copyright: 
   time: 2017 ## the time of copyright in the footer
-  name: Poem ## the name of copyright in the footer
 
 # disqus
 ## you can find more help on https://disqus.com/.

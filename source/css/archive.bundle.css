@@ -326,37 +326,43 @@
         color: #f45a6f;
 }
 
-.header-wrapper .drawer .drawer__footer {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
+.header-wrapper .drawer .drawer__links {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-top: 8px;
         border-top: 1px solid #e6e6e6;
-}
-
-.header-wrapper .drawer .drawer__footer .links {
+        padding-top: 8px;
         list-style-type: none;
 }
 
-.header-wrapper .drawer .drawer__footer li {
-        float: left;
+.header-wrapper .drawer .drawer__links li {
+        width: 25%;
 }
 
-.header-wrapper .drawer .drawer__footer li:nth-child(n+2) {
-        position: relative;
-        padding-left: 2px
+.header-wrapper .drawer .drawer__links li:nth-child(n+2) {
+        position: relative
 }
 
-.header-wrapper .drawer .drawer__footer li:nth-child(n+2)::after {
+.header-wrapper .drawer .drawer__links li:nth-child(n+2)::after {
         content: '';
         position: absolute;
         top: 29px;
-        left: 0;
+        left: -1px;
         width: 2px;
         height: 2px;
         background: #bdbdbd;
 }
 
-.header-wrapper .drawer .drawer__footer a {
+.header-wrapper .drawer .drawer__links a {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -366,13 +372,13 @@
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
-        width: 60px;
+        width: 100%;
         height: 60px;
         font-size: 18px;
         color: #7f8c8d
 }
 
-.header-wrapper .drawer .drawer__footer a:hover {
+.header-wrapper .drawer .drawer__links a:hover {
         text-decoration: none;
         color: #f45a6f;
 }

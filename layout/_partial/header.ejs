@@ -10,8 +10,8 @@
                 <div class="menu-bar__middle"></div>
             </div>
             <a href="/" class="logo">
-                <!--<img src="<%= theme.header.logo %>" alt="logo">-->
-                Codpoe
+                <!--<img src="<%= theme.logo %>" alt="logo">-->
+                <%= theme.site_name %>
             </a>
             <!--
             <ul class="links">
@@ -68,9 +68,6 @@
                 </li>
             <% } %>
         </ul>
-        <!--
-        <i class="fa fa-bars menu-bar"></i>
-        -->
     </div>
 
     <div class="drawer">
@@ -82,7 +79,7 @@
                  'linear-gradient(to bottom,' + theme.drawer.gradient.top + ',' + theme.drawer.gradient.bottom + ')' :
                  'linear-gradient(to bottom, #3a6186, #89253e)' %>">
             
-            <img src="<%= theme.header.logo %>" alt="logo" class="logo">
+            <img src="<%= theme.logo %>" alt="logo" class="logo">
 
         </div>
         <ul class="drawer__menu-list">
@@ -116,23 +113,52 @@
             <% } %>
         <% } %>
         </ul>
-        <div class="drawer__footer">
-            <ul class="links">
-                <% for (var key in theme.header.links) { %>
-                    <li>
-                        <% if (key.indexOf('mail') !== -1) { %>
-                            <a href="mailto:<%= theme.header.links[key] %>" title="<%= key %>">
-                                <i class="fa fa-envelope"></i>
-                            </a>
-                        <% } else { %>
-                            <a href="<%= theme.header.links[key] %>" target="_blank" title="<%= key %>">
-                                <i class="fa fa-<%= key %>"></i>
-                            </a>
-                        <% } %>
-                    </li>
-                <% } %>
-            </ul>
-        </div>
+        <ul class="drawer__links">
+        <% for (var key in theme.header.links) { %>
+            <%
+                var color;
+                switch (key) {
+                    case 'mail':
+                        color = '#2D9EDE';
+                        break;
+                    case 'weibo':
+                        color = '#E6162D';
+                        break;
+                    case 'twitter':
+                        color = '#1DA1F2';
+                        break;
+                    case 'github':
+                        color = '#24292E';
+                        break;
+                    case 'gitlab':
+                        color = '#FC6D26';
+                        break;
+                    case 'facebook':
+                        color = '#3B5998';
+                        break;
+                    case 'dribbble':
+                        color = '#EA4C89';
+                        break;
+                    case 'behance':
+                        color = '#0057FF';
+                        break;
+                    default:
+                        color = '#7f8c8d';
+                }
+            %>
+            <li>
+            <% if (key.indexOf('mail') !== -1) { %>
+                <a href="mailto:<%= theme.header.links[key] %>" title="<%= key %>">
+                    <i class="fa fa-envelope" style="color: <%= color %>"></i>
+                </a>
+            <% } else { %>
+                <a href="<%= theme.header.links[key] %>" target="_blank" title="<%= key %>">
+                    <i class="fa fa-<%= key %>" style="color: <%= color %>"></i>
+                </a>
+            <% } %>
+            </li>
+        <% } %>
+        </ul>
     </div>
 
     <div class="window-mask"></div>
