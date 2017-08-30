@@ -16,6 +16,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
+    width: 100%;
     transform: translate(-50%, -50%);
     text-align: center;
     user-select: none;
@@ -26,7 +27,7 @@
     cursor: default;
     h1 {
         margin-bottom: 20px;
-        font-size: 64px;
+        font-size: 56px;
         font-weight: 700;
         color: white;
         letter-spacing: 8px;
@@ -40,7 +41,6 @@
         letter-spacing: 2px;
     }
     .links {
-        margin-bottom: 20px;
         text-align: center;
         font-size: 16px;
         color: var(--third-text-color);

@@ -1550,6 +1550,7 @@ a:hover {
     position: absolute;
     top: 50%;
     left: 50%;
+    width: 100%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
     text-align: center;
@@ -1583,7 +1584,7 @@ a:hover {
 
 .first-screen .center h1 {
     margin-bottom: 20px;
-    font-size: 64px;
+    font-size: 56px;
     font-weight: 700;
     color: white;
     letter-spacing: 8px;
@@ -1598,7 +1599,6 @@ a:hover {
 }
 
 .first-screen .center .links {
-    margin-bottom: 20px;
     text-align: center;
     font-size: 16px;
     color: #7f8c8d;
