@@ -41,12 +41,14 @@
         letter-spacing: 2px;
     }
     .links {
-        text-align: center;
         font-size: 16px;
         color: var(--third-text-color);
         letter-spacing: 2px;
     }
     a {
+        position: relative;
+        float: left;
+        padding: 0 12px;
         font-size: 16px;
         color: white;
         letter-spacing: 2px;
@@ -56,11 +58,13 @@
             color: var(--primary-color);
         }
         &:nth-child(n+2)::before {
-            content: '/';
-            position: relative;
-            left: -3px;
-            font-size: 16px;
-            color: white;
+            content: '';
+            position: absolute;
+            top: 7px;
+            left: -1px;
+            width: 2px;
+            height: 2px;
+            background: rgba(255,255,255,0.6);
         }
     }
 }
