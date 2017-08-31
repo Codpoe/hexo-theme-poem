@@ -468,6 +468,30 @@
         color: #616161;
 }
 
+.header-wrapper--dark {
+    background: rgba(255, 255, 255, 0);
+}
+
+.header-wrapper--dark .left .menu-bar__middle, .header-wrapper--dark .left .menu-bar__middle::before, .header-wrapper--dark .left .menu-bar__middle::after {
+        background: rgba(255, 255, 255, .8);
+}
+
+.header-wrapper--dark .left .header__info {
+        color: rgba(255, 255, 255, .8);
+}
+
+.header-wrapper--dark .right >li:nth-child(n+2)::before {
+        background: rgba(255, 255, 255, .6);
+}
+
+.header-wrapper--dark .right .normal-menu, .header-wrapper--dark .right .category {
+        color: rgba(255, 255, 255, .8);
+}
+
+.header-wrapper--light {
+    background: rgba(255, 255, 255, 0);
+}
+
 .header-wrapper--shrink {
     height: 60px;
     background: rgba(255, 255, 255, 1);

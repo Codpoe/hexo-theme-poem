@@ -1,8 +1,7 @@
 <header class="header-wrapper 
-    <%- is_home() && page.current === 1 
-        ? 'header-wrapper--first-screen' : '' %>
-    <%- is_home() && page.current === 1 && !theme.first_screen.img && !theme.first_screen.gradient ? 
-        'header-wrapper--grid' : '' %>">
+    <%- is_home() ? 
+        (theme.first_screen.dark ? 'header-wrapper--dark' : 'header-wrapper--light') : 
+        '' %>">
 
     <div class="header">
         <div class="left">

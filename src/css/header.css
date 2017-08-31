@@ -381,6 +381,33 @@
     }
 }
 
+.header-wrapper--dark {
+    background: rgba(255,255,255,0);
+    .left {
+        .menu-bar__middle,
+        .menu-bar__middle::before,
+        .menu-bar__middle::after {
+            background: rgba(255,255,255,0.8);
+        }
+        .header__info {
+            color: rgba(255,255,255,0.8);
+        }
+    }
+    .right {
+        >li:nth-child(n+2)::before {
+            background: rgba(255,255,255,0.6);
+        }
+        .normal-menu,
+        .category {
+            color: rgba(255,255,255,0.8);
+        }
+    }
+}
+
+.header-wrapper--light {
+    background: rgba(255,255,255,0);
+}
+
 .header-wrapper--shrink {
     height: 60px;
     background: rgba(255,255,255,1);

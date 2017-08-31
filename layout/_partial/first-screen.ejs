@@ -1,4 +1,4 @@
-<div class="first-screen <%- (!theme.first_screen.img && !theme.first_screen.gradient) ? 'first-screen--grid' : '' %>"
+<div class="first-screen <%- theme.first_screen.dark ? 'first-screen--dark' : '' %>"
     style="<%- theme.first_screen.img ? 'background-image: url(' + theme.first_screen.img + ')' : 
         (theme.first_screen.gradient ? 
             'background: linear-gradient(to right,' + theme.first_screen.gradient.left + ',' + theme.first_screen.gradient.right + ')' : '') %>"
