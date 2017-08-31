@@ -21,7 +21,7 @@ first_screen:
   gradient:
     left: '#3a6186'
     right: '#89253e'
-  dark: true ## If your image or color is dark, set it to true, else false.
+  dark: true ## If the style of your image or color is dark, set it to true, else false.
   links:
     Gmail: codpoe.me@gmail.com
     Weibo: http://weibo.com
