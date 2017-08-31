@@ -17,7 +17,7 @@ window.addEventListener('scroll', function(ev) {
     if (!isHeaderShrink && scrollTop > limit) {
         isHeaderShrink = true;
         header.classList.add('header-wrapper--shrink');
-    } else if (isHeaderShrink && scrollTop <=50) {
+    } else if (isHeaderShrink && scrollTop <= limit) {
         isHeaderShrink = false;
         header.classList.remove('header-wrapper--shrink');
     }
