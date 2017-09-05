@@ -5,13 +5,15 @@
     <link rel="stylesheet" href="/css/index.bundle.css">
 </head>
 <body>
-    <% if (page.current === 1) { %>
+    <% if (page.current === 0) { %>
         <%- partial('_partial/first-screen') %>
     <% } %>
 
     <%- partial('_partial/header') %>
 
     <div class="wrapper">
+        <%- partial('_partial/header-info') %>
+
         <div class="container">
             <% page.posts.forEach(function(post) { %>
                 <%- partial('_partial/post', {post: post}) %>

@@ -8,12 +8,11 @@
             <div class="menu-bar">
                 <div class="menu-bar__middle"></div>
             </div>
-            <a href="/" class="header__info">
-                <img src="<%= theme.logo %>" alt="logo">
-                <span><%= theme.name %></span>
-                <!--<span><%= theme.description %></span>-->
+            <a href="/">
+                <h1 class="header__name">
+                    <%= theme.name %>
+                </h1>
             </a>
-
         </div>
         <ul class="right">
             <% for (var i in theme.header.menu) { %>
@@ -53,7 +52,7 @@
         </ul>
     </div>
 
-    <div class="drawer">
+    <div class="header__drawer">
         <div
             class="drawer__header"
             style="background-image: <%- theme.drawer.img ? 

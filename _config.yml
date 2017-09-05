@@ -4,7 +4,7 @@
 
 # primary config
 name: Poem ## Your name shown on the header and the drawer
-description: I am ... ## Introduce yourself
+description: Always believe that good things are coming soon ## Introduce yourself
 site_name: Poem's blog ## Your site name shown on the first screen
 site_description: Life is a Poem ## Introduce your site
 logo: https://i.loli.net/2017/08/31/59a79b0b3ffd8.gif ## The logo on the header and the drawer
@@ -21,7 +21,7 @@ first_screen:
   gradient:
     left: '#3a6186'
     right: '#89253e'
-  dark: true ## If the style of your image or color is dark, set it to true, else false.
+  dark: false ## If the style of your image or color is dark, set it to true, else false.
   links:
     Gmail: codpoe.me@gmail.com
     Weibo: http://weibo.com
@@ -34,6 +34,16 @@ header:
     category: /categories
     archive: /archives
     about: /about
+  links:
+    wechat:
+      name: Wechat
+      url: https://web.wechat.com/
+    weibo:
+      name: Weibo
+      url: https://weibo.com
+    github:
+      name: GitHub
+      url: https://github.com
 
 # navigation drawer
 ## The configuration of the drawer is like that of the first screen.

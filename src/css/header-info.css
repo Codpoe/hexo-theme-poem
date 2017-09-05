@@ -1,0 +1,50 @@
+@import './common.css';
+
+.header-info {
+    width: 800px;
+    margin: 110px auto 0 auto;
+    padding: 0 20px;
+    transition: all 0.2s ease;
+    .header__desc {
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 2px;
+        color: var(--normal-text-color);
+    }
+    .header__links {
+        margin-top: 40px;
+    }
+    .header__link {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        float: left;
+        min-width: 28px;
+        height: 28px;
+        margin-right: 12px;
+        border-radius: 50%;
+        background: #e6e6e6;
+        font-size: 14px;
+        color: var(--normal-text-color);
+        &:hover {
+            text-decoration: none;
+            .header__link-title {
+                visibility: visible;
+                opacity: 1;
+                min-width: 0;
+            }
+        }
+    }
+    .header__link-title {
+        display: none;
+        opacity: 0;
+        transition: all 0.2s ease;
+    }
+    img {
+        margin-right: 16px;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+    }
+}

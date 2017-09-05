@@ -5,7 +5,6 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 80px;
     position: fixed;
     background: rgba(255,255,255,1);
     transition: all 0.3s ease;
@@ -14,45 +13,45 @@
 
 .header {
     position: relative;
-    max-width: 990px;
-    height: 100%;
+    max-width: 800px;
+    height: 100px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     z-index: 0;
+    transition: all 0.3s ease;
 }
 
 .header-wrapper .left {
-    align-self: stretch;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    perspective: 400px;
 }
 
-.header__info {
-    align-self: stretch;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-right: 24px;
+.header-wrapper a:hover {
+    text-decoration: none;
+}
+
+.header__name {
+    position: relative;
     font-size: 22px;
     font-weight: 700;
-    color: var(--normal-text-color);
-    text-decoration: none;
-    transition: all 0.2s ease;
+    letter-spacing: 2px;
+    color: var(--text-color);
     &:hover {
         text-decoration: none;
     }
-    img {
-        margin-right: 16px;
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
+    &::before {
+        content: '#';
+        position: absolute;
+        top: 2px;
+        left: -18px;
+        font-size: 1.2rem;
+        color: var(--primary-color);
     }
 }
 
@@ -220,7 +219,7 @@
     }
 }
 
-.header-wrapper .drawer {
+.header-wrapper .header__drawer {
     width: 256px;
     height: 100vh;
     position: absolute;
@@ -362,13 +361,15 @@
 }
 
 .header-wrapper--light {
-    background: rgba(255,255,255,0);
+    background: rgba(255,255,255,1);
 }
 
 .header-wrapper--shrink {
-    height: 60px;
     background: rgba(255,255,255,1);
     box-shadow: 0 1px #e6e6e6;
+    .header {
+        height: 60px;
+    }
     .left {
         .menu-bar__middle,
         .menu-bar__middle::before,
