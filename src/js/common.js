@@ -3,7 +3,7 @@ var firstScreen = document.querySelector('.first-screen');
 var windowMask = document.querySelector('.window-mask');
 var header = document.querySelector('.header-wrapper');
 var menuBar = document.querySelector('.menu-bar');
-var drawer = document.querySelector('.drawer');
+var drawer = document.querySelector('.header__drawer');
 
 window.addEventListener('scroll', function(ev) {
     var scrollTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
@@ -25,15 +25,15 @@ window.addEventListener('scroll', function(ev) {
 
 menuBar.addEventListener('click', function (ev) {
     menuBar.classList.toggle('menu-bar--close');
-    drawer.classList.toggle('drawer--show');
+    drawer.classList.toggle('header__drawer--show');
     windowMask.classList.toggle('window-mask--show');
 });
 
 windowMask.addEventListener('click', function (ev) {
     menuBar.classList.toggle('menu-bar--close');
-    drawer.classList.toggle('drawer--show');
+    drawer.classList.toggle('header__drawer--show');
     windowMask.classList.toggle('window-mask--show');
-})
+});
 
 function throttle(fn, wait) {
     let that = this;
