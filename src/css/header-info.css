@@ -1,7 +1,7 @@
 @import './common.css';
 
 .header-info {
-    width: 800px;
+    max-width: 800px;
     margin: 110px auto 0 auto;
     padding: 0 20px;
     transition: all 0.2s ease;
@@ -20,31 +20,53 @@
         justify-content: center;
         align-items: center;
         float: left;
+        position: relative;
         min-width: 28px;
         height: 28px;
         margin-right: 12px;
         border-radius: 50%;
-        background: #e6e6e6;
+        background: #eaeaea;
         font-size: 14px;
-        color: var(--normal-text-color);
+        color: var(--third-text-color);
+        transition: all 0.2s ease;
         &:hover {
             text-decoration: none;
-            .header__link-title {
+            background: var(--primary-color);
+            color: white;
+            .header__link-extend {
                 visibility: visible;
                 opacity: 1;
-                min-width: 0;
+                transform: translate(-50%, 0);
             }
         }
     }
-    .header__link-title {
-        display: none;
+    .header__link-extend {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        padding: 4px;
+        border-radius: 2px;
+        box-shadow: 0 1px 2px 0 rgba(0,0,0,.1), 0 -1px 2px 0 rgba(0,0,0,.1);
+        background: white;
+        visibility: hidden;
         opacity: 0;
+        transform: translate(-50%, -10px);
         transition: all 0.2s ease;
-    }
-    img {
-        margin-right: 16px;
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
+        z-index: 99;
+        &::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-bottom: 4px solid white;
+            border-left:  2px solid transparent;
+            border-right:  2px solid transparent;
+        }
+        img {
+            width: 100px;
+            height: 100px;
+        }
     }
 }

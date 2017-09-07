@@ -1314,16 +1314,8 @@ a:hover {
     padding: 0 20px;
 }
 
-.post:first-child {
-    margin-top: 40px;
-}
-
-.post:nth-child(n+2) {
-    margin-top: 40px;
-}
-
-.title-wrapper {
-    padding-top: 30px;
+.post {
+    margin-top: 70px;
 }
 
 .title-wrapper h1 {
@@ -1609,6 +1601,10 @@ a:hover {
     -webkit-transform: translateY(0);
             transform: translateY(0);
     opacity: 1;
+}
+
+.post:first-child {
+    margin-top: 140px;
 }
 
 .markdown-body {

@@ -38,6 +38,7 @@ header:
     wechat:
       name: Wechat
       url: https://web.wechat.com/
+      img: https://ws3.sinaimg.cn/large/006tKfTcgy1fj8st9kjdwj308w08wq3v.jpg
     weibo:
       name: Weibo
       url: https://weibo.com

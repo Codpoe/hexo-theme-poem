@@ -1224,7 +1224,7 @@
 }
 
 .header-info {
-    width: 800px;
+    max-width: 800px;
     margin: 110px auto 0 auto;
     padding: 0 20px;
     transition: all 0.2s ease;
@@ -1253,32 +1253,56 @@
     -ms-flex-align: center;
     align-items: center;
     float: left;
+    position: relative;
     min-width: 28px;
     height: 28px;
     margin-right: 12px;
     border-radius: 50%;
-    background: #e6e6e6;
+    background: #eaeaea;
     font-size: 14px;
-    color: #616161
+    color: #9ca3ad;
+    transition: all 0.2s ease
 }
 .header-info .header__link:hover {
     text-decoration: none;
+    background: #f45a6f;
+    color: white;
 }
-.header-info .header__link:hover .header__link-title {
+.header-info .header__link:hover .header__link-extend {
     visibility: visible;
     opacity: 1;
-    min-width: 0;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
 }
-.header-info .header__link-title {
-    display: none;
+.header-info .header__link-extend {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    padding: 4px;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1), 0 -1px 2px 0 rgba(0, 0, 0, .1);
+    background: white;
+    visibility: hidden;
     opacity: 0;
+    -webkit-transform: translate(-50%, -10px);
+    transform: translate(-50%, -10px);
     transition: all 0.2s ease;
+    z-index: 99;
 }
-.header-info img {
-    margin-right: 16px;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
+.header-info .header__link-extend img {
+    width: 100px;
+    height: 100px;
+}
+.header-info .header__link-extend::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 4px solid white;
+    border-left:  2px solid transparent;
+    border-right:  2px solid transparent;
 }.footer {
     height: 80px;
     display: -webkit-box;
@@ -1370,16 +1394,8 @@ a:hover {
     padding: 0 20px;
 }
 
-.post:first-child {
-    margin-top: 40px;
-}
-
-.post:nth-child(n+2) {
-    margin-top: 40px;
-}
-
-.title-wrapper {
-    padding-top: 30px;
+.post {
+    margin-top: 70px;
 }
 
 .title-wrapper h1 {

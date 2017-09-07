@@ -602,16 +602,8 @@ a:hover {
     padding: 0 20px;
 }
 
-.post:first-child {
-    margin-top: 40px;
-}
-
-.post:nth-child(n+2) {
-    margin-top: 40px;
-}
-
-.title-wrapper {
-    padding-top: 30px;
+.post {
+    margin-top: 70px;
 }
 
 .title-wrapper h1 {
@@ -842,7 +834,7 @@ a:hover {
 }
 
 .year-wrapper:first-child {
-    margin: 130px 30px 20px 30px;
+    margin: 140px 30px 20px 30px;
 }
 
 .year {
@@ -890,7 +882,7 @@ a:hover {
     left: 0;
     margin-top: -7px;
     font-size: 14px;
-    color: #7f8c8d;
+    color: #9ca3ad;
     text-transform: uppercase;
     letter-spacing: 1px;
     cursor: default;

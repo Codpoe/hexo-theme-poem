@@ -1,19 +1,22 @@
-<div class="header-info">
-    <h2 class="header__desc">
-        <%= theme.description %>
-    </h2>
-    <ul class="header__links">
+<div>
+    <div class="header-info">
+        <h2 class="header__desc">
+            <%= theme.description %>
+        </h2>
+        <ul class="header__links">
         <% for (var key in theme.header.links) { %>
-            <%console.log(key); console.log(typeof key);%>
-                <a href="<%- key.indexOf('mail') !== -1 ? 'mailto:' : '' %><%- theme.header.links[key].url %>" class="header__link">
+            <a 
+                href="<%- key.indexOf('mail') !== -1 ? 'mailto:' : '' %><%- theme.header.links[key].url %>" 
+                class="header__link">
 
                 <i class="fa fa-<%= key %>"></i>
-                <span class="header__link-title">
-                    <%= theme.header.links[key].name %>
-                </span>
+                <div class="header__link-extend">
+                    <img src="<%- theme.header.links[key].img %>" alt="<%= theme.header.links[key].name %>">
+                </div>
             </a>
-                <% } %>
-    </ul>
-    <!--<img src="<%= theme.logo %>" alt="logo">-->
-    <!--<span><%= theme.description %></span>-->
+        <% } %>
+        </ul>
+        <!--<img src="<%= theme.logo %>" alt="logo">-->
+    </div>
 </div>
+

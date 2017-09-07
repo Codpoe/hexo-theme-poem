@@ -6,6 +6,10 @@
     opacity: 1;
 }
 
+.post:first-child {
+    margin-top: 140px;
+}
+
 .markdown-body {
     color: var(--second-text-color);
 }
