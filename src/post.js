@@ -8,4 +8,5 @@ import './css/prev-next.css';
 import './css/post.css';
 
 import './js/common.js';
+import './js/post.js';
 

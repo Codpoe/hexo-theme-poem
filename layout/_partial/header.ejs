@@ -4,52 +4,64 @@
         '' %>">
 
     <div class="header">
-        <div class="left">
-            <a href="/">
+        <div class="header__normal">
+            <div class="left">
+                <a href="/">
+                    <h1 class="header__name">
+                        <%= theme.name %>
+                    </h1>
+                </a>
+            </div>
+            <ul class="right">
+                <% for (var i in theme.header.menu) { %>
+                <%
+                    var isActive;
+                    switch (theme.header.menu[i]) {
+                        case '/':
+                            isActive = is_home();
+                            break;
+                        case '/categories':
+                            isActive = is_category();
+                            break;
+                        case '/archives':
+                            isActive = is_archive();
+                            break;
+                        default:
+                            isActive = theme.header.menu[i] + '/index.html' === '/' + path;
+                            break;
+                    }
+                %>
+                    <li>
+                        <% if (i.indexOf('category') === -1) { %>
+                            <a
+                                href="<%- theme.header.menu[i] %>" 
+                                class="normal-menu <%- isActive ? 'menu--active' : '' %>"
+                                target="<%- i.indexOf('resume') === -1 ? '_self' : '_blank' %>">
+                                <%= __(i) %>
+                            </a>
+                        <% } else { %>
+                            <span class="category">
+                                <%= __(i) %>&nbsp;<i class="fa fa-angle-down"></i>
+                                <%- list_categories({class: 'category'}) %>
+                            </span>
+                        <% } %>
+                    </li>
+                <% } %>
+            </ul>
+            <div class="menu-bar">
+                <div class="menu-bar__middle"></div>
+            </div>
+        </div>
+        <% if (is_post()) { %>
+        <div class="header__post">
+            <div class="left">
                 <h1 class="header__name">
-                    <%= theme.name %>
+                    <%= post.title %>
                 </h1>
-            </a>
+            </div>
+            <div class="right"></div>
         </div>
-        <ul class="right">
-            <% for (var i in theme.header.menu) { %>
-            <%
-                var isActive;
-                switch (theme.header.menu[i]) {
-                    case '/':
-                        isActive = is_home();
-                        break;
-                    case '/categories':
-                        isActive = is_category();
-                        break;
-                    case '/archives':
-                        isActive = is_archive();
-                        break;
-                    default:
-                        isActive = theme.header.menu[i] + '/index.html' === '/' + path;
-                        break;
-                }
-            %>
-                <li>
-                    <% if (i.indexOf('category') === -1) { %>
-                        <a
-                            href="<%- theme.header.menu[i] %>" 
-                            class="normal-menu <%- isActive ? 'menu--active' : '' %>"
-                            target="<%- i.indexOf('resume') === -1 ? '_self' : '_blank' %>">
-                            <%= __(i) %>
-                        </a>
-                    <% } else { %>
-                        <span class="category">
-                            <%= __(i) %>&nbsp;<i class="fa fa-angle-down"></i>
-                            <%- list_categories({class: 'category'}) %>
-                        </span>
-                    <% } %>
-                </li>
-            <% } %>
-        </ul>
-        <div class="menu-bar">
-            <div class="menu-bar__middle"></div>
-        </div>
+        <% } %>
     </div>
 
     <div class="header__drawer">
