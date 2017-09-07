@@ -5,6 +5,7 @@
 # primary config
 name: Poem ## Your name shown on the header and the drawer
 description: Always believe that good things are coming soon ## Introduce yourself
+keywords: Blog, Tech
 site_name: Poem's blog ## Your site name shown on the first screen
 site_description: Life is a Poem ## Introduce your site
 logo: https://i.loli.net/2017/08/31/59a79b0b3ffd8.gif ## The logo on the header and the drawer
