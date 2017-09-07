@@ -23,10 +23,10 @@
                 });
             %>
             <% _.forEach(postGroups, function(posts, year) { %>
-                <h1 class="year-wrapper">
-                    <span class="year"><%= -year %></span>
-                </h1>
-                <h2 class="amount">- <%= posts.length %> -</h2>
+                <header class="year-wrapper">
+                    <h1 class="year"><%= -year %></h1>
+                    <h2 class="amount">- <%= posts.length %> -</h2>
+                </header>
                 <ul class="archive-posts">
                     <% _.forEach(posts, function(post) { %>
                         <li class="archive-post-wrapper">

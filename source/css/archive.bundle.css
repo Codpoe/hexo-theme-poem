@@ -59,7 +59,7 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    z-index: 4;
+    z-index: 3;
     transition: all 0.3s ease;
 }
 
@@ -244,13 +244,11 @@
         color: #9ca3ad;
 }
 
-.header-wrapper .left .menu-bar {
+.header-wrapper .menu-bar {
     display: none;
     position: relative;
-    margin-right: 18px;
     padding: 6px;
     cursor: pointer;
-    z-index: 3;
 }
 
 .menu-bar .menu-bar__middle {
@@ -280,8 +278,11 @@
     padding: 100px 0 20px 0;
     position: absolute;
     top: 0;
-    -webkit-transform: translateY(-100%);
-            transform: translateY(-100%);
+    left: 0;
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+    -webkit-transform-origin: top;
+            transform-origin: top;
     background: white;
     transition: all 0.3s ease;
     z-index: 2;
@@ -506,19 +507,16 @@
 }
 
 .header-wrapper .header__drawer--show {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
 }
 
 @media screen and (max-width: 767px) {
-    .header-wrapper .left .menu-bar {
-                display: block;
-        }
-    .header-wrapper .header__info img {
-                display: none;
-        }
     .header-wrapper .right {
                 display: none;
+        }
+    .header-wrapper .menu-bar {
+                display: block;
         }
 }
 
@@ -831,6 +829,19 @@ a:hover {
 }
 
 .year-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin: 40px 0 20px 0;
     font-size: 0;
 }
@@ -840,7 +851,6 @@ a:hover {
 }
 
 .year {
-    display: inline-block;
     position: relative;
     font-size: 22.4px;
     font-size: 1.4rem;
@@ -861,7 +871,8 @@ a:hover {
 }
 
 .amount {
-    font-size: 14px;
+    margin-left: 30px;
+    font-size: 16px;
     font-weight: normal;
     color: #525e6b;
     cursor: default;
@@ -911,10 +922,12 @@ a:hover {
 
 @media screen and (max-width: 767px) {
     .year-wrapper {
-        margin-top: 0;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
     }
-    .year-wrapper:first-child {
-        margin-top: 120px;
+    .amount {
+        margin-left: 0;
     }
     .archive-post-wrapper {
         padding: 20px 0;
