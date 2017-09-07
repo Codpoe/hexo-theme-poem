@@ -12,7 +12,7 @@
                     </h1>
                 </a>
             </div>
-            <ul class="right">
+            <ul class="right menu-list">
                 <% for (var i in theme.header.menu) { %>
                 <%
                     var isActive;
@@ -53,13 +53,25 @@
             </div>
         </div>
         <% if (is_post()) { %>
-        <div class="header__post">
-            <div class="left">
-                <h1 class="header__name">
-                    <%= post.title %>
-                </h1>
+        <div class="header__post-hidden">
+            <div class="header__post-visible">
+                <div class="header__post-holder"></div>
+                <div class="header__post">
+                    <div class="left">
+                        <h1 class="header__name">
+                            <%= post.title %>
+                        </h1>
+                    </div>
+                    <div class="right">
+                        分享到：
+                        <ul class="share-links">
+                            <li>
+                                <a class="share-link" href="" target="_blank">微博</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="right"></div>
         </div>
         <% } %>
     </div>

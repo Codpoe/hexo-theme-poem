@@ -748,7 +748,6 @@
     width: 100%;
     position: fixed;
     background: rgba(255, 255, 255, 1);
-    overflow: hidden;
     transition: all 0.3s ease;
     z-index: 999;
 }
@@ -759,12 +758,12 @@
     height: 100px;
     margin: 0 auto;
     padding: 0 20px;
-    overflow: visible;
     z-index: 3;
     transition: all 0.3s ease;
 }
 
-.header__normal, .header__post {
+.header__normal {
+    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -780,11 +779,34 @@
             align-items: center;
     width: 100%;
     height: 100%;
+    z-index: 1;
+    transition: all 0.3s ease;
 }
 
-.header--switch {
-    -webkit-transform: translateY(-100%);
-            transform: translateY(-100%);
+.header__post-hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.header__post-hidden .header__post-visible {
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+        transition: all 0.3s ease;
+}
+
+.header__post-hidden .header__post-holder {
+        height: 100%;
+}
+
+.header--switch .header__normal, .header--switch .header__post-visible {
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
 }
 
 .header-wrapper .left {
@@ -819,30 +841,72 @@
         text-decoration: none;
 }
 
-.header__post .header__name {
+.header__post {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
 }
+
+.header__post .left {}
+
+.header__post .header__name {}
 
 .header__post .header__name::before {
         content: '';
         position: absolute;
-        top: 3px;
+        top: 2px;
         left: -14px;
         width: 3px;
         height: 16px;
         background: #f45a6f;
 }
 
-.header-wrapper .right {
+.header__post .right {
+        font-size: 14px;
+        font-size: 0.875rem;
+        color: #616161;
+}
+
+.header__post .right .share-links {
+        display: inline-block;
+        list-style-type: none;
+}
+
+.header__post .right .share-link {
+        display: inline-block;
+        padding: 0 12px;
+        line-height: 28px;
+        border: 1px solid #eaeaea;
+        border-radius: 15px;
+        font-size: 14px;
+        font-size: 0.875rem;
+        color: #616161;
+}
+
+.header-wrapper .menu-list {
     list-style-type: none;
     display: inline-block;
 }
 
-.header-wrapper .right >li {
+.header-wrapper .menu-list >li {
         position: relative;
         float: left;
 }
 
-.header-wrapper .right .normal-menu, .header-wrapper .right .category {
+.header-wrapper .menu-list .normal-menu, .header-wrapper .menu-list .category {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -861,12 +925,12 @@
         transition: all 0.3s ease;
 }
 
-.header-wrapper .right .category {
+.header-wrapper .menu-list .category {
         position: relative;
         cursor: default;
 }
 
-.header-wrapper .right >li:nth-child(n+2) .normal-menu::before, .header-wrapper .right .category::before {
+.header-wrapper .menu-list >li:nth-child(n+2) .normal-menu::before, .header-wrapper .menu-list .category::before {
         content: '';
         position: absolute;
         top: 19px;
@@ -877,11 +941,11 @@
         transition: all 0.3s ease;
 }
 
-.header-wrapper .right .normal-menu:hover {
+.header-wrapper .menu-list .normal-menu:hover {
         text-decoration: none
 }
 
-.header-wrapper .right .normal-menu:hover::after {
+.header-wrapper .menu-list .normal-menu:hover::after {
         content: '';
         position: absolute;
         bottom: 0;
@@ -894,24 +958,24 @@
         transition: all 0.3s ease;
 }
 
-.header-wrapper .right .category:hover .category-list {
+.header-wrapper .menu-list .category:hover .category-list {
         visibility: visible;
         -webkit-transform: translateY(0);
         transform: translateY(0);
         opacity: 1;
 }
 
-.header-wrapper .right .menu--active {
+.header-wrapper .menu-list .menu--active {
         font-weight: 700;
         color: #616161;
         transition: all 0.3s ease;
 }
 
-.header-wrapper .right .menu--active .fa {
+.header-wrapper .menu-list .menu--active .fa {
         font-weight: 700;
 }
 
-.header-wrapper .right .menu--active::after {
+.header-wrapper .menu-list .menu--active::after {
         content: '';
         position: absolute;
         bottom: 0;
@@ -1184,11 +1248,11 @@
         color: rgba(255, 255, 255, .8);
 }
 
-.header-wrapper--dark .right .normal-menu, .header-wrapper--dark .right .category {
+.header-wrapper--dark .menu-list .normal-menu, .header-wrapper--dark .menu-list .category {
         color: rgba(255, 255, 255, .8);
 }
 
-.header-wrapper--dark .right >li:nth-child(n+2) .normal-menu::before, .header-wrapper--dark .right .category::before {
+.header-wrapper--dark .menu-list >li:nth-child(n+2) .normal-menu::before, .header-wrapper--dark .menu-list .category::before {
         background: rgba(255, 255, 255, .6);
 }
 
@@ -1213,21 +1277,20 @@
         color: #616161;
 }
 
-.header-wrapper--shrink .right .normal-menu, .header-wrapper--shrink .right .category {
+.header-wrapper--shrink .menu-list .normal-menu, .header-wrapper--shrink .menu-list .category {
         height: 60px;
         color: #616161;
 }
 
-.header-wrapper--shrink .right >li:nth-child(n+2) .normal-menu::before, .header-wrapper--shrink .right .category::before {
+.header-wrapper--shrink .menu-list >li:nth-child(n+2) .normal-menu::before, .header-wrapper--shrink .menu-list .category::before {
         -webkit-transform: translateY(10px);
         transform: translateY(10px);
         background: #9ca3ad;
 }
 
-.header-wrapper--shrink .right .normal-menu:hover, .header-wrapper--shrink .right .menu--active {
-}
+.header-wrapper--shrink .menu-list .normal-menu:hover, .header-wrapper--shrink .menu-list .menu--active {}
 
-.header-wrapper--shrink .right .normal-menu:hover::after, .header-wrapper--shrink .right .menu--active::after {
+.header-wrapper--shrink .menu-list .normal-menu:hover::after, .header-wrapper--shrink .menu-list .menu--active::after {
         width: 100%;
 }
 
@@ -1361,7 +1424,7 @@ a:hover {
 .title-wrapper h1::before {
     content: '';
     position: absolute;
-    top: 3px;
+    top: 2px;
     left: -14px;
     width: 3px;
     height: 16px;
