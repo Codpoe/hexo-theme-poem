@@ -1241,6 +1241,7 @@
     transition: all 0.2s ease;
 }
 .header-info .header__desc {
+    line-height: 1.75;
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 2px;

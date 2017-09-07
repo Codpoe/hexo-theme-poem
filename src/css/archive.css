@@ -14,31 +14,30 @@
 }
 
 .year-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 30px 30px 20px 30px;
-    text-align: center;
+    margin: 40px 0 20px 0;
+    font-size: 0;
 }
 
 .year-wrapper:first-child {
-    margin: 140px 30px 20px 30px;
+    margin: 120px 0 20px 0;
 }
 
 .year {
+    display: inline-block;
     position: relative;
-    font-size: 26px;
+    font-size: 1.4rem;
     font-weight: 700;
     color: var(--text-color);
     letter-spacing: 8px;
     cursor: default;
     &::before {
-        content: '#';
+        content: '';
         position: absolute;
-        top: 1px;
-        left: -1em;
-        font-size: 24px;
-        color: var(--primary-color);
+        top: 3px;
+        left: -14px;
+        width: 3px;
+        height: 16px;
+        background: var(--primary-color);
     }
 }
 
@@ -46,14 +45,12 @@
     font-size: 14px;
     font-weight: normal;
     color: var(--second-text-color);
-    text-align: center;
     cursor: default;
 }
 
 .archive-posts {
     max-width: 660px;
     margin: 0 auto 60px auto;
-    padding: 0 30px;
     list-style: none;
 }
 
@@ -94,13 +91,10 @@
         margin-top: 0;
     }
     .year-wrapper:first-child {
-        margin-top: 100px;
-    }
-    .archive-posts {
-        padding: 0 15px;
+        margin-top: 120px;
     }
     .archive-post-wrapper {
-        padding: 16px 0;
+        padding: 20px 0;
         .post-date {
             position: static;
             margin-top: 0;
