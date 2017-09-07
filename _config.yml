@@ -35,10 +35,9 @@ header:
     category: /categories
     archive: /archives
     about: /about
-  links:
+  links: ## the links on the header and the drawer, you can customize it.
     wechat:
       name: Wechat
-      url: https://web.wechat.com/
       img: https://ws3.sinaimg.cn/large/006tKfTcgy1fj8st9kjdwj308w08wq3v.jpg
     weibo:
       name: Weibo
