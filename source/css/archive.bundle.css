@@ -47,7 +47,7 @@
     margin: 0 auto;
     padding: 0 20px;
     z-index: 3;
-    transition: all 0.3s ease;
+    transition: height 0.3s ease;
 }
 
 .header__normal {
@@ -68,7 +68,9 @@
     width: 100%;
     height: 100%;
     z-index: 1;
-    transition: all 0.3s ease;
+    transition: -webkit-transform 0.3s ease;
+    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
 .header__post-hidden {
@@ -85,7 +87,9 @@
         width: 100%;
         height: 100%;
         overflow: visible;
-        transition: all 0.3s ease;
+        transition: -webkit-transform 0.3s ease;
+        transition: transform 0.3s ease;
+        transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
 .header__post-hidden .header__post-holder {
@@ -155,7 +159,7 @@
 .header__post .header__name::before {
         content: '';
         position: absolute;
-        top: 2px;
+        top: 3px;
         left: -14px;
         width: 3px;
         height: 16px;
@@ -363,6 +367,7 @@
 }
 
 .header-wrapper .header__drawer {
+    display: none;
     width: 100vw;
     padding: 100px 0 20px 0;
     position: absolute;
@@ -607,6 +612,9 @@
     .header-wrapper .menu-bar {
                 display: block;
         }
+    .header-wrapper .header__drawer {
+                display: block;
+        }
 }
 
 .footer {
@@ -626,13 +634,13 @@
             align-items: center;
     box-shadow: 0 -1px 1px #e6e6e6;
     font-size: 14px;
-    color: #7f8c8d;
+    color: #9ca3ad;
 }
 .footer .copyright {
     margin-bottom: 14px;
 }
 .footer a {
-    color: #7f8c8d;
+    color: #9ca3ad;
 }
 .footer a:hover {
     color: #f45a6f;
@@ -712,7 +720,7 @@ a:hover {
 .title-wrapper h1::before {
     content: '';
     position: absolute;
-    top: 2px;
+    top: 3px;
     left: -14px;
     width: 3px;
     height: 16px;

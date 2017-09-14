@@ -58,7 +58,7 @@ a {
         &::before {
             content: '';
             position: absolute;
-            top: 2px;
+            top: 3px;
             left: -14px;
             width: 3px;
             height: 16px;
