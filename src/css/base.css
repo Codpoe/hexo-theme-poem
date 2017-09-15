@@ -1,6 +1,8 @@
 @import './common.css';
 
-* {
+*,
+*::before, 
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -55,7 +57,7 @@ a {
     .title {
         display: inline-block;
         position: relative;
-        margin-bottom: 42px;
+        margin-bottom: 30px;
         font-size: 1.4rem;
         font-weight: 700;
         text-decoration: none;
@@ -64,15 +66,18 @@ a {
         transition: color 0.2s ease;
         &:hover {
             color: var(--primary-color);
+            &::before {
+                animation: sign-rotate 0.4s linear infinite;
+            }
         }
-        &::after {
+        &::before {
             content: '';
             position: absolute;
-            bottom: -12px;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            margin-top: 10px;
+            top: 50%;
+            left: -20px;
+            width: 2px;
+            height: 14px;
+            margin-top: -7px;
             background: var(--primary-color);
         }
     }
@@ -213,4 +218,18 @@ a {
 /*
  ---------------triangle canvas end---------------
 */
+
+@keyframes sign-rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .title-wrapper {
+        .title::before {
+            width: 4px;
+        }
+    }
+}
 
