@@ -2,7 +2,6 @@
 
 .prev-next {
     margin: 45px 0;
-    padding: 0 45px;
     &::after {
         content: '';
         display: block;
@@ -21,7 +20,7 @@
         font-size: 14px;
         font-weight: 700;
         color: var(--third-text-color);
-        transition: all 0.2s ease;
+        transition: all 0.3s ease;
         &:hover {
             border-color: var(--primary-color);
             color: var(--primary-color);
@@ -38,7 +37,7 @@
             position: absolute;
             top: 8px;
             left: 8px;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
         }
         &:hover {
             &::before {
@@ -56,7 +55,7 @@
             position: absolute;
             top: 8px;
             right: 8px;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
         }
         &:hover {
             &::after {
@@ -64,12 +63,5 @@
             }
         }
     }
-}
-
-@media (max-width: 767px) {
-    .prev-next {
-        padding: 0 15px;
-    }
-    
 }
 

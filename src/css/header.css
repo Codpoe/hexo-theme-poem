@@ -112,20 +112,24 @@
         }
     }
     .right {
-        font-size: 0.875rem;
-        color: var(--normal-text-color);
         .share-links {
             display: inline-block;
             list-style-type: none;
         }
         .share-link {
             display: inline-block;
-            padding: 0 12px;
+            padding: 0 14px;
             line-height: 28px;
-            border: 1px solid #eaeaea;
+            border: 1px solid #e6e6e6;
             border-radius: 15px;
             font-size: 0.875rem;
-            color: var(--normal-text-color);
+            font-weight: 700;
+            color: var(--third-text-color);
+            transition: all 0.3s ease;
+            &:hover {
+                border-color: #E6162D;
+                color: #E6162D;
+            }
         }
     }
 }

@@ -166,12 +166,6 @@
         background: #f45a6f;
 }
 
-.header__post .right {
-        font-size: 14px;
-        font-size: 0.875rem;
-        color: #616161;
-}
-
 .header__post .right .share-links {
         display: inline-block;
         list-style-type: none;
@@ -179,13 +173,20 @@
 
 .header__post .right .share-link {
         display: inline-block;
-        padding: 0 12px;
+        padding: 0 14px;
         line-height: 28px;
-        border: 1px solid #eaeaea;
+        border: 1px solid #e6e6e6;
         border-radius: 15px;
         font-size: 14px;
         font-size: 0.875rem;
-        color: #616161;
+        font-weight: 700;
+        color: #9ca3ad;
+        transition: all 0.3s ease
+}
+
+.header__post .right .share-link:hover {
+        border-color: #E6162D;
+        color: #E6162D;
 }
 
 .header-wrapper .menu-list {

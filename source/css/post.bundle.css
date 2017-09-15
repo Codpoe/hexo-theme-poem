@@ -878,12 +878,6 @@
         background: #f45a6f;
 }
 
-.header__post .right {
-        font-size: 14px;
-        font-size: 0.875rem;
-        color: #616161;
-}
-
 .header__post .right .share-links {
         display: inline-block;
         list-style-type: none;
@@ -891,13 +885,20 @@
 
 .header__post .right .share-link {
         display: inline-block;
-        padding: 0 12px;
+        padding: 0 14px;
         line-height: 28px;
-        border: 1px solid #eaeaea;
+        border: 1px solid #e6e6e6;
         border-radius: 15px;
         font-size: 14px;
         font-size: 0.875rem;
-        color: #616161;
+        font-weight: 700;
+        color: #9ca3ad;
+        transition: all 0.3s ease
+}
+
+.header__post .right .share-link:hover {
+        border-color: #E6162D;
+        color: #E6162D;
 }
 
 .header-wrapper .menu-list {
@@ -1623,7 +1624,6 @@ a:hover {
 
 .prev-next {
     margin: 45px 0;
-    padding: 0 45px;
 }
 
 .prev-next .next:hover {}
@@ -1647,7 +1647,7 @@ a:hover {
     font-size: 14px;
     font-weight: 700;
     color: #9ca3ad;
-    transition: all 0.2s ease
+    transition: all 0.3s ease
 }
 
 .prev-next .prev:hover, .prev-next .next:hover {
@@ -1668,7 +1668,7 @@ a:hover {
     position: absolute;
     top: 8px;
     left: 8px;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .prev-next .next {
@@ -1683,7 +1683,7 @@ a:hover {
     position: absolute;
     top: 8px;
     right: 8px;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .prev-next::after {
@@ -1693,13 +1693,6 @@ a:hover {
         height: 0;
         visibility: hidden;
         clear: both;
-}
-
-@media (max-width: 767px) {
-    .prev-next {
-        padding: 0 15px;
-    }
-    
 }
 
 .wrapper {
