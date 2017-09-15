@@ -52,21 +52,10 @@ a {
 }
 
 .title-wrapper {
-    h1 {
-        position: relative;
-        font-size: 0;
-        &::before {
-            content: '';
-            position: absolute;
-            top: 3px;
-            left: -14px;
-            width: 3px;
-            height: 16px;
-            background: var(--primary-color);
-        }
-    }
     .title {
+        display: inline-block;
         position: relative;
+        margin-bottom: 42px;
         font-size: 1.4rem;
         font-weight: 700;
         text-decoration: none;
@@ -76,11 +65,21 @@ a {
         &:hover {
             color: var(--primary-color);
         }
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            margin-top: 10px;
+            background: var(--primary-color);
+        }
     }
 }
 
 .post .description {
-    margin: 30px 0;
+    margin-bottom: 30px;
     list-style: none;
     font-size: 0.875rem;
     color: var(--third-text-color);
@@ -120,7 +119,7 @@ a {
 	box-sizing: border-box;
 	min-width: 200px;
 	max-width: 800px;
-	margin: 30px auto;
+	margin: 0 auto 30px auto;
     border-radius: 4px;
     color: var(--second-text-color);
     line-height: 1.75;
