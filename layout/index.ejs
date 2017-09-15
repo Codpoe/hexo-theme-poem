@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="/css/index.bundle.css">
 </head>
 <body>
-    <% if (page.current === 0) { %>
+    <% if (page.current === 1 && theme.first_screen.open) { %>
         <%- partial('_partial/first-screen') %>
     <% } %>
 

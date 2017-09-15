@@ -1,7 +1,8 @@
 <header class="header-wrapper 
-    <%- is_home() ? 
+    <%- is_home() && page.current === 1 && theme.first_screen.open ?
         (theme.first_screen.dark ? 'header-wrapper--dark' : 'header-wrapper--light') : 
-        '' %>">
+        '' %> 
+    <%- is_home() && page.current === 1 && theme.first_screen.open ? 'header-wrapper--first-screen' : '' %>">
 
     <div class="header">
         <div class="header__normal">

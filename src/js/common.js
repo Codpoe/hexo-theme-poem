@@ -24,15 +24,17 @@ window.addEventListener('scroll', function(ev) {
 });
 
 menuBar.addEventListener('click', function (ev) {
-    menuBar.classList.toggle('menu-bar--close');
-    drawer.classList.toggle('header__drawer--show');
-    windowMask.classList.toggle('window-mask--show');
+    header.classList.toggle('header-wrapper--drawer-show');
+    // menuBar.classList.toggle('menu-bar--close');
+    // drawer.classList.toggle('header__drawer--show');
+    // windowMask.classList.toggle('window-mask--show');
 });
 
 windowMask.addEventListener('click', function (ev) {
-    menuBar.classList.toggle('menu-bar--close');
-    drawer.classList.toggle('header__drawer--show');
-    windowMask.classList.toggle('window-mask--show');
+    header.classList.toggle('header-wrapper--drawer-show');
+    // menuBar.classList.toggle('menu-bar--close');
+    // drawer.classList.toggle('header__drawer--show');
+    // windowMask.classList.toggle('window-mask--show');
 });
 
 function throttle(fn, wait) {
