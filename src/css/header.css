@@ -344,12 +344,16 @@
         color: rgba(255,255,255,0.6);
     }
     .drawer__menu-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
         list-style-type: none;
     }
     .drawer__menu {
         display: block;
-        margin: 8px 40px;
-        border: 1px solid #eaeaea;
+        margin: 8px auto;
+        padding: 0 30px;
         border-radius: 22px;
         text-align: center;
         line-height: 42px;
@@ -362,7 +366,6 @@
     }
     .drawer__menu--active {
         background: var(--primary-color);
-        border-color: var(--primary-color);
         color: white;
     }
     .drawer__links {
