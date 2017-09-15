@@ -685,7 +685,76 @@
     }
 }
 
-.footer {
+.header-info {
+    max-width: 800px;
+    margin: 110px auto 0 auto;
+    padding: 0 20px;
+    transition: all 0.2s ease;
+}
+.header-info .header__desc {
+    line-height: 1.75;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #616161;
+}
+.header-info .header__links {
+    margin-top: 40px;
+}
+.header-info .header__link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    float: left;
+    position: relative;
+    width: 28px;
+    height: 28px;
+    margin-right: 24px;
+    border-radius: 50%;
+    background: #eaeaea;
+    font-size: 14px;
+    color: #9ca3ad;
+    transition: all 0.2s ease
+}
+.header-info .header__link:hover {
+    text-decoration: none;
+    background: #f45a6f;
+    color: white;
+}
+.header-info .header__link:hover .header__link-extend {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+}
+.header-info .header__link-extend {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    color: #9ca3ad;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transform: translate(-50%, 10px);
+    transform: translate(-50%, 10px);
+    transition: all 0.2s ease;
+    z-index: 99;
+}
+.header-info .header__link-extend img {
+    width: 100px;
+    height: 100px;
+}.footer {
     height: 80px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1030,12 +1099,8 @@ a:hover {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    margin: 40px 0 20px 0;
+    margin: 70px 0 20px 0;
     font-size: 0;
-}
-
-.year-wrapper:first-child {
-    margin: 120px 0 20px 0;
 }
 
 .year {

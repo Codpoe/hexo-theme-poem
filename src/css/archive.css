@@ -18,12 +18,8 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    margin: 40px 0 20px 0;
+    margin: 70px 0 20px 0;
     font-size: 0;
-}
-
-.year-wrapper:first-child {
-    margin: 120px 0 20px 0;
 }
 
 .year {
