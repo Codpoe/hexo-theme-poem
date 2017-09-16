@@ -54,6 +54,9 @@ a {
 }
 
 .title-wrapper {
+    h1 {
+        font-size: 0;
+    }
     .title {
         display: inline-block;
         position: relative;
@@ -80,6 +83,9 @@ a {
             margin-top: -7px;
             background: var(--primary-color);
         }
+    }
+    span.title {
+        cursor: default;
     }
 }
 

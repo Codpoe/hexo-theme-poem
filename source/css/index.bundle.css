@@ -1411,7 +1411,15 @@
     color: #616161;
 }
 .header-info .header__links {
-    margin-top: 40px;
+    margin-top: 40px
+}
+.header-info .header__links::after {
+    content: '';
+    width: 0;
+    height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
 }
 .header-info .header__link {
     display: -webkit-box;
@@ -1572,6 +1580,10 @@ a:hover {
     background: #f45a6f;
 }
 
+.title-wrapper h1 {
+    font-size: 0;
+}
+
 .title-wrapper .title {
     display: inline-block;
     position: relative;
@@ -1592,6 +1604,10 @@ a:hover {
 .title-wrapper .title:hover::before {
     -webkit-animation: sign-rotate 0.4s linear infinite;
     animation: sign-rotate 0.4s linear infinite;
+}
+
+.title-wrapper span.title {
+    cursor: default;
 }
 
 .post .description {
