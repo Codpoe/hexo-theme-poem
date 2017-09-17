@@ -871,11 +871,11 @@
 
 .header__post .header__post-name {
         position: relative;
-        font-weight: 700;
-        font-size: 22.4px;
-        font-size: 1.4rem;
-        color: #2c3e50;
-        letter-spacing: 2px
+        line-height: 1.2;
+        font-weight: 400;
+        font-size: 18px;
+        font-size: 1.125rem;
+        color: #2c3e50
 }
 
 .header__post .header__post-name::before {

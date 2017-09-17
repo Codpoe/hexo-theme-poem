@@ -103,10 +103,10 @@
     padding: 0 20px;
     .header__post-name {
         position: relative;
-        font-weight: 700;
-        font-size: 1.4rem;
+        line-height: 1.2;
+        font-weight: 400;
+        font-size: 1.125rem;
         color: var(--text-color);
-        letter-spacing: 2px;
         &::before {
             content: '';
             position: absolute;
