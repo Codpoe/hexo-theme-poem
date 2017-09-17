@@ -7,7 +7,7 @@
 }
 
 .post:first-child {
-    margin-top: 130px;
+    margin-top: 160px;
 }
 
 .markdown-body {
@@ -15,13 +15,12 @@
 }
 
 .comments {
-    margin: 45px 0;
-    padding: 0 45px;
+    margin: 40px 0;
 }
 
 @media (max-width: 767px) {
-    .comments {
-        padding: 0 15px;
+    .post:first-child {
+        margin-top: 130px;
     }
 }
 

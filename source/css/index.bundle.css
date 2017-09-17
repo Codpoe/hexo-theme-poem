@@ -1566,7 +1566,7 @@ a:hover {
 }
 
 .post {
-    margin-top: 70px;
+    margin-top: 100px;
 }
 
 .title-wrapper .title::before {
@@ -1587,7 +1587,8 @@ a:hover {
 .title-wrapper .title {
     display: inline-block;
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    line-height: 1.5;
     font-size: 22.4px;
     font-size: 1.4rem;
     font-weight: 700;
@@ -1611,7 +1612,7 @@ a:hover {
 }
 
 .post .description {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     list-style: none;
     font-size: 14px;
     font-size: 0.875rem;
@@ -1658,7 +1659,7 @@ a:hover {
 	box-sizing: border-box;
 	min-width: 200px;
 	max-width: 800px;
-	margin: 0 auto 30px auto;
+	margin: 0 auto 40px auto;
     border-radius: 4px;
     color: #525e6b;
     line-height: 1.75;
@@ -1795,6 +1796,9 @@ a:hover {
     .title-wrapper .title::before {
         width: 4px;
     }
+    .post {
+        margin-top: 70px;
+    }
 }
 
 .first-screen {
@@ -1915,63 +1919,80 @@ a:hover {
 
 .pagination {
     position: relative;
-    margin: 45px 0;
-    padding: 0 45px;
+    margin: 40px 0;
     text-align: center;
 }
 
 .pagination .next:hover {}
 
 .pagination .next:hover::after {
-    color: #f45a6f;
-}
-
-.pagination .prev:hover {}
-
-.pagination .prev:hover::before {
-    color: #f45a6f;
-}
-
-.pagination a, .pagination span {
-    display: inline-block;
-    margin: 0 10px;
-    padding: 8px 8px;
-    border-radius: 2px;
-    border: 1px solid transparent;
-    font-size: 14px;
-    color: #9ca3ad;
-    transition: all 0.2s ease;
-}
-
-.pagination a:hover {
     border-color: #f45a6f;
     color: #f45a6f;
     text-decoration: none;
 }
 
-.pagination .current {
+.pagination .prev:hover {}
+
+.pagination .prev:hover::before {
+    border-color: #f45a6f;
     color: #f45a6f;
+    text-decoration: none;
 }
 
-.pagination .space:hover {
-    background: transparent;
+.pagination a, .pagination span {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    line-height: 28px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    font-size: 14px;
     color: #9ca3ad;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.pagination a.page-number:hover {
+    border-color: #f45a6f;
+    color: #f45a6f;
+    text-decoration: none;
+}
+
+.pagination .extend:hover {
+    border-color: #f45a6f;
+}
+
+.pagination .current {
+    background: #f45a6f;
+    color: white;
+}
+
+.pagination .space {
+    pointer-events: none;
 }
 
 .pagination .prev {
     position: relative;
     padding-left: 26px;
     text-transform: uppercase;
-    letter-spacing: 1px
+    letter-spacing: 1px;
+    color: transparent
 }
 
 .pagination .prev::before {
     content: '\2190';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    line-height: 26px;
     font-size: 14px;
     color: #9ca3ad;
-    position: absolute;
-    top: 8px;
-    left: 8px;
     transition: all 0.2s ease;
 }
 
@@ -1979,23 +2000,24 @@ a:hover {
     position: relative;
     padding-right: 26px;
     text-transform: uppercase;
-    letter-spacing: 1px
+    letter-spacing: 1px;
+    color: transparent
 }
 
 .pagination .next::after {
     content: '\2192';
-    font-size: 14px;
-    color: #9ca3ad;
     position: absolute;
-    top: 8px;
-    right: 8px;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    font-size: 14px;
+    line-height: 26px;
+    color: #9ca3ad;
     transition: all 0.2s ease;
 }
 
 @media (max-width: 767px) {
-    .pagination {
-        padding: 0 15px;
-    }
     .pagination a, .pagination span {
         margin: 0 6px;
     }

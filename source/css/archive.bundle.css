@@ -854,7 +854,7 @@ a:hover {
 }
 
 .post {
-    margin-top: 70px;
+    margin-top: 100px;
 }
 
 .title-wrapper .title::before {
@@ -875,7 +875,8 @@ a:hover {
 .title-wrapper .title {
     display: inline-block;
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    line-height: 1.5;
     font-size: 22.4px;
     font-size: 1.4rem;
     font-weight: 700;
@@ -899,7 +900,7 @@ a:hover {
 }
 
 .post .description {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     list-style: none;
     font-size: 14px;
     font-size: 0.875rem;
@@ -946,7 +947,7 @@ a:hover {
 	box-sizing: border-box;
 	min-width: 200px;
 	max-width: 800px;
-	margin: 0 auto 30px auto;
+	margin: 0 auto 40px auto;
     border-radius: 4px;
     color: #525e6b;
     line-height: 1.75;
@@ -1083,6 +1084,9 @@ a:hover {
     .title-wrapper .title::before {
         width: 4px;
     }
+    .post {
+        margin-top: 70px;
+    }
 }
 
 .wrapper {
@@ -1115,7 +1119,7 @@ a:hover {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    margin: 70px 0 20px 0;
+    margin: 100px 0 20px 0;
     font-size: 0;
 }
 
@@ -1182,7 +1186,7 @@ a:hover {
     color: #525e6b;
     letter-spacing: 2px;
     transition: all 0.2s;
-    line-height: 1.6
+    line-height: 1.5
 }
 
 .archive-post-wrapper a:hover {
@@ -1195,6 +1199,7 @@ a:hover {
         -webkit-box-pack: justify;
             -ms-flex-pack: justify;
                 justify-content: space-between;
+        margin-top: 70px;
     }
     .year::before {
         width: 4px;

@@ -50,7 +50,7 @@ a {
 }
 
 .post {
-    margin-top: 70px;
+    margin-top: 100px;
 }
 
 .title-wrapper {
@@ -60,7 +60,8 @@ a {
     .title {
         display: inline-block;
         position: relative;
-        margin-bottom: 30px;
+        margin-bottom: 40px;
+        line-height: 1.5;
         font-size: 1.4rem;
         font-weight: 700;
         text-decoration: none;
@@ -90,7 +91,7 @@ a {
 }
 
 .post .description {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     list-style: none;
     font-size: 0.875rem;
     color: var(--third-text-color);
@@ -130,7 +131,7 @@ a {
 	box-sizing: border-box;
 	min-width: 200px;
 	max-width: 800px;
-	margin: 0 auto 30px auto;
+	margin: 0 auto 40px auto;
     border-radius: 4px;
     color: var(--second-text-color);
     line-height: 1.75;
@@ -236,6 +237,9 @@ a {
         .title::before {
             width: 4px;
         }
+    }
+    .post {
+        margin-top: 70px;
     }
 }
 

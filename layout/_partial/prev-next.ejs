@@ -1,9 +1,9 @@
 <div class="prev-next">
 <% if (page.prev) { %>
-    <a class="prev" href="<%- url_for(page.prev.path) %>"><%= __('newer') %></a>
+    <a class="prev" href="<%- url_for(page.prev.path) %>"><i class="fa fa-angle-left"></i> <%= page.prev.title %></a>
 <% } %>
 <% if (page.next) { %>
-    <a class="next" href="<%- url_for(page.next.path) %>"><%= __('older') %></a>
+    <a class="next" href="<%- url_for(page.next.path) %>"><%= page.next.title %> <i class="fa fa-angle-right"></i></a>
 <% } %>
 </div>
 

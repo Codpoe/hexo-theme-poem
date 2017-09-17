@@ -18,7 +18,7 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    margin: 70px 0 20px 0;
+    margin: 100px 0 20px 0;
     font-size: 0;
 }
 
@@ -79,7 +79,7 @@
         color: var(--second-text-color);
         letter-spacing: 2px;
         transition: all 0.2s;
-        line-height: 1.6;
+        line-height: 1.5;
         &:hover {
             color: var(--primary-color);
             text-decoration: none;
@@ -90,6 +90,7 @@
 @media screen and (max-width: 767px) {
     .year-wrapper {
         justify-content: space-between;
+        margin-top: 70px;
     }
     .year::before {
         width: 4px;

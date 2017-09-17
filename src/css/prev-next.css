@@ -1,7 +1,7 @@
 @import './common.css';
 
 .prev-next {
-    margin: 45px 0;
+    margin: 40px 0;
     &::after {
         content: '';
         display: block;
@@ -12,10 +12,11 @@
     }
     .prev,
     .next {
-        position: relative;
-        border-radius: 2px;
-        border: 1px solid #e6e6e6;
-        text-transform: uppercase;
+        max-width: 50%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        line-height: 1.5;
         letter-spacing: 1px;
         font-size: 14px;
         font-weight: 700;
@@ -29,39 +30,11 @@
     }
     .prev {
         float: left;
-        padding: 8px 8px 8px 26px;
-        &::before {
-            content: '←';
-            font-size: 14px;
-            color: var(--third-text-color);
-            position: absolute;
-            top: 8px;
-            left: 8px;
-            transition: all 0.3s ease;
-        }
-        &:hover {
-            &::before {
-                color: var(--primary-color);
-            }
-        }
+        margin-right: 6px;
     }
     .next {
         float: right;
-        padding: 8px 26px 8px 8px;
-        &::after {
-            content: '→';
-            font-size: 14px;
-            color: var(--third-text-color);
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            transition: all 0.3s ease;
-        }
-        &:hover {
-            &::after {
-                color: var(--primary-color);
-            }
-        }
+        margin-left: 6px;
     }
 }
 
