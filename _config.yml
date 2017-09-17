@@ -4,7 +4,7 @@
 
 # primary config
 name: Poem ## Your name shown on the header and the drawer
-description: Always believe that good things are coming soon ## Introduce yourself
+description: Always believe that something wonderful is about to happen ## Introduce yourself
 keywords: Blog, Tech
 site_name: Poem's blog ## Your site name shown on the first screen
 site_description: Life is a Poem ## Introduce your site
@@ -26,7 +26,7 @@ first_screen:
   dark: true ## If the style of your image or color is dark, set it to true, else false.
   links:
     Gmail: codpoe.me@gmail.com
-    Weibo: http://weibo.com
+    Weibo: https://weibo.com
     GitHub: https://github.com
 
 # header
@@ -46,21 +46,6 @@ header:
     github:
       name: GitHub
       url: https://github.com
-
-# navigation drawer
-## The configuration of the drawer is like that of the first screen.
-## The links part of drawer supports: 
-## email, weibo, twitter, github, gitlab, facebook, dribbble, behance
-## note: the link here will be shown as a icon.
-drawer:
-  img: https://ws3.sinaimg.cn/large/006tNc79gy1fiyf9ncv1tj31kw11odmz.jpg
-  gradient:
-    top: '#3a6186'
-    bottom: '#89253e'
-  links:
-    mail: codpoe.me@gmail.com
-    weibo: http://weibo.com
-    github: https://github.com
 
 # copyright
 copyright: 

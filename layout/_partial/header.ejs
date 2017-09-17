@@ -81,22 +81,6 @@
     </div>
 
     <div class="header__drawer">
-        <!--
-        <div
-            class="drawer__header"
-            style="background-image: <%- theme.drawer.img ? 
-                'url(' + theme.drawer.img + ')' :
-                 theme.drawer.gradient ? 
-                 'linear-gradient(to bottom,' + theme.drawer.gradient.top + ',' + theme.drawer.gradient.bottom + ')' :
-                 'linear-gradient(to bottom, #3a6186, #89253e)' %>">
-            
-            <div class="drawer__info">
-                <img src="<%= theme.logo %>" alt="logo" class="drawer__logo">
-                <h1 class="drawer__name"><%= theme.name %></h1>
-                <h2 class="drawer__description"><%= theme.description %></h2>
-            </div>
-        </div>
-        -->
         <ul class="drawer__menu-list">
         <% for (var i in theme.header.menu) { %>
         <%
@@ -128,54 +112,6 @@
         <% } %>
         <% } %>
         </ul>
-        <!--
-        <ul class="drawer__links">
-        <% for (var key in theme.drawer.links) { %>
-            <%
-                var color;
-                switch (key) {
-                    case 'mail':
-                        color = '#2D9EDE';
-                        break;
-                    case 'weibo':
-                        color = '#E6162D';
-                        break;
-                    case 'twitter':
-                        color = '#1DA1F2';
-                        break;
-                    case 'github':
-                        color = '#24292E';
-                        break;
-                    case 'gitlab':
-                        color = '#FC6D26';
-                        break;
-                    case 'facebook':
-                        color = '#3B5998';
-                        break;
-                    case 'dribbble':
-                        color = '#EA4C89';
-                        break;
-                    case 'behance':
-                        color = '#0057FF';
-                        break;
-                    default:
-                        color = '#7f8c8d';
-                }
-            %>
-            <li>
-            <% if (key.indexOf('mail') !== -1) { %>
-                <a href="mailto:<%= theme.drawer.links[key] %>" title="<%= key %>">
-                    <i class="fa fa-envelope" style="color: <%= color %>"></i>
-                </a>
-            <% } else { %>
-                <a href="<%= theme.drawer.links[key] %>" target="_blank" title="<%= key %>">
-                    <i class="fa fa-<%= key %>" style="color: <%= color %>"></i>
-                </a>
-            <% } %>
-            </li>
-        <% } %>
-        </ul>
-        -->
     </div>
 
     <div class="window-mask"></div>
