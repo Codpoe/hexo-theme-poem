@@ -5,7 +5,7 @@
     <%- is_home() && page.current === 1 && theme.first_screen.open ? 'header-wrapper--first-screen' : '' %>">
 
     <div class="header">
-        <div class="header__normal">
+        <div class="header__normal <%- is_post() ? 'header__normal--is-post' : '' %>">
             <div class="left">
                 <a href="/">
                     <h1 class="header__name">
@@ -60,7 +60,7 @@
                 <div class="header__post">
                     <div class="left">
                         <h1 class="header__post-name">
-                            <%= page.title %>
+                            <%= post.title %>
                         </h1>
                     </div>
                     <div class="right">

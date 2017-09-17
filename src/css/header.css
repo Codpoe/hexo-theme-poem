@@ -53,7 +53,7 @@
 }
 
 .header--switch {
-    .header__normal,
+    .header__normal--is-post,
     .header__post-visible {
         transform: translateY(-100%);
     }
