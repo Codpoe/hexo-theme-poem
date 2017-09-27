@@ -3,7 +3,7 @@
 
 An elegant theme for [Hexo](https://hexo.io/). Some of the desgin are inspired by [EVAN YOU's blog](http://evanyou.me).
 
-![](https://ws1.sinaimg.cn/large/006tNc79gy1fjy66uen2xj30zk0qoabl.jpg)
+![](./blob/demo.jpeg)
 
 ## Installation
 Clone this repository
