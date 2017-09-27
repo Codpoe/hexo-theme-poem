@@ -39,7 +39,7 @@ header:
   links: ## the links on the header and the drawer, you can customize it.
     wechat:
       name: Wechat
-      img: https://ws3.sinaimg.cn/large/006tKfTcgy1fj8st9kjdwj308w08wq3v.jpg
+      img: https://ws3.sinaimg.cn/large/006tKfTcgy1fj8st9kjdwj308w08wq3v.jpg ## your wechat qrcode
     weibo:
       name: Weibo
       url: https://weibo.com

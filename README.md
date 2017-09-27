@@ -3,6 +3,8 @@
 
 An elegant theme for [Hexo](https://hexo.io/). Some of the desgin are inspired by [EVAN YOU's blog](http://evanyou.me).
 
+![](https://ws2.sinaimg.cn/large/006tNc79gy1fjy5vv35r2j31kw16o12t.jpg)
+
 ## Installation
 Clone this repository
 
@@ -22,7 +24,8 @@ The default configuration:
 
 # primary config
 name: Poem ## Your name shown on the header and the drawer
-description: I am ... ## Introduce yourself
+description: Always believe that something wonderful is about to happen ## Introduce yourself
+keywords: Blog, Tech
 site_name: Poem's blog ## Your site name shown on the first screen
 site_description: Life is a Poem ## Introduce your site
 logo: https://i.loli.net/2017/08/31/59a79b0b3ffd8.gif ## The logo on the header and the drawer
@@ -35,6 +38,7 @@ logo: https://i.loli.net/2017/08/31/59a79b0b3ffd8.gif ## The logo on the header 
 ## just like <GitHub: [your github url]>.
 ## note: the key of the link will be the word shown on the screen.
 first_screen:
+  open: true
   img: https://ws3.sinaimg.cn/large/006tNc79gy1fiyf9ncv1tj31kw11odmz.jpg
   gradient:
     left: '#3a6186'
@@ -42,7 +46,7 @@ first_screen:
   dark: true ## If the style of your image or color is dark, set it to true, else false.
   links:
     Gmail: codpoe.me@gmail.com
-    Weibo: http://weibo.com
+    Weibo: https://weibo.com
     GitHub: https://github.com
 
 # header
@@ -52,21 +56,16 @@ header:
     category: /categories
     archive: /archives
     about: /about
-
-# navigation drawer
-## The configuration of the drawer is like that of the first screen.
-## The links part of drawer supports: 
-## email, weibo, twitter, github, gitlab, facebook, dribbble, behance
-## note: the link here will be shown as a icon.
-drawer:
-  img: https://ws3.sinaimg.cn/large/006tNc79gy1fiyf9ncv1tj31kw11odmz.jpg
-  gradient:
-    top: '#3a6186'
-    bottom: '#89253e'
-  links:
-    mail: codpoe.me@gmail.com
-    weibo: http://weibo.com
-    github: https://github.com
+  links: ## the links on the header and the drawer, you can customize it.
+    wechat:
+      name: Wechat
+      img: https://ws3.sinaimg.cn/large/006tKfTcgy1fj8st9kjdwj308w08wq3v.jpg ## your wechat qrcode
+    weibo:
+      name: Weibo
+      url: https://weibo.com
+    github:
+      name: GitHub
+      url: https://github.com
 
 # copyright
 copyright: 
