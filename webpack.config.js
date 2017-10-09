@@ -47,6 +47,13 @@ module.exports = {
     plugins: [
         new ExtractTextPlugin({
             filename: 'css/[name].bundle.css'
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            beautify: false,
+            comments: false,
+            compress: {
+                warnings: false
+            }
         })
     ],
     devServer: {
