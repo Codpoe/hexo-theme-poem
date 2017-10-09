@@ -25,6 +25,9 @@ window.addEventListener('scroll', function (ev) {
 });
 
 window.addEventListener('load', function (ev) {
+    if (!tocNode) {
+        return;
+    }
     tocNode.addEventListener('click', ev => {
         var target = ev.target;
         if (target.classList.contains('toc-text')) {

@@ -1914,25 +1914,9 @@ a:hover {
     padding-left: calc(20px + 3em);
 }
 
-@-webkit-keyframes indicator-out-anim {
-    50% {
-        height: 50px;
-        line-height: 50px;
-    }
-    100% {
-        -webkit-transform: translateX();
-                transform: translateX()
-    }
-}
-
-@keyframes indicator-out-anim {
-    50% {
-        height: 50px;
-        line-height: 50px;
-    }
-    100% {
-        -webkit-transform: translateX();
-                transform: translateX()
+@media screen and (max-width: 1000px){
+    .toc-wrapper {
+        display: none;
     }
 }
 
