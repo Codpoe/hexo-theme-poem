@@ -6,6 +6,7 @@ import './css/footer.css';
 import './css/base.css';
 import './css/prev-next.css';
 import './css/post.css';
+import './css/toc.css';
 
 import './js/common.js';
 import './js/post.js';

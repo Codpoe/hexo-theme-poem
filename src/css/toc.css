@@ -1,0 +1,95 @@
+@import './common.css';
+
+.toc-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 260px;
+    margin-left: -220px;
+    z-index: 99;
+    transition: all 0.4s cubic-bezier(0.4, 0.1, 0.1, 1);
+}
+
+.toc-wrapper:hover {
+    transform: translateX(220px);
+    .toc-link::before {
+        transform: translateX(-260px);
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+.toc {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    width: 200px;
+    list-style-type: none;
+}
+
+.toc-child {
+    list-style-type: none;
+    margin-left: 1em;
+}
+
+.toc-link {
+    position: relative;
+    display: block;
+    font-size: 14px;
+    line-height: 2;
+    color: var(--third-text-color);
+    transition: all 0.1s;
+    &:hover {
+        color: var(--primary-color);
+        text-decoration: none;
+        &::before {
+            background: var(--primary-color);
+        }
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        margin-top: -1px;
+        height: 2px;
+        border-radius: 1px;
+        background: #ccc;
+        visibility: visible;
+        opacity: 1;
+        transition: all 0.4s cubic-bezier(0.4, 0.1, 0.1, 1);
+    }
+}
+
+.toc-level-1 .toc-link::before {
+    width: 2.6em;
+}
+
+.toc-level-2 .toc-link::before {
+    width: 2em;
+}
+
+.toc-level-3 .toc-link::before {
+    width: 1.4em;
+}
+
+.toc-level-4 .toc-link::before {
+    width: 0.8em;
+}
+
+.toc-link--active {
+    color: var(--primary-color);
+    &::before {
+        background: var(--primary-color);
+    }
+}
+
+.toc-text {
+    display: block;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+

@@ -1791,3 +1791,104 @@ a:hover {
     }
 }
 
+.toc-link::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        margin-top: -1px;
+        height: 2px;
+        border-radius: 1px;
+        background: #ccc;
+        visibility: visible;
+        opacity: 1;
+        transition: all 0.4s cubic-bezier(0.4, 0.1, 0.1, 1);
+}
+
+.toc-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 260px;
+    margin-left: -220px;
+    z-index: 99;
+    transition: all 0.4s cubic-bezier(0.4, 0.1, 0.1, 1);
+}
+
+.toc-wrapper:hover {
+    -webkit-transform: translateX(220px);
+            transform: translateX(220px);
+}
+
+.toc-wrapper:hover .toc-link::before {
+        -webkit-transform: translateX(-260px);
+        transform: translateX(-260px);
+        visibility: hidden;
+        opacity: 0;
+}
+
+.toc {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    width: 200px;
+    list-style-type: none;
+}
+
+.toc-child {
+    list-style-type: none;
+    margin-left: 1em;
+}
+
+.toc-link {
+    position: relative;
+    display: block;
+    font-size: 14px;
+    line-height: 2;
+    color: #9ca3ad;
+    transition: all 0.1s
+}
+
+.toc-link:hover {
+        color: #f45a6f;
+        text-decoration: none;
+}
+
+.toc-link:hover::before {
+            background: #f45a6f;
+}
+
+.toc-level-1 .toc-link::before {
+    width: 2.6em;
+}
+
+.toc-level-2 .toc-link::before {
+    width: 2em;
+}
+
+.toc-level-3 .toc-link::before {
+    width: 1.4em;
+}
+
+.toc-level-4 .toc-link::before {
+    width: 0.8em;
+}
+
+.toc-link--active {
+    color: #f45a6f
+}
+
+.toc-link--active::before {
+        background: #f45a6f;
+}
+
+.toc-text {
+    display: block;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+

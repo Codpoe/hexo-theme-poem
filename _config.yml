@@ -18,7 +18,7 @@ logo: https://i.loli.net/2017/08/31/59a79b0b3ffd8.gif ## The logo on the header 
 ## just like <GitHub: [your github url]>.
 ## note: the key of the link will be the word shown on the screen.
 first_screen:
-  open: true
+  open: false
   img: https://ws3.sinaimg.cn/large/006tNc79gy1fiyf9ncv1tj31kw11odmz.jpg
   gradient:
     left: '#3a6186'
