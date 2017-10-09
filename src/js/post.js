@@ -29,7 +29,7 @@ window.addEventListener('load', function (ev) {
         var target = ev.target;
         if (target.classList.contains('toc-text')) {
             ev.preventDefault();
-            scrollAnim(offsets[target.parentNode.dataset.index], 700);
+            scrollAnim(offsets[target.parentNode.dataset.index], 500);
         }
     });
     scrollSpy(document.querySelector('.toc'), { className: 'toc-link--active' });
