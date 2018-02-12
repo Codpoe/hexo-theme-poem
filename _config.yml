@@ -25,8 +25,10 @@ header:
 
 # footer
 copyright: 
-  time: 2017 ## the time of copyright in the footer
+  time: 2018 ## the time of copyright in the footer
   name: Poem ## the name of copyright in the footer
+  
+icp: 
 
 # triangle_canvas
 triangle_canvas: true ## toggle whether your site show the colorful triangle-canvas in the top of all page
