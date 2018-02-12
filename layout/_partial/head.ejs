@@ -5,11 +5,12 @@
     <% } else if (config.title) { %>
         <%= config.title %>
     <% } else { %>
-        Codpoe's blog
+        Hexo
     <% } %>
 </title>
-<meta name="author" content="Codpoe">
-<meta name="description" content="An elegant blog about technology and life">
-<meta name="keywords" content="blog, technology, frontend, elegant">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="<%= config.author %>">
+<meta name="description" content="<%= config.description %>">
+<meta name="keywords" content="<%= theme.keywords %>">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 

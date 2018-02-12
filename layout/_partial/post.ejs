@@ -1,56 +1,74 @@
 <div class="post">
-    <div class="title-wrapper">
+    <header class="title-wrapper">
         <% if (is_home()) { %>
-            <a class="title" href="<%- url_for(post.path) %>">
-                <%= post.title %>
-            </a>
+            <h1>
+                <a class="title" href="<%- url_for(post.path) %>">
+                    <%= post.title %>
+                </a>
+            </h1>
         <% } else { %>
-            <span class="title">
-                <%= post.title %>
-            </span>
+            <h1>
+                <span class="title">
+                    <%= post.title %>
+                </span>
+            </h1>
         <% } %>
+        <% if (is_post()) { %>
         <ul class="description">
             <li>
-                <i class="fa fa-calendar"></i>
                 <%- post.date.format('ll') %>
             </li>
             <% if (post.path.indexOf('about') === -1) { %>
-                |
-                <li>
-                    <i class="fa fa-tag"></i>
-                    <% post.categories.forEach(function(category, index) { %>
-                        <a href="<%- url_for(config.category_dir + '/' + category.name) %>">
-                            <% if (index < post.categories.length - 1) { %>
-                                <%= category.name + ' · ' %>
-                            <% } else { %>
-                                <%= category.name %>
-                            <% } %>
-                        </a>
-                    <% }) %>
-                </li>
+            <li>
+            <% post.categories.forEach(function(category, index) { %>
+                <a href="<%- url_for(config.category_dir + '/' + category.name) %>">
+                    <% if (index < post.categories.length - 1) { %>
+                        <%= category.name + ' · ' %>
+                    <% } else { %>
+                        <%= category.name %>
+                    <% } %>
+                </a>
+            <% }) %>
+            </li>
             <% } %>
         </ul>
-    </div>
+        <% } %>
+    </header>
     
-    <div class="markdown-body">
+    <section class="markdown-body">
         <% if (post.excerpt && is_home()) { %>
             <%- post.excerpt %>
         <% } else { %>
             <%- post.content %>
         <% } %>
-    </div>
+    </section>
     
     <% if (is_home()) { %>
-        <div class="more-wrapper">
-            <div class="more-btn-wrapper">
-                <a href="<%- url_for(post.path) %>">
-                    <button class="more-btn">MORE</button>
-                    <div class="border-top"></div>
-                    <div class="border-right"></div>
-                    <div class="border-bottom"></div>
-                    <div class="border-left"></div>
+    <footer class="footer-wrapper">
+        <ul class="description">
+            <li>
+                <%- post.date.format('ll') %>
+            </li>
+            <% if (post.path.indexOf('about') === -1) { %>
+            <li>
+            <% post.categories.forEach(function(category, index) { %>
+                <a href="<%- url_for(config.category_dir + '/' + category.name) %>">
+                    <% if (index < post.categories.length - 1) { %>
+                        <%= category.name + ' · ' %>
+                    <% } else { %>
+                        <%= category.name %>
+                    <% } %>
                 </a>
-            </div>
-        </div>
+            <% }) %>
+            </li>
+            <% } %>
+        </ul>
+        <hr>
+        <a href="<%- url_for(post.path) %>">
+            <button class="more-btn">
+                <span><%= __('more') %> <i class="fa fa-angle-right"></i></span>
+            </button>
+        </a>
+    </footer>
     <% } %>
 </div>

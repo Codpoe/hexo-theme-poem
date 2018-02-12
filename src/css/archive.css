@@ -1,44 +1,57 @@
 @import './common.css';
 
-.header-wrapper {
-    transform: translateY(0);
+.wrapper {
+    margin-top: 0;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.2, 0.3, 0.8, 1);
 }
 
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
+.wrapper--show {
     transform: translateY(0);
+    opacity: 1;
+    animation: none;
+}
+
+.year-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 100px 0 20px 0;
+    font-size: 0;
 }
 
 .year {
-    margin: 80px 0 20px 0;
-    font-size: 30px;
+    position: relative;
+    font-size: 1.4rem;
     font-weight: 700;
     color: var(--text-color);
     letter-spacing: 8px;
-    text-align: center;
     cursor: default;
-}
-
-.year:first-child {
-    margin-top: 145px;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -20px;
+        width: 2px;
+        height: 14px;
+        margin-top: -7px;
+        background: var(--primary-color);
+    }
 }
 
 .amount {
-    margin: 20px 0 25px;
-    font-size: 14px;
+    margin-left: 30px;
+    font-size: 16px;
     font-weight: normal;
     color: var(--second-text-color);
-    text-align: center;
     cursor: default;
 }
 
 .archive-posts {
     max-width: 660px;
-    margin: 25px auto 45px auto;
-    padding: 0 30px;
+    margin: 0 auto 70px auto;
     list-style: none;
 }
 
@@ -51,8 +64,6 @@
         top: 50%;
         left: 0;
         margin-top: -7px;
-        font-weight: lighter;
-        font-family: menlo, PingFangSC-Regular, Helvetica, Arial, sans-serif;
         font-size: 14px;
         color: var(--third-text-color);
         text-transform: uppercase;
@@ -68,7 +79,7 @@
         color: var(--second-text-color);
         letter-spacing: 2px;
         transition: all 0.2s;
-        line-height: 1.6;
+        line-height: 1.5;
         &:hover {
             color: var(--primary-color);
             text-decoration: none;
@@ -77,14 +88,18 @@
 }
 
 @media screen and (max-width: 767px) {
-    .year:first-child {
-        margin-top: 115px;
+    .year-wrapper {
+        justify-content: space-between;
+        margin-top: 70px;
     }
-    .archive-posts {
-        padding: 0 15px;
+    .year::before {
+        width: 4px;
+    }
+    .amount {
+        margin-left: 0;
     }
     .archive-post-wrapper {
-        padding: 16px 0;
+        padding: 20px 0;
         .post-date {
             position: static;
             margin-top: 0;

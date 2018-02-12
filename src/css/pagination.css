@@ -1,0 +1,109 @@
+@import './common.css';
+
+.pagination {
+    position: relative;
+    margin: 40px 0;
+    text-align: center;
+    a,
+    span {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        margin: 0 10px;
+        line-height: 28px;
+        text-align: center;
+        border-radius: 50%;
+        border: 1px solid transparent;
+        font-size: 14px;
+        color: var(--third-text-color);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        transition: all 0.2s ease;
+    }
+    a.page-number:hover {
+        border-color: var(--primary-color);
+        color: var(--primary-color);
+        text-decoration: none;
+    }
+    .extend:hover {
+        border-color: var(--primary-color);
+    }
+    .current {
+        background: var(--primary-color);
+        color: white;
+    }
+    .space {
+        pointer-events: none;
+    }
+    .prev {
+        position: relative;
+        padding-left: 26px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: transparent;
+        &::before {
+            content: '←';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            line-height: 26px;
+            font-size: 14px;
+            color: var(--third-text-color);
+            transition: all 0.2s ease;
+        }
+        &:hover {
+            &::before {
+                border-color: var(--primary-color);
+                color: var(--primary-color);
+                text-decoration: none;
+            }
+        }
+    }
+    .next {
+        position: relative;
+        padding-right: 26px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: transparent;
+        &::after {
+            content: '→';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+            line-height: 26px;
+            color: var(--third-text-color);
+            transition: all 0.2s ease;
+        }
+        &:hover {
+            &::after {
+                border-color: var(--primary-color);
+                color: var(--primary-color);
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .pagination {
+        a,
+        span {
+            margin: 0 6px;
+        }
+    }
+    
+}
+
+@media screen and (max-width: 560px) {
+    .pagination {
+        a,
+        span {
+            margin: 0;
+        }
+    }
+}
+

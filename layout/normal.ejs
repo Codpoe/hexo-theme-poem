@@ -3,12 +3,14 @@
 <head>
     <%- partial('_partial/head') %>
     <link rel="stylesheet" href="/css/post.bundle.css">
+    <script>
+        window.onload = function (ev) {
+            var wrapper = document.querySelector('.wrapper');
+            wrapper.classList.add('wrapper--show');
+        }
+    </script>
 </head>
 <body>
-    <% if (theme.triangle_canvas) { %>
-        <%- partial('_partial/triangle') %>
-    <% } %>
-
     <%- partial('_partial/header') %>
 
     <div class="wrapper">
@@ -20,15 +22,14 @@
                     </span>
                     <ul class="description">
                         <li>
-                            <i class="fa fa-calendar"></i>
                             <%- page.date.format('ll') %>
                         </li>
                     </ul>
                 </div>
                 
-                <div class="markdown-body">
+                <section class="markdown-body">
                     <%- page.content %>
-                </div>
+                </section>
             </div>
 
             <section class="comments">

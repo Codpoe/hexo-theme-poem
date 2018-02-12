@@ -5,11 +5,7 @@
     <link rel="stylesheet" href="/css/post.bundle.css">
 </head>
 <body>
-    <% if (theme.triangle_canvas) { %>
-        <%- partial('_partial/triangle') %>
-    <% } %>
-
-    <%- partial('_partial/header') %>
+    <%- partial('_partial/header', {post: page}) %>
 
     <div class="wrapper">
         <div class="container">
@@ -21,6 +17,7 @@
         </div>
         <%- partial('_partial/footer') %>
     </div>
+    <%- partial('_partial/toc') %>
     
     <script src="/js/post.bundle.js"></script>
 </body>

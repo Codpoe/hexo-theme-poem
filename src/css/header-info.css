@@ -1,0 +1,69 @@
+@import './common.css';
+
+.header-info {
+    max-width: 800px;
+    margin: 110px auto 0 auto;
+    padding: 0 20px;
+    transition: all 0.2s ease;
+    .header__desc {
+        line-height: 1.75;
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 2px;
+        color: var(--normal-text-color);
+    }
+    .header__links {
+        margin-top: 40px;
+        &::after {
+            content: '';
+            width: 0;
+            height: 0;
+            display: block;
+            visibility: hidden;
+            clear: both;
+        }
+    }
+    .header__link {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        float: left;
+        position: relative;
+        width: 28px;
+        height: 28px;
+        margin-right: 24px;
+        border-radius: 50%;
+        background: #eaeaea;
+        font-size: 14px;
+        color: var(--third-text-color);
+        transition: all 0.2s ease;
+        &:hover {
+            text-decoration: none;
+            background: var(--primary-color);
+            color: white;
+            .header__link-extend {
+                visibility: visible;
+                opacity: 1;
+                transform: translate(-50%, 0);
+            }
+        }
+    }
+    .header__link-extend {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        width: 100px;
+        height: 100px;
+        color: var(--third-text-color);
+        visibility: hidden;
+        opacity: 0;
+        transform: translate(-50%, 10px);
+        transition: all 0.2s ease;
+        z-index: 99;
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    }
+}

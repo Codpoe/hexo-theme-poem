@@ -1,60 +1,119 @@
-<header class="header-wrapper">
+<header class="header-wrapper 
+    <%- is_home() && page.current === 1 && theme.first_screen.open ?
+        (theme.first_screen.dark ? 'header-wrapper--dark' : 'header-wrapper--light') : 
+        '' %> 
+    <%- is_home() && page.current === 1 && theme.first_screen.open ? 'header-wrapper--first-screen' : '' %>">
+
     <div class="header">
-        <div class="left">
-            <a href="/">
-                <img class="logo" src="<%= theme.header.logo %>" alt="logo">
-            </a>
-            <ul class="links">
-                <% for (var key in theme.header.links) { %>
+        <div class="header__normal <%- is_post() ? 'header__normal--is-post' : '' %>">
+            <div class="left">
+                <a href="/">
+                    <h1 class="header__name">
+                        <%= theme.name %>
+                    </h1>
+                </a>
+            </div>
+            <ul class="right menu-list">
+                <% for (var i in theme.header.menu) { %>
+                <%
+                    var isActive;
+                    switch (theme.header.menu[i]) {
+                        case '/':
+                            isActive = is_home();
+                            break;
+                        case '/categories':
+                            isActive = is_category();
+                            break;
+                        case '/archives':
+                            isActive = is_archive();
+                            break;
+                        default:
+                            isActive = theme.header.menu[i] + '/index.html' === '/' + path;
+                            break;
+                    }
+                %>
                     <li>
-                        <% if (key.indexOf('mail') !== -1) { %>
-                            <a href="mailto:<%= theme.header.links[key] %>" title="<%= key %>">
-                                <i class="fa fa-envelope"></i>
+                        <% if (i.indexOf('category') === -1) { %>
+                            <a
+                                href="<%- theme.header.menu[i] %>" 
+                                class="normal-menu <%- isActive ? 'menu--active' : '' %>"
+                                target="<%- i.indexOf('resume') === -1 ? '_self' : '_blank' %>">
+                                <%= __(i) %>
                             </a>
                         <% } else { %>
-                            <a href="<%= theme.header.links[key] %>" target="_blank" title="<%= key %>">
-                                <i class="fa fa-<%= key %>"></i>
-                            </a>
+                            <span class="category">
+                                <%= __(i) %>&nbsp;<i class="fa fa-angle-down"></i>
+                                <%- list_categories({class: 'category'}) %>
+                            </span>
                         <% } %>
                     </li>
                 <% } %>
             </ul>
-
+            <div class="menu-bar">
+                <div class="menu-bar__middle"></div>
+            </div>
         </div>
-        <ul class="right">
-            <% for (var i in theme.header.menu) { %>
-                <li>
-                    <% if (i.indexOf('category') === -1) { %>
-                        <a 
-                            href="<%- theme.header.menu[i] %>" 
-                            class="normal-menu <%- theme.header.menu[i] + 'index.html' === '/' + path ? 'menu--active' : '' %>"
-                            target="<%- i.indexOf('resume') === -1 ? '_self' : '_blank' %>">
-                            <%= __(i) %>
-                        </a>
-                    <% } else { %>
-                        <span class="category">
-                            <%= __(i) %> <i class="fa fa-angle-down"></i>
-                            <%- list_categories({class: 'category'}) %>
-                        </span>
-                    <% } %>
-                </li>
-            <% } %>
-        </ul>
-        <i class="fa fa-bars menu-bar"></i>
-    </div>
-    <ul class="mobile-menu">
-        <% for (var i in theme.header.menu) { %>
-            <% if (i.indexOf('category') === -1) { %>
-                <li>
-                    <a 
-                        href="<%- theme.header.menu[i] %>" 
-                        class="<%- theme.header.menu[i] + 'index.html' === '/' + path ? 'menu--active' : '' %>"
-                        target="<%- i.indexOf('resume') === -1 ? '_self' : '_blank' %>">
-                        <%= __(i) %>
-                    </a>
-                </li>
-            <% } %>
+        <% if (is_post()) { %>
+        <div class="header__post-hidden">
+            <div class="header__post-visible">
+                <div class="header__post-holder"></div>
+                <div class="header__post">
+                    <div class="left">
+                        <h1 class="header__post-name">
+                            <%= post.title %>
+                        </h1>
+                    </div>
+                    <div class="right">
+                        <ul class="share-links">
+                            <li>
+                                <a class="share-link"
+                                    href="http://service.weibo.com/share/share.php?appkey=3131596266&title=分享文章「<%= page.title %>」&url=<%= url %>"
+                                    target="_blank">
+                                    <i class="fa fa-weibo"></i> <%- __('share-on-weibo') %>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
         <% } %>
-    </ul>
+    </div>
+
+    <div class="header__drawer">
+        <ul class="drawer__menu-list">
+        <% for (var i in theme.header.menu) { %>
+        <%
+            var isDrawerActive;
+            switch (theme.header.menu[i]) {
+                case '/':
+                    isDrawerActive = is_home();
+                    break;
+                case '/categories':
+                    isDrawerActive = is_category();
+                    break;
+                case '/archives':
+                    isDrawerActive = is_archive();
+                    break;
+                default:
+                    isDrawerActive = theme.header.menu[i] + '/index.html' === '/' + path;
+                    break;
+            }
+        %>
+        <% if (i.indexOf('category') === -1) { %>
+            <li>
+                <a 
+                    href="<%- theme.header.menu[i] %>" 
+                    class="drawer__menu <%- isDrawerActive ? 'drawer__menu--active' : '' %>"
+                    target="<%- i.indexOf('resume') === -1 ? '_self' : '_blank' %>">
+                    <%= __(i) %>
+                </a>
+            </li>
+        <% } %>
+        <% } %>
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
 </header>
 

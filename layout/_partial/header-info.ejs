@@ -1,0 +1,67 @@
+<div>
+    <div class="header-info">
+        <h2 class="header__desc">
+            <%= theme.description %>
+        </h2>
+        <ul class="header__links">
+        <% for (var key in theme.header.links) { %>
+            <%
+                var bgColor;
+                switch (key) {
+                    case 'mail':
+                        bgColor = '#2D9EDE';
+                        break;
+                    case 'wechat':
+                        bgColor = '#1FB922';
+                        break;
+                    case 'weibo':
+                        bgColor = '#E6162D';
+                        break;
+                    case 'twitter':
+                        bgColor = '#1DA1F2';
+                        break;
+                    case 'github':
+                        bgColor = '#24292E';
+                        break;
+                    case 'gitlab':
+                        bgColor = '#FC6D26';
+                        break;
+                    case 'facebook':
+                        bgColor = '#3B5998';
+                        break;
+                    case 'dribbble':
+                        bgColor = '#EA4C89';
+                        break;
+                    case 'behance':
+                        bgColor = '#0057FF';
+                        break;
+                    default:
+                        bgColor = '#7f8c8d';
+                }
+            %>
+            <% if (theme.header.links[key].img) { %>
+                <span class="header__link"
+                    onmouseover="this.style.backgroundColor='<%= bgColor %>'"
+                    onmouseout="this.style.backgroundColor='#eaeaea'">
+
+                    <i class="fa fa-<%= key %>"></i>
+                    <div class="header__link-extend">
+                        <img src="<%- theme.header.links[key].img %>" alt="<%= theme.header.links[key].name %>">
+                    </div>
+                </span>
+            <% } else { %>
+                <a class="header__link"
+                    onmouseover="this.style.backgroundColor='<%= bgColor %>'"
+                    onmouseout="this.style.backgroundColor='#eaeaea'"
+                    href="<%- key.indexOf('mail') !== -1 ? 'mailto:' : '' %><%- theme.header.links[key].url %>"
+                    target="_blank">
+
+                    <i class="fa fa-<%= key %>"></i>
+                </a>
+            <% } %>
+        <% } %>
+        </ul>
+        <!--<img src="<%= theme.logo %>" alt="logo">-->
+    </div>
+</div>
+

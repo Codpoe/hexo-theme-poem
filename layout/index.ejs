@@ -5,27 +5,27 @@
     <link rel="stylesheet" href="/css/index.bundle.css">
 </head>
 <body>
-    <% if (theme.first_screen.open && page.current === 1) { %>
+    <% if (page.current === 1 && theme.first_screen.open) { %>
         <%- partial('_partial/first-screen') %>
     <% } %>
 
     <%- partial('_partial/header') %>
 
     <div class="wrapper">
+        <%- partial('_partial/header-info') %>
+
         <div class="container">
             <% page.posts.forEach(function(post) { %>
                 <%- partial('_partial/post', {post: post}) %>
             <% }) %>
 
-            <%- partial('_partial/prev-next') %>
+            <div class="pagination">
+                <%- paginator({total: page.total, current: page.current, mid_size: 1, prev_text: __('prev'), next_text: __('next')}) %>
+            </div>
         </div>
 
         <%- partial('_partial/footer') %>
     </div>
-
-    <% if (theme.triangle_canvas) { %>
-        <%- partial('_partial/triangle') %>
-    <% } %>
 
     <script src="/js/index.bundle.js"></script>
 </body>
